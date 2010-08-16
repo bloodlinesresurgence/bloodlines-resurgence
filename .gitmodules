@@ -1,0 +1,3 @@
+[submodule "mod"]
+	path = mod
+	url = git@github.com:bloodlinesresurgence/Resurgence.git
