@@ -30,6 +30,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -48,12 +64,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="lib\HashList.cs" />
+    <Compile Include="lib\EventEmitter.cs" />
+    <Compile Include="Form_Installer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_Installer.Designer.cs">
+      <DependentUpon>Form_Installer.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib\Timeout.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -61,10 +80,95 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpecTesterForm.resx">
+      <DependentUpon>SpecTesterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="..\smallgit\.ssh\known_hosts">
+      <Link>smallgit\.ssh\known_hosts</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\git-pull">
+      <Link>smallgit\bin\git-pull</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\git-sh-setup">
+      <Link>smallgit\bin\git-sh-setup</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\etc\gitconfig">
+      <Link>smallgit\etc\gitconfig</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\git.bat">
+      <Link>smallgit\git.bat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\libexec\git-core\git-pull">
+      <Link>smallgit\libexec\git-core\git-pull</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\libexec\git-core\git-sh-setup">
+      <Link>smallgit\libexec\git-core\git-sh-setup</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\README.md">
+      <Link>smallgit\README.md</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\description">
+      <Link>smallgit\share\git-core\templates\description</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\applypatch-msg.sample">
+      <Link>smallgit\share\git-core\templates\hooks\applypatch-msg.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\commit-msg.sample">
+      <Link>smallgit\share\git-core\templates\hooks\commit-msg.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\post-commit.sample">
+      <Link>smallgit\share\git-core\templates\hooks\post-commit.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\post-receive.sample">
+      <Link>smallgit\share\git-core\templates\hooks\post-receive.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\post-update.sample">
+      <Link>smallgit\share\git-core\templates\hooks\post-update.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\pre-applypatch.sample">
+      <Link>smallgit\share\git-core\templates\hooks\pre-applypatch.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\pre-commit.sample">
+      <Link>smallgit\share\git-core\templates\hooks\pre-commit.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\pre-rebase.sample">
+      <Link>smallgit\share\git-core\templates\hooks\pre-rebase.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\prepare-commit-msg.sample">
+      <Link>smallgit\share\git-core\templates\hooks\prepare-commit-msg.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\hooks\update.sample">
+      <Link>smallgit\share\git-core\templates\hooks\update.sample</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\share\git-core\templates\info\exclude">
+      <Link>smallgit\share\git-core\templates\info\exclude</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="git.bat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -74,6 +178,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Smallgit.cs" />
+    <Compile Include="Spec.cs" />
+    <Compile Include="SpecTesterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecTesterForm.Designer.cs">
+      <DependentUpon>SpecTesterForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\smallgit\bin\basename.exe">
+      <Link>smallgit\bin\basename.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\git-merge.exe">
+      <Link>smallgit\bin\git-merge.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\git.exe">
+      <Link>smallgit\bin\git.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\libiconv2.dll">
+      <Link>smallgit\bin\libiconv2.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\msys-1.0.dll">
+      <Link>smallgit\bin\msys-1.0.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\msys-crypto-0.9.8.dll">
+      <Link>smallgit\bin\msys-crypto-0.9.8.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\msys-minires.dll">
+      <Link>smallgit\bin\msys-minires.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\msys-z.dll">
+      <Link>smallgit\bin\msys-z.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\sed.exe">
+      <Link>smallgit\bin\sed.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\sh.exe">
+      <Link>smallgit\bin\sh.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\bin\ssh.exe">
+      <Link>smallgit\bin\ssh.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\smallgit\libexec\git-core\git.exe">
+      <Link>smallgit\libexec\git-core\git.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="smallgit\share\git-core\templates\branches\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
