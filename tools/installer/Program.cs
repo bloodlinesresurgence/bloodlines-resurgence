@@ -15,6 +15,11 @@ namespace BloodlinesResurgenceInstaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+#if DEBUG
+            new SpecTesterForm().Show();
+#endif
+
             Application.Run(new Form_Installer());
         }
     }
