@@ -1,0 +1,3 @@
+*.swp
+tools/installer/obj/*
+tools/installer/bin/*
