@@ -1,3 +1,9 @@
 [submodule "mod"]
 	path = mod
 	url = git@github.com:bloodlinesresurgence/Resurgence.git
+[submodule "tools/installer/refs/nodecs"]
+	path = tools/installer/refs/nodecs
+	url = git@github.com:DaedalusRaistlin/nodecs.git
+[submodule "tools/installer/refs/specsharp"]
+	path = tools/installer/refs/specsharp
+	url = git@github.com:DaedalusRaistlin/specsharp.git
