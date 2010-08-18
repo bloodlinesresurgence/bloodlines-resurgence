@@ -17,7 +17,7 @@ namespace BloodlinesResurgenceInstaller
             Application.SetCompatibleTextRenderingDefault(false);
 
 #if DEBUG
-            new SpecTesterForm().Show();
+            new SpecBack.SpecTesterForm(new Type[] { typeof(NodeCS.EventEmitter) }).Show();
 #endif
 
             Application.Run(new Form_Installer());
