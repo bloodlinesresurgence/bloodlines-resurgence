@@ -1,9 +1,9 @@
 [submodule "mod"]
 	path = mod
-	url = git@github.com:bloodlinesresurgence/Resurgence.git
+	url = git://github.com:bloodlinesresurgence/Resurgence.git
 [submodule "tools/installer/refs/nodecs"]
 	path = tools/installer/refs/nodecs
-	url = git@github.com:DaedalusRaistlin/nodecs.git
+	url = git://github.com:DaedalusRaistlin/nodecs.git
 [submodule "tools/installer/refs/specback"]
 	path = tools/installer/refs/specback
-	url = git@github.com:DaedalusRaistlin/specback.git
+	url = git://github.com:DaedalusRaistlin/specback.git
