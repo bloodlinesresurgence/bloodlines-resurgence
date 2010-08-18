@@ -224,6 +224,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="refs\nodecs\NodeCS.csproj">
+      <Project>{21310134-5DAD-4266-BF59-84890BF6FF3C}</Project>
+      <Name>NodeCS</Name>
+    </ProjectReference>
+    <ProjectReference Include="refs\specsharp\SpecBack.csproj">
+      <Project>{176C053B-D9D8-4016-B367-18A1F777786F}</Project>
+      <Name>SpecBack</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="smallgit\share\git-core\templates\branches\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

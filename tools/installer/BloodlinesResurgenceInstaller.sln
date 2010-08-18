@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodlinesResurgenceInstall
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeCS", "refs\nodecs\NodeCS.csproj", "{21310134-5DAD-4266-BF59-84890BF6FF3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecSharp", "refs\specsharp\SpecSharp.csproj", "{176C053B-D9D8-4016-B367-18A1F777786F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecBack", "refs\specsharp\SpecBack.csproj", "{176C053B-D9D8-4016-B367-18A1F777786F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

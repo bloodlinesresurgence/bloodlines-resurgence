@@ -4,6 +4,6 @@
 [submodule "tools/installer/refs/nodecs"]
 	path = tools/installer/refs/nodecs
 	url = git@github.com:DaedalusRaistlin/nodecs.git
-[submodule "tools/installer/refs/specsharp"]
-	path = tools/installer/refs/specsharp
-	url = git@github.com:DaedalusRaistlin/specsharp.git
+[submodule "tools/installer/refs/specback"]
+	path = tools/installer/refs/specback
+	url = git@github.com:DaedalusRaistlin/specback.git
