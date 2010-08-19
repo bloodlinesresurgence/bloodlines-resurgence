@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-namespace BloodlinesResurgenceInstaller.smallgit
+namespace Resurgence.smallgit
 {
     public enum GitResult
     {

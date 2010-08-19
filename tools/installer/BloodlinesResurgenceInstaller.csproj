@@ -8,7 +8,7 @@
     <ProjectGuid>{559C2FED-6578-4E09-A9CA-9A1C8664F515}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BloodlinesResurgenceInstaller</RootNamespace>
+    <RootNamespace>Resurgence</RootNamespace>
     <AssemblyName>BloodlinesResurgenceInstaller</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

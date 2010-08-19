@@ -1,4 +1,4 @@
-﻿namespace BloodlinesResurgenceInstaller
+﻿namespace Resurgence
 {
     partial class Form_Installer
     {

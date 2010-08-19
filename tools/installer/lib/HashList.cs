@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections;
 using System.ComponentModel;
 
-namespace BloodlinesResurgenceInstaller
+namespace Resurgence
 {
     /// <summary>
     /// Provides a named set of type-specific entries, identified via a key.
