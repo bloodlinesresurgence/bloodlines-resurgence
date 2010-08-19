@@ -47,6 +47,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DaedalusLib, Version=1.1.2.100, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refs\DaedalusLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -64,6 +68,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Info.cs" />
+    <Compile Include="lib\Assemblies.cs" />
+    <Compile Include="lib\Exceptions\InvalidTranslationLineException.cs" />
+    <Compile Include="lib\Exceptions\LibCommunicationsNotSetException.cs" />
+    <Compile Include="lib\Exceptions\TranslationLoadException.cs" />
+    <Compile Include="lib\Exceptions\VPKIndexNotFound.cs" />
+    <Compile Include="lib\Result.cs" />
+    <Compile Include="lib\TranslationItemList.cs" />
     <Compile Include="lib\HashList.cs" />
     <Compile Include="Form_Installer.cs">
       <SubType>Form</SubType>
@@ -71,6 +83,25 @@
     <Compile Include="Form_Installer.Designer.cs">
       <DependentUpon>Form_Installer.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib\TranslatedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="lib\TranslatedControl.designer.cs">
+      <DependentUpon>TranslatedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lib\TranslatedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lib\TranslatedForm.designer.cs">
+      <DependentUpon>TranslatedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lib\TranslationProvider.cs" />
+    <Compile Include="lib\Translation\LanguageFile.cs" />
+    <Compile Include="lib\Translation\RuntimeLanguageChanger.cs" />
+    <Compile Include="lib\Translation\Translation.cs" />
+    <Compile Include="lib\Translation\TranslationCollection.cs" />
+    <Compile Include="lib\Translation\TranslationEngine.cs" />
+    <Compile Include="lib\Translation\TranslationItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,9 +109,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="lib\WizardPage.resx">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="..\smallgit\.ssh\known_hosts">
       <Link>smallgit\.ssh\known_hosts</Link>
@@ -172,6 +207,19 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Smallgit.cs" />
+    <Compile Include="tools\vextract\DirectoryEntry.cs" />
+    <Compile Include="tools\vextract\DirectoryInfo.cs" />
+    <Compile Include="tools\vextract\Vextract.cs" />
+    <Compile Include="tools\vextract\VPKFile.cs" />
+    <Compile Include="tools\vextract\VPKIndex.cs" />
+    <Compile Include="lib\WildMatch.cs" />
+    <Compile Include="lib\WizardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lib\WizardPage.designer.cs">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lib\XMLTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\smallgit\bin\basename.exe">

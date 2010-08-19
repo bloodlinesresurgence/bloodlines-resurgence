@@ -1,0 +1,707 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DaedalusLib</name>
+    </assembly>
+    <members>
+        <member name="T:DaedalusLib.SystemImage">
+            <summary>
+            Provides a method of retreiving the different image types shown in a
+            MessageBox.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.SystemImage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DaedalusLib.SystemImage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.SystemImage.#ctor">
+            <summary>
+            Creates a new instance of the SystemImage class with the
+            default image.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.SystemImage.CurrentIconImage">
+            <summary>
+            Gets or sets the current icon image to display.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.SystemImage.CurrentIcon">
+            <summary>
+            Gets or sets the current icon to display.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.SystemImage.CurrentImage">
+            <summary>
+            Enumerates the different icon images to display.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Application">
+            <summary>
+            Application image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Asterisk">
+            <summary>
+            Asterisk image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Error">
+            <summary>
+            Error image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Exclamation">
+            <summary>
+            Exclamation image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Hand">
+            <summary>
+            Hand image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Information">
+            <summary>
+            Information image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Question">
+            <summary>
+            Question image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Shield">
+            <summary>
+            Shield image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.Warning">
+            <summary>
+            Warning image.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.SystemImage.CurrentImage.WinLogo">
+            <summary>
+            Windows logo image.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.InformationPanel">
+            <summary>
+            Provides an Information Panel akin to the DocComment panel on
+            a PropertyGrid control.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.InformationPanel.#ctor">
+            <summary>
+            Creates a new instance of the InformationPanel class.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.InformationPanel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.InformationPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DaedalusLib.InformationPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.InformationPanel.DisplayTitle">
+            <summary>
+            Gets or sets the text displayed as the title.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.InformationPanel.DisplayDescription">
+            <summary>
+            Gets or sets the text displayed as the description.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.Inputbox">
+            <summary>
+            Provides a modal-based dialog for entering a line of text.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Inputbox.DialogResult">
+            <summary>
+            Result of the dialog operation.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.#ctor">
+            <summary>
+            Creates a new instance of the Inputbox class using default options.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the Inputbox class using the specified title.
+            </summary>
+            <param name="title">Title of the Inputbox dialog.</param>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of the Inputbox class using the specified title and initial dialog input text.
+            </summary>
+            <param name="title">Title of the Inputbox dialog.</param>
+            <param name="initialtext">Initial text to place in the entry area.</param>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates a new instance of the Inputbox class using the specified title, initial dialog input text
+            and display message.
+            </summary>
+            <param name="title">Title of the Inputbox dialog.</param>
+            <param name="intialtext">Initial text to place in the entry area.</param>
+            <param name="message">Message to be displayed to the user.</param>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.setOptions(System.String,System.String,System.String)">
+            <summary>
+            Sets various options of the dialog box.
+            </summary>
+            <param name="title">Title of the dialogbox.</param>
+            <param name="initialtext">Initial text displayed for the entry area.</param>
+            <param name="message">Message displayed to the user.</param>
+        </member>
+        <member name="F:DaedalusLib.Inputbox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DaedalusLib.Inputbox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.Inputbox.Title">
+            <summary>
+            Gets or sets the title of the dialog box.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.Inputbox.InitialText">
+            <summary>
+            Gets or sets the inital entry text for the dialog box.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.Inputbox.Value">
+            <summary>
+            Gets the text entered into the entry field of the dialog box.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.Inputbox.Message">
+            <summary>
+            Gets or sets the message displayed to the user.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.BaseSerializable">
+            <summary>
+            Provides an interface for runtime serialization and deserialization.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.BaseSerializable.ChildObjectRef">
+            <summary>
+            Provides a graph-link to the object to be serialized.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.BaseSerializable.formatterType">
+            <summary>
+            Specifies the serialization formatting type to be used.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable.#ctor">
+            <summary>
+            Initializes a new instance of the BaseSerializable class, using 
+            Binary serialization formatter.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable.#ctor(DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Initializes a new instance of the BaseSerializable class, using
+            the specified serialization formatter.
+            </summary>
+            <param name="type">Serialization formatter to use.</param>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable._SerializeToString">
+            <summary>
+            Serializes the object to a string.
+            </summary>
+            <returns>A string representing the serialized form of the object.</returns>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable.__Serialize(System.String)">
+            <summary>
+            Serializes the object to a file.
+            </summary>
+            <param name="FullPath">Path to the file to serialize to. The file will be overwritten.</param>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable._DeserializeFromString(System.String,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the given string data into an object.
+            </summary>
+            <param name="data">Serialized data to deserialize.</param>
+            <param name="type">Serialization formatter to use for deserializing.</param>
+            <returns>The deserialized object from the string.</returns>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable._DeserializeFromString(System.String)">
+            <summary>
+            Deserializes the given string data into an object.
+            </summary>
+            <param name="data">Serialized data to deserialize.</param>
+            <returns>The deserialized object from the string.</returns>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable._DeserializeFromMemory(System.IO.MemoryStream,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the given memory stream into an object.
+            </summary>
+            <param name="s">Memory stream containing the serialized data to deserialize.</param>
+            <param name="type">Serialization formatter to use for deserializing.</param>
+            <returns>The deserialized object from the stream.</returns>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable._Deserialize(System.String,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the given file into an object.
+            </summary>
+            <param name="FullPath">Path to the file containing the serialized data to deserialize.</param>
+            <param name="type">Serialization formatter to use for deserializing.</param>
+            <returns>The deserialized object from the file.</returns>
+        </member>
+        <member name="M:DaedalusLib.BaseSerializable._Deserialize(System.String)">
+            <summary>
+            Deserializes the given file into an object.
+            </summary>
+            <param name="FullPath">Path to the file containing the serialized data to deserialize.</param>
+            <returns>The deserialized object from the file.</returns>
+        </member>
+        <member name="T:DaedalusLib.BaseSerializable.FormatterType">
+            <summary>
+            Provides enumeration for different serialization formatting types.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.BaseSerializable.FormatterType.Binary">
+            <summary>
+            Use binary serialization. This is not very verbose, and is not 
+            intended for transmitting data between programs.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.BaseSerializable.FormatterType.Soap">
+            <summary>
+            Use SOAP serialization. This is verbose, and is suitable for
+            transmission between programs. Plain text is used.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.IBaseSerializable`1">
+            <summary>
+            Provides an interface to the BaseSerializable class using a fixed type.
+            </summary>
+            <typeparam name="TYPE">Type of object to interface with.</typeparam>
+        </member>
+        <member name="M:DaedalusLib.IBaseSerializable`1._Deserialize(System.String,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the given file into an object.
+            </summary>
+            <param name="filename">Path to the file containing the serialized data to deserialize.</param>
+            <param name="type">Serialization formatter to use for deserializing.</param>
+        </member>
+        <member name="M:DaedalusLib.IBaseSerializable`1._DeserializeFromMemory(System.IO.MemoryStream,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the given memory stream into an object.
+            </summary>
+            <param name="stream">Memory stream containing the serialized data to deserialize.</param>
+            <param name="type">Serialization formatter to use for deserializing.</param>
+            <returns>The deserialized object from the stream.</returns>
+        </member>
+        <member name="M:DaedalusLib.IBaseSerializable`1._DeserializeFromString(System.String,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the given string data into an object.
+            </summary>
+            <param name="data">Serialized data to deserialize.</param>
+            <param name="type">Serialization formatter to use for deserializing.</param>
+            <returns>The deserialized object from the string.</returns>
+        </member>
+        <member name="T:DaedalusLib.MLTextbox">
+            <summary>
+            Implements a Markup-Language extended RichTextBox.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.MLTextbox.DefaultTextColor">
+            <summary>
+            Default text color to use.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.MLTextbox.#ctor">
+            <summary>
+            Initializes a new instance of the MLTextbox class.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.MLTextbox.AddFormattedText(System.String,System.Int32)">
+            <summary>
+            Adds the specified markup-language text at the given position.
+            </summary>
+            <param name="mltext">Valid markup-language text to insert.</param>
+            <param name="position">Position to insert text. Zero-based.</param>
+        </member>
+        <member name="M:DaedalusLib.MLTextbox.getEntities(System.String)">
+            <summary>
+            Parses markup parameters and text.
+            </summary>
+            <param name="mltext">String of text to parse</param>
+            <returns>System.Collections.List(MLEntity) object containing parsed entities.</returns>
+        </member>
+        <member name="M:DaedalusLib.MLTextbox.stringToColor(System.String)">
+            <summary>
+            Converts a color string (eg "red") to a System.Drawing.Color object.
+            </summary>
+            <param name="str">Color, in english text.</param>
+            <returns>A new System.Drawing.Color object representing the color.</returns>
+        </member>
+        <member name="M:DaedalusLib.MLTextbox.AddLogText(System.String)">
+            <summary>
+            Adds log-type text, with timestamp, to the textbox.
+            </summary>
+            <param name="text">Text to add.</param>
+        </member>
+        <member name="P:DaedalusLib.MLTextbox.Text">
+            <summary>
+            Gets or sets the text for the textbox. Performs ML operations.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.MLTextbox.StateValues">
+            <summary>
+            State values for the markup entity parser
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.MLTextbox.MLEntity">
+            <summary>
+            Container for each markup entity
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.MLTextbox.MLEntity.Text">
+            <summary>
+            Text to be formatted and displayed.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.MLTextbox.MLEntity.Markup">
+            <summary>
+            Markup parameters for the text.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.MLTextbox.MLEntity.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of the MLEntity struct.
+            </summary>
+            <param name="_text">Text to be formatted and displayed.</param>
+            <param name="_markup">Markup parameters for the text.</param>
+        </member>
+        <member name="T:DaedalusLib.EContainer">
+            <summary>
+            Provides an encrypted container class.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.EBaseSerializable">
+            <summary>
+            Provides serialization for encrypted objects.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.EBaseSerializable.serializingKey">
+            <summary>
+            Key used to serialize.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.EBaseSerializable.child">
+            <summary>
+            Child object to serialize.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.EBaseSerializable.defaultType">
+            <summary>
+            Default serialization formatting type to use.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.EBaseSerializable.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the EBaseSerializable class.
+            </summary>
+            <param name="key">The encryption key to use.</param>
+        </member>
+        <member name="M:DaedalusLib.EBaseSerializable._Serialize(System.String)">
+            <summary>
+            Serializes the container to a file.
+            </summary>
+            <param name="filename">Path to file to serialize to.</param>
+        </member>
+        <member name="M:DaedalusLib.EBaseSerializable.Deserialize(System.String,System.String,DaedalusLib.BaseSerializable.FormatterType)">
+            <summary>
+            Deserializes the object from a file, using the specified encrpytion key and serialization 
+            formatter.
+            </summary>
+            <param name="filename">Path to file to deserialize.</param>
+            <param name="key">Encryption key to use.</param>
+            <param name="type">Serialization formatter to use.</param>
+            <returns>The object representing the deserialized data.</returns>
+        </member>
+        <member name="M:DaedalusLib.EBaseSerializable.Deserialize(System.String,System.String)">
+            <summary>
+            Deserializes the object from a file, using the specified encrpytion key and serialization 
+            formatter.
+            </summary>
+            <param name="filename">Path to file to deserialize.</param>
+            <param name="key">Encryption key to use.</param>
+            <returns>The object representing the deserialized data.</returns>
+        </member>
+        <member name="M:DaedalusLib.EBaseSerializable.CryptDecrypt(System.String,System.String)">
+            <summary>
+            Encrypts or decrypts the given text using the specified key. Pass text in once to encrypt,
+            pass the encrypted text in to decrypt. You must use the same key both times.
+            </summary>
+            <param name="data">Data to encrypt or decrypt.</param>
+            <param name="Key">Encryption key to use.</param>
+            <returns>Encrypted or decrypted string.</returns>
+        </member>
+        <member name="M:DaedalusLib.EContainer.#ctor(System.String)">
+            <summary>
+            Initializes the encrypted container class.
+            </summary>
+            <param name="key">The private encryption key to use.</param>
+        </member>
+        <member name="M:DaedalusLib.EContainer.Serialize(System.String)">
+            <summary>
+            Writes the class to an encrypted file.
+            </summary>
+            <param name="filename">File to write to.</param>
+        </member>
+        <member name="M:DaedalusLib.EContainer.Deserialize(System.String,System.String)">
+            <summary>
+            Loads the class from an encrypted file.
+            </summary>
+            <param name="filename">File to read from.</param>
+            <param name="key">Encryption key used to decrypt data. Must be the same as original encryption key.</param>
+            <returns>A new EContainer object containing all the previously serialized data.</returns>
+        </member>
+        <member name="P:DaedalusLib.EContainer.Item(System.String)">
+            <summary>
+            Retreives or sets a key value.
+            </summary>
+            <param name="identifier">Key to use.</param>
+            <returns>Value of the key.</returns>
+        </member>
+        <member name="T:DaedalusLib.ExceptionMessagebox">
+            <summary>
+            Provides a generic Exception-based MessageBox to alert users to
+            exceptions, and provide the option of sending the exception details
+            to a specified server.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.ExceptionMessagebox.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new instance of the ExceptionMessagebox class.
+            </summary>
+            <param name="message">The message to display to the user.</param>
+            <param name="ex">The exception to display and use.</param>
+        </member>
+        <member name="M:DaedalusLib.ExceptionMessagebox.#ctor(System.String,System.Exception,System.Boolean)">
+            <summary>
+            Creates a new instance of the ExceptionMessagebox class, specifying whether
+            this was a fatal exception.
+            </summary>
+            <param name="message">The message to display to the user.</param>
+            <param name="ex">The exception to display and use.</param>
+            <param name="fatal">If true, treats the exception as a fatal one.</param>
+        </member>
+        <member name="M:DaedalusLib.ExceptionMessagebox.Show(System.String,System.Exception,System.Boolean)">
+            <summary>
+            Creates a new instance of the ExceptionMessagebox class and displays it
+            to the user.
+            </summary>
+            <param name="message">The message to display to the user.</param>
+            <param name="ex">The exception to display and use.</param>
+            <param name="fatal">If true, treats the exception as a fatal one.</param>
+        </member>
+        <member name="M:DaedalusLib.ExceptionMessagebox.Show(System.String,System.Exception)">
+            <summary>
+            Creates a new instance of the ExceptionMessagebox class and displays it
+            to the user.
+            </summary>
+            <param name="message">The message to display to the user.</param>
+            <param name="ex">The exception to display and use.</param>
+        </member>
+        <member name="F:DaedalusLib.ExceptionMessagebox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.ExceptionMessagebox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DaedalusLib.ExceptionMessagebox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.HorizontalBar">
+            <summary>
+            A horizontal bar.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.HorizontalBar.#ctor">
+            <summary>
+            Initializes a new instance of the Horizontal Bar class.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.HorizontalBar.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.HorizontalBar.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DaedalusLib.HorizontalBar.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.ExtendedPanel">
+            <summary>
+            Provides extensions to the standard Panel object.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.ExtendedPanel.#ctor">
+            <summary>
+            Creates a new instance of the ExtendedPanel control.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.ExtendedPanel.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Overrides the OnPaint method to draw the ExtendedBorder.
+            </summary>
+            <param name="pe"></param>
+        </member>
+        <member name="P:DaedalusLib.ExtendedPanel.ExtendedBorderColor">
+            <summary>
+            Gets or sets the color of the panel's border.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.ExtendedPanel.ExtendedBorder">
+            <summary>
+            Gets or sets whether the panel's border is shown.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.ID">
+            <summary>
+            Summary description for Definitions.
+            </summary>
+        </member>
+        <member name="T:DaedalusLib.Settings">
+            <summary>
+            Provides a number of application-speficic functions related to settings 
+            and program files.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Settings.ApplicationData">
+            <summary>
+            Specifies the directory that all application data will reside in.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Settings.IncomingFolder">
+            <summary>
+            Specifies the directory to retreive incoming files from.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Settings.DoNotSave">
+            <summary>
+            Controls the saving of the Settings object when updated.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Settings.ApplicationDirectoryName">
+            <summary>
+            The name of the directory to save application files under.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Settings.SettingsLoaded">
+            <summary>
+            Indicates whether the settings file was loaded from disk, or created anew.
+            </summary>
+        </member>
+        <member name="F:DaedalusLib.Settings.SettingsPath">
+            <summary>
+            Full path to settings file
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.Settings.#ctor(System.String)">
+            <summary>
+            Initializes the class with default settings.
+            <param name="folderName">Folder name to save files under.</param>
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.Settings.#ctor(System.String,System.String)">
+            <summary>
+            Initializes the class with a custom Application Data folder.
+            </summary>
+            <param name="folderName">Folder name to save files under.</param>
+            <param name="customAppData">Custom Application Data folder to use.</param>
+        </member>
+        <member name="M:DaedalusLib.Settings.ApplicationFolder(System.String)">
+            <summary>
+            Retreives a folder path using the Application Data folder and program root.
+            </summary>
+            <param name="Folder">Folder to retrieve within program root.</param>
+            <returns>Folder within the program root.</returns>
+        </member>
+        <member name="M:DaedalusLib.Settings.Save">
+            <summary>
+            Forces a save of the settings data.
+            </summary>
+        </member>
+        <member name="M:DaedalusLib.Settings.ApplicationFile(System.String)">
+            <summary>
+            Constructs a path to the given file located in the program's storage folder.
+            </summary>
+            <param name="file">File to locate.</param>
+            <returns></returns>
+        </member>
+        <member name="P:DaedalusLib.Settings.Root">
+            <summary>
+            Retreives the location of the root program folder.
+            </summary>
+        </member>
+        <member name="P:DaedalusLib.Settings.Item(System.String)">
+            <summary>
+            Gets or sets program settings under the specified key.
+            </summary>
+            <param name="key">Setting to use.</param>
+            <returns>The value of the setting.</returns>
+        </member>
+    </members>
+</doc>
