@@ -17,7 +17,7 @@ namespace Resurgence
             Application.SetCompatibleTextRenderingDefault(false);
 
 #if DEBUG
-            new SpecBack.SpecTesterForm(new Type[] { typeof(NodeCS.EventEmitter) }).Show();
+            new SpecBack.SpecTesterForm(new Type[] { typeof(NodeCS.EventEmitter), typeof(NodeCS.StateMachine) }).Show();
 #endif
 
             Application.Run(new Form_Installer());

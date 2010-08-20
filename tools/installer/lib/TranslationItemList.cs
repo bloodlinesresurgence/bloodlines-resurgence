@@ -10,7 +10,7 @@ namespace Resurgence
     /// Provides keyed list of TranslationItem's.
     /// </summary>
     public class TranslationItemList
-        : HashList<TranslationItem>
+        : Dictionary<string, TranslationItem>
     {
         /// <summary>
         /// Creates a new instance of the TranslationItemList class.

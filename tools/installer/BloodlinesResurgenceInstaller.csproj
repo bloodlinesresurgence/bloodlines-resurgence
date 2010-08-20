@@ -76,7 +76,6 @@
     <Compile Include="lib\Exceptions\VPKIndexNotFound.cs" />
     <Compile Include="lib\Result.cs" />
     <Compile Include="lib\TranslationItemList.cs" />
-    <Compile Include="lib\HashList.cs" />
     <Compile Include="Form_Installer.cs">
       <SubType>Form</SubType>
     </Compile>
