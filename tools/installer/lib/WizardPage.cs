@@ -79,5 +79,17 @@ namespace Resurgence
         {
             throw new NotImplementedException("Must override DoInitializeComponent!");
         }
+
+        private void CancelWizardButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you wish to cancel?", "Bloodlines Resurgence",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            switch(result) {
+                case DialogResult.Yes:
+                    Program.cancel();
+                    break;
+            }
+        }
     }
 }

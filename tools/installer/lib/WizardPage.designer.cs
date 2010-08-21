@@ -32,14 +32,14 @@
             this.WizardDescription = new System.Windows.Forms.Label();
             this.WizardTitle = new System.Windows.Forms.Label();
             this.ControlPanel = new DaedalusLib.ExtendedPanel();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.FinishButton = new System.Windows.Forms.Button();
             this.LanguageButton = new System.Windows.Forms.Button();
             this.horizontalBar1 = new DaedalusLib.HorizontalBar();
             this.CancelWizardButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.NextButton = new System.Windows.Forms.Button();
             this.ContentPanel = new DaedalusLib.ExtendedPanel();
             this.horizontalBar2 = new DaedalusLib.HorizontalBar();
-            this.FinishButton = new System.Windows.Forms.Button();
             this.extendedPanel3.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.ContentPanel.SuspendLayout();
@@ -73,9 +73,9 @@
             this.WizardTitle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WizardTitle.Location = new System.Drawing.Point(12, 9);
             this.WizardTitle.Name = "WizardTitle";
-            this.WizardTitle.Size = new System.Drawing.Size(186, 18);
+            this.WizardTitle.Size = new System.Drawing.Size(175, 18);
             this.WizardTitle.TabIndex = 0;
-            this.WizardTitle.Text = "Bloodlines Revival Tools";
+            this.WizardTitle.Text = "Bloodlines Resurgence";
             // 
             // ControlPanel
             // 
@@ -93,6 +93,27 @@
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(494, 46);
             this.ControlPanel.TabIndex = 1;
+            // 
+            // NextButton
+            // 
+            this.NextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NextButton.Location = new System.Drawing.Point(396, 12);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(86, 22);
+            this.NextButton.TabIndex = 0;
+            this.NextButton.Text = "Next";
+            this.NextButton.UseVisualStyleBackColor = true;
+            // 
+            // FinishButton
+            // 
+            this.FinishButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FinishButton.Location = new System.Drawing.Point(396, 12);
+            this.FinishButton.Name = "FinishButton";
+            this.FinishButton.Size = new System.Drawing.Size(86, 22);
+            this.FinishButton.TabIndex = 6;
+            this.FinishButton.Text = "Finish";
+            this.FinishButton.UseVisualStyleBackColor = true;
+            this.FinishButton.Visible = false;
             // 
             // LanguageButton
             // 
@@ -122,6 +143,7 @@
             this.CancelWizardButton.TabIndex = 2;
             this.CancelWizardButton.Text = "Cancel";
             this.CancelWizardButton.UseVisualStyleBackColor = true;
+            this.CancelWizardButton.Click += new System.EventHandler(this.CancelWizardButton_Click);
             // 
             // BackButton
             // 
@@ -132,16 +154,6 @@
             this.BackButton.TabIndex = 1;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
-            // 
-            // NextButton
-            // 
-            this.NextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.NextButton.Location = new System.Drawing.Point(396, 12);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(86, 22);
-            this.NextButton.TabIndex = 0;
-            this.NextButton.Text = "Next";
-            this.NextButton.UseVisualStyleBackColor = true;
             // 
             // ContentPanel
             // 
@@ -163,17 +175,6 @@
             this.horizontalBar2.Name = "horizontalBar2";
             this.horizontalBar2.Size = new System.Drawing.Size(494, 10);
             this.horizontalBar2.TabIndex = 2;
-            // 
-            // FinishButton
-            // 
-            this.FinishButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FinishButton.Location = new System.Drawing.Point(396, 12);
-            this.FinishButton.Name = "FinishButton";
-            this.FinishButton.Size = new System.Drawing.Size(86, 22);
-            this.FinishButton.TabIndex = 6;
-            this.FinishButton.Text = "Finish";
-            this.FinishButton.UseVisualStyleBackColor = true;
-            this.FinishButton.Visible = false;
             // 
             // WizardPage
             // 
