@@ -8,8 +8,8 @@
     <ProjectGuid>{09104D34-9DA0-48AB-BC1C-61F78D7171E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RevivalTools</RootNamespace>
-    <AssemblyName>RevivalTools</AssemblyName>
+    <RootNamespace>ResurgenceTools</RootNamespace>
+    <AssemblyName>ResurgenceTools</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\RevivalTools.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ResurgenceTools.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,6 +113,10 @@
       <DependentUpon>CopyOriginalFiles.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Steps\CopyBaseFiles.resx">
+      <DependentUpon>CopyBaseFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Steps\DecompileMaps.resx">
       <DependentUpon>DecompileMaps.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,11 +130,19 @@
     <EmbeddedResource Include="Steps\FixDecompiledMaps.resx">
       <DependentUpon>FixDecompiledMaps.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Steps\UpdateAndPatchFiles.resx">
+      <DependentUpon>UpdateAndPatchFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\FinalPage.resx">
       <DependentUpon>FinalPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\ModDetails.resx">
       <DependentUpon>ModDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPages\SelectOperation.resx">
+      <DependentUpon>SelectOperation.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\SelectPaths.resx">
@@ -147,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="Languages\Documents\Finish-English.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -160,6 +173,18 @@
     <Content Include="Languages\Documents\Welcome-Русский %28Russian%29.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="..\Dependancies\base.rar">
+      <Link>Tools\base.rar</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Dependancies\ikvm-0.38.0.2-small.rar">
+      <Link>Tools\ikvm-0.38.0.2-small.rar</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Dependancies\smallgit.rar">
+      <Link>Tools\smallgit.rar</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Languages\Documents\Finish-Español %28Spanish%29.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -177,18 +202,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Tools\content-ob.rar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\content-ep1.rar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\ikvm-0.38.0.2-small.rar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\replacements.rar">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -219,11 +232,11 @@
     <Compile Include="Steps\CopyOriginalFiles.Designer.cs">
       <DependentUpon>CopyOriginalFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Steps\CopyReplacementFiles.cs">
+    <Compile Include="Steps\CopyBaseFiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Steps\CopyReplacementFiles.Designer.cs">
-      <DependentUpon>CopyReplacementFiles.cs</DependentUpon>
+    <Compile Include="Steps\CopyBaseFiles.Designer.cs">
+      <DependentUpon>CopyBaseFiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Steps\DecompileMaps.cs">
       <SubType>Form</SubType>
@@ -261,6 +274,12 @@
     <Compile Include="Steps\FixDecompiledMaps.Designer.cs">
       <DependentUpon>FixDecompiledMaps.cs</DependentUpon>
     </Compile>
+    <Compile Include="Steps\UpdateAndPatchFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\UpdateAndPatchFiles.Designer.cs">
+      <DependentUpon>UpdateAndPatchFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="WizardPages\FinalPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +291,12 @@
     </Compile>
     <Compile Include="WizardPages\ModDetails.Designer.cs">
       <DependentUpon>ModDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardPages\SelectOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPages\SelectOperation.Designer.cs">
+      <DependentUpon>SelectOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="WizardPages\SelectPaths.cs">
       <SubType>Form</SubType>
@@ -293,6 +318,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Dependancies\ttz2vtf.exe">
+      <Link>Tools\ttz2vtf.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Dependancies\UnRAR-license.txt">
+      <Link>Tools\UnRAR-license.txt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Dependancies\UnRAR.exe">
+      <Link>Tools\UnRAR.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Dependancies\vmex.exe">
+      <Link>Tools\vmex.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Dependancies\vmex.jar">
+      <Link>Tools\vmex.jar</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Dependancies\zlib1.dll">
+      <Link>Tools\zlib1.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Languages\English.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -306,21 +355,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Русский %28Russian%29.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\ttz2vtf.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\UnRAR-license.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\UnRAR.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\vmex.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tools\zlib1.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -338,4 +372,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

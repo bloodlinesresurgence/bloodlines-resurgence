@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyTitle("Resurgence Tools")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Bloodlines Resurgence Project")]
+[assembly: AssemblyCompany("Bloodlines Resurgence")]
 [assembly: AssemblyProduct("ResurgenceTools")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
