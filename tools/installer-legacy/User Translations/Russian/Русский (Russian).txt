@@ -1,0 +1,163 @@
+﻿# This is the English translation text for the Bloodlines Revival Installer.
+#
+# How to use this file (or create your own):
+#  - Any line starting with # is a comment
+#  - Only replace the text after the = sign, nothing before it.
+#  - Do not replace any lines starting with [, or any lines that looks like [frmWizard]
+#  - Do not replace text (usually a number) inside a pair of { } - eg, {0}
+#    - These represent text that is filled in during execution.
+#    - You can however, re-order them. Instead of:
+#        Copying = Copying file {0}...
+#           You could use
+#        Copying = {0} being copied...
+#  - Replace only the text after the = sign
+#
+# Happy Vampirism!
+# - Daedalus
+
+[!Globals]
+!AppTitle = Bloodlines Revival Tools
+!Browse = Обзор...
+!OK     = OK
+!Cancel = Cancel
+!Start  = Start
+!Cancelling        = Закрываю...
+!Cancelled         = Закрыто.
+!Terminating       = Terminating process...
+!SelectVampireDirectoryMessage = Укажите директорию игры Vampire: Bloodlines
+!SelectSteamDirectoryMessage   = Укажите путь к Steam
+!SelectTempDirectoryMessage    = Укажите директорию для временных файлов
+!ConfirmQuit                   = Вы уверены, что хотите прекратить установку?
+!ConfirmTitle                  = Bloodlines Revival Tools Wizard
+!Vextract_Ready                = Нажмите Start для начала извлечения файлов.
+# The following line could also be written as: {1} files remaining
+!VextractFilestoGo             = {1} files to go
+!Vextract_Done                 = Закончено. {0} файла(ов)/директории(ий) извлечено.
+!Vextract_VPKIndex			   = Creating VPK index...
+!Vextract_VPKIndex_Done        = Завершено.
+!ErrorCopyingFile  = Ошибка копирования файла {0}: {1}
+!ErrorCreatingDir  = Ошибка создания директории {0}: {1}
+!NoMapsFound       = Не найдено карт в {0}
+# The following two constants correspond to a Result - Success, or Failure
+!Result.Success = Завершено успешно
+!Result.Failure = Не удалось завершить успешно
+
+[WizardPage]
+!Title     = Bloodlines Revival Tools Wizard
+WizardTitle = Bloodlines Revival Tools
+# This next one shouldn't appear, so don't worry about translating it.
+# It's more of a warning to the developer that they forgot to set a description.
+WizardDescription = (DEBUG) You forgot to set the WizardDescription!
+# The "&" in the next two lines is the 'accelerator', and pressing ALT+(key after &) will "click" the button.
+# Eg, In the following, &B means you'd presss ALT+B to "click" the button. Try to ensure that multiple buttons
+# and text boxes don't have the same "accelerator". The & may be anywhere in the text, as long as a letter follows it.
+BackButton = << &Назад
+NextButton = &Вперед >>
+CancelWizardButton = Cancel
+LanguageButton     = Язык ...
+
+[Preparing]
+!Title       = Bloodlines Revival Toolkit
+Description  = Preparing data files, пожалуйста, подождите...
+
+[Welcome]
+WizardDescription = Добро пожаловать в установку «The Bloodlines Revival Toolkit»!
+Understand        = Я понимаю и принимаю написанное выше.
+!WelcomeDocNotFound = Вступительный текст для вашего языка не найден. Не найден файл: {0}
+
+[FinalPage]
+WizardDescription = Установка завершена.
+!FinalDocNotFound = Финальный текст для вашего языка не найден. Не найден файл: {0}
+
+[SelectPaths]
+WizardDescription = Укажите необходимые директории
+SupplyWizard      = Пожалуйста, укажите следующую информацию:
+SelectVampireDirectory = Директория Vampire: Bloodlines:
+SelectSteamDirectory  = Директория Steam:
+BloodlinesNotFound = Игра Vampire: Bloodlines не была найдена в указанной директории.
+SteamNotFound      = Steam не был найден в указанной директории.
+SelectTemporaryDirectory = Директория временных файлов:
+TempNotFound       = Директория временных файлов не указана или не существует.
+CreateTempDirectory = Создать
+!CreateFailed       = Не удалось создать:
+
+[ModDetails]
+WizardDescription  = Уточните детали, относящиеся к Моду
+Info               = Требуется указать еще некоторые детали. Пожалуйста, убедитесь, что вы использовали «Create A Mod wizard» в Steam до того, как продолжить установку.
+SelectSourceModDirectory = Имя мода:
+ModDirectoryHint      = (Это имя мода, который вы создали)
+ModType            = Укажите версию Source для установки:
+EpisodeOneOption   = Episode 1 (Более старая, но более стабильная)
+OrangeBoxOption    = Orange Box (Новая, но некоторые особенности еще не поддерживаются)
+ModNotFound        = Ошибка: не был найден Мод. Убедитесь, что вы его создали.
+InstallTo          = Bloodlines Revival будет установлен в:
+
+[SelectSteps]
+!Recreate_VPK_Indexes              = Recreate VPK indexes
+!Recreate_VPK_Indexes_Description  = Recreates the required VPK index data.
+!Extract_General_Files             = Установить основные файлы
+!Extract_General_Files_Description = Установка всех основных файлов, не требующих конвертации.
+!Extract_Materials                 = Установить игровые материалы (текстуры)
+!Extract_Materials_Description     = Установка всех игровых материалов (текстур) во временную папку для конвертации.
+!Convert_And_Copy_Materials        = Сконвертир. и установить материалы (текстуры)
+!Convert_And_Copy_Materials_Description = Конвертирование всех игровых материалов (текстур) и перемещение их в указанную папку.
+!Decompile_Maps                    = Декомпилировать карты
+!Decompile_Maps_Description        = Декомпиляция карт в .VMF файлы, которые можно запустить с помощью Hammer.
+!Fix_Decompiled_Maps               = Исправить декомпилированные карты
+!Fix_Decompiled_Maps_Description   = Исправление некоторых декомпиляционных ошибок с картам и копирование их в директорию с картами мода.
+!Copy_Replacement_Files            = Заменять существующие файлы
+!Copy_Replacement_Files_Description = Замена старых файлов в указанной директории новыми, созданными командой Bloodlines Revival.
+!Extract_Original_Models           = Извлечь оригинальные модели (опционально)
+!Extract_Original_Models_Description = (Опционально) Установка оригинальных игровых моделей. Эти модели не могут быть использованы без декомпиляции.
+!Copy_New_Models                   = Установить новые модели
+!Copy_New_Models_Description       = Устанавка новых (исправленных и работающих) моделей в указанную директорию.
+WizardDescription  = Step Selection
+Instruction        = Выберите пункты для выполнения из списка ниже:
+DescriptionBox     = Описание
+Description        = Наведите курсор вашей мыши на пункт для того, чтобы увидеть описание.
+AutoProceed        = Переходить к следующему шагу автоматически, как только закончится предыдущий
+
+[ExtractGeneralFiles]
+WizardDescription  = Extract General Files
+Description        = Exactracting general files...
+
+[ExtractMaterials]
+WizardDescription  = Extract Materials
+Description        = Extracting materials to temporary directory...
+
+[ConvertAndCopyMaterials]
+WizardDescription  = Конвертация и установка материалов
+Description		   = Этот этап может занять некоторое время. Нажмите Start, чтобы начать.
+!StageOne		   = Этап 1: поиск всех директорий с материалами...
+!StageOneDone      = Закончено: {0} директорий найдено.
+!StageTwo          = Этап 2: конвертация и установка материалов...
+!StageTwoConvert   = Конвертирую папку: {0}...
+!StageTwoCopy      = Устанавливаю материалы в папку Мода...
+!StageTwoDone      = Закончено. {0} материалов в {1} папках сконвертировано и установлено.
+
+[DecompileMaps]
+WizardDescription  = Декомпиляция карт
+Description        = Декомпилирую карты так, что они могут быть загружены с помощью Hammer
+!StageOne          = Этап 1: извлеваю файлы поддержки vmex...
+!StageOneDone      = Готово.
+!Decompiling       = Декомпилирую карту: {0}
+!DecompilingDone   = Декомпиляция карт закончена.
+
+[FixDecompiledMaps]
+WizardDescription  = Исправить декомпилированные карты
+Description        = Исправение декомпилированных карт и копирование их в директорию мода
+!StageOne          = Ищу карты для исправления...
+!StageOneDone      = найдено {0} карт(ы).
+!StageTwoFix       = Исправляю {0}...
+!StageTwoCopy      = Копирую...
+!Done              = Готово.
+
+[CopyReplacementFiles]
+WizardDescription  = Copy Replacement Files
+Description        = Copies replacement files to the mod directory.
+!Starting          = Extracting...
+
+[ExtractModels]
+WizardDescription  = Извлекаю модели
+Description        = Копирую извлеченные модели в директорию мода.
+!Starting          = Извлекаю модели в {0}

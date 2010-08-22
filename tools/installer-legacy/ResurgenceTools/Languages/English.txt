@@ -1,0 +1,172 @@
+﻿# This is the English translation text for the Bloodlines Resurgence Installer.
+#
+# How to use this file (or create your own):
+#  - Any line starting with # is a comment
+#  - Only replace the text after the = sign, nothing before it.
+#  - Do not replace any lines starting with [, or any lines that looks like [frmWizard]
+#  - Do not replace text (usually a number) inside a pair of { } - eg, {0}
+#    - These represent text that is filled in during execution.
+#    - You can however, re-order them. Instead of:
+#        Copying = Copying file {0}...
+#           You could use
+#        Copying = {0} being copied...
+#  - Replace only the text after the = sign
+#
+# Happy Vampirism!
+# - Daedalus
+
+[!Globals]
+!AppTitle = Bloodlines Resurgence Tools
+!Browse = Browse...
+!OK     = OK
+!Cancel = Cancel
+!Start  = Start
+!Cancelling        = Cancelling...
+!Cancelled         = Cancelled.
+!Terminating       = Terminating process...
+!SelectVampireDirectoryMessage = Select your Vampire: Bloodlines directory
+!SelectSteamDirectoryMessage   = Select your Steam directory
+!SelectTempDirectoryMessage    = Select a directory to store temporary files in
+!ConfirmQuit                   = Are you sure you wish to cancel?
+!ConfirmTitle                  = Bloodlines Resurgence Tools Wizard
+!Vextract_Ready                = Click Start to extract files.
+# The following line could also be written as: {1} files remaining
+!VextractFilestoGo             = {1} files to go
+!Vextract_Done                 = Done. {0} file(s)/directory(s) extracted.
+!Vextract_VPKIndex			   = Creating VPK index...
+!Vextract_VPKIndex_Done        = Done.
+!ErrorCopyingFile  = Error copying file {0}: {1}
+!ErrorCreatingDir  = Error creating directory {0}: {1}
+!NoMapsFound       = No maps found in {0}
+# The following two constants correspond to a Result - Success, or Failure
+!Result.Success = Success
+!Result.Failure = Failure
+
+[WizardPage]
+!Title     = Bloodlines Resurgence Tools Wizard
+WizardTitle = Bloodlines Resurgence Tools
+# This next one shouldn't appear, so don't worry about translating it.
+# It's more of a warning to the developer that they forgot to set a description.
+WizardDescription = (DEBUG) You forgot to set the WizardDescription!
+# The "&" in the next two lines is the 'accelerator', and pressing ALT+(key after &) will "click" the button.
+# Eg, In the following, &B means you'd presss ALT+B to "click" the button. Try to ensure that multiple buttons
+# and text boxes don't have the same "accelerator". The & may be anywhere in the text, as long as a letter follows it.
+BackButton = << &Back
+NextButton = &Next >>
+CancelWizardButton = Cancel
+LanguageButton     = Language ...
+
+[Preparing]
+!Title       = Bloodlines Resurgence Toolkit
+Description  = Preparing data files, please wait...
+
+[Welcome]
+WizardDescription = Welcome to the Bloodlines Resurgence Toolkit!
+Understand        = I understand the above conditions
+!WelcomeDocNotFound = Welcome document for your language was not found. Expected file: {0}
+
+[FinalPage]
+WizardDescription = Installation complete.
+!FinalDocNotFound = Final document for your language was not found. Expected file: {0}
+
+[SelectPaths]
+WizardDescription = Specify directory information
+SupplyWizard      = Please supply the Wizard with the following information:
+SelectVampireDirectory = Vampire: Bloodlines Directory:
+SelectSteamDirectory  = Steam Directory:
+BloodlinesNotFound = Vampire: Bloodlines was not found in this directory.
+SteamNotFound      = Steam was not found in this directory.
+SelectTemporaryDirectory = Temporary files Directory:
+TempNotFound       = The temporary files directory was not found.
+CreateTempDirectory = Create
+!CreateFailed       = Creation failed:
+
+[ModDetails]
+WizardDescription  = Specify Mod-related Details
+Info               = Some more details are required. Please ensure you have used the Create A Mod wizard in Steam before continuing past this step.
+SelectSourceModDirectory = SourceMod Directory Name:
+ModDirectoryHint      = (This is the name of the mod you created.)
+ModType            = Select the mod type to install:
+EpisodeOneOption   = Episode 1 (Older, more stable)
+OrangeBoxOption    = Orange Box (Latest, unstable, missing features)
+ModNotFound        = Error: Mod not found. Ensure you have created the mod.
+InstallTo          = Bloodlines Resurgence will install to:
+
+[SelectSteps]
+!Recreate_VPK_Indexes              = Recreate VPK indexes
+!Recreate_VPK_Indexes_Description  = Recreates the required VPK index data.
+!Extract_General_Files             = Extract general files
+!Extract_General_Files_Description = Extracts all general game files that do not require conversion.
+!Copy_Original_Files			   = Copy original game files
+!Copy_Original_Files_Description   = Copies all general game files that were not packaged in VPK files
+!Extract_Materials                 = Extract game materials (textures)
+!Extract_Materials_Description     = Extracts all game materials (textures) to a tempory directory for converting.
+!Convert_And_Copy_Materials        = Convert and copy game materials (textures)
+!Convert_And_Copy_Materials_Description = Converts all game materials (textures) and place them in the destination directory.
+!Decompile_Maps                    = Decompile maps
+!Decompile_Maps_Description        = Decompiles maps into .VMF files loadable by Hammer.
+!Fix_Decompiled_Maps               = Fix decompiled maps
+!Fix_Decompiled_Maps_Description   = Fixes various decompilation issues with decompiled maps and copies them to the mod's maps directory.
+!Copy_Replacement_Files            = Copy replacement files
+!Copy_Replacement_Files_Description = Copies new and replacement files developed by the Bloodlines Resurgence team, to the destination directory.
+!Extract_Original_Models           = Extract original models (optional)
+!Extract_Original_Models_Description = (Optional) Extracts original game models. These models cannot be used without decompiling them.
+!Copy_New_Models                   = Copy new models
+!Copy_New_Models_Description       = Copies new (fixed and working) models to the destination directory.
+WizardDescription  = Step Selection
+Instruction        = Select the steps to run from the list below:
+DescriptionBox     = Step Description
+Description        = Move your mouse over an item to view its description.
+AutoProceed        = Proceed to next dialogue automatically as each step finishes
+
+[ExtractGeneralFiles]
+WizardDescription  = Extract General Files
+Description        = Exactracting general files...
+
+[CopyOriginalFiles]
+WizardDescription  = Copy Original Files
+Description        = Copy loose files not packaged in VPK files
+!StageOne          = Searching for files to copy...
+!StageTwo          = Copying files to mod directory...
+!StageTwoCopy      = Copying
+
+[ExtractMaterials]
+WizardDescription  = Extract Materials
+Description        = Extracting materials to temporary directory...
+
+[ConvertAndCopyMaterials]
+WizardDescription  = Convert and Copy Materials
+Description		   = This stage may take some time. Click Start to begin.
+!StageOne		   = Stage One: Finding all material directories...
+!StageOneDone      = Finished: {0} directories found.
+!StageTwo          = Stage Two: Converting and copying materials...
+!StageTwoConvert   = Converting folder: {0}...
+!StageTwoCopy      = Copying to mod folder...
+!StageTwoDone      = Finished. {0} materials in {1} folders converted and copied.
+
+[DecompileMaps]
+WizardDescription  = Decompile Maps
+Description        = Decompile maps so they may be loaded in Hammer
+!StageOne          = Stage One: Extracting vmex support files...
+!StageOneDone      = Done.
+!Decompiling       = Decompiling map: {0}
+!DecompilingDone   = Finished decompiling maps.
+
+[FixDecompiledMaps]
+WizardDescription  = Fix Decompiled Maps
+Description        = Fixes decompiled maps and moves them to the mod directory
+!StageOne          = Searching for maps to fix...
+!StageOneDone      = found {0} maps.
+!StageTwoFix       = Fixing {0}...
+!StageTwoCopy      = moving...
+!Done              = Done.
+
+[CopyReplacementFiles]
+WizardDescription  = Copy Replacement Files
+Description        = Copies replacement files to the mod directory.
+!Starting          = Extracting...
+
+[ExtractModels]
+WizardDescription  = Extract Models
+Description        = Extracts models to specified mod directory.
+!Starting          = Extracting models to {0}

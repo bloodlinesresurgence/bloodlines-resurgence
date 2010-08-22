@@ -1,0 +1,172 @@
+﻿# This is the German translation text for the Bloodlines Resurgence Installer.
+#
+# How to use this file (or create your own):
+#  - Any line starting with # is a comment
+#  - Only replace the text after the = sign, nothing before it.
+#  - Do not replace any lines starting with [, or any lines that looks like [frmWizard]
+#  - Do not replace text (usually a number) inside a pair of { } - eg, {0}
+#    - These represent text that is filled in during execution.
+#    - You can however, re-order them. Instead of:
+#        Copying = Copying file {0}...
+#           You could use
+#        Copying = {0} being copied...
+#  - Replace only the text after the = sign
+#
+# Happy Vampirism!
+# - Daedalus
+
+[!Globals]
+!AppTitle = Bloodlines Resurgence Tools
+!Browse = Durchsuchen...
+!OK     = OK
+!Cancel = Abbrechen
+!Start  = Start
+!Cancelling        = Rückgängig machen...
+!Cancelled         = Abgebrochen.
+!Terminating       = Beende Prozess...
+!SelectVampireDirectoryMessage = Vampire: Bloodlines Verzeichnis auswählen
+!SelectSteamDirectoryMessage   = Steam Verzeichnis auswählen
+!SelectTempDirectoryMessage    = Verzeichnis zum speichern Temporärer Dateien auswählen
+!ConfirmQuit                   = Wollen Sie wirklich abbrechen?
+!ConfirmTitle                  = Bloodlines Resurgence Tools Assistent
+!Vextract_Ready                = Start klicken um Dateien zu entpacken.
+# The following line could also be written as: {1} files remaining
+!VextractFilestoGo             = {1} Dateien verbleibend
+!Vextract_Done                 = Fertig. {0} Datei(en)/Verzeichnis(se) entpackt.
+!Vextract_VPKIndex            = Erstelle VPK Index...
+!Vextract_VPKIndex_Done        = Fertig.
+!ErrorCopyingFile  = Fehler beim kopieren der Datei {0}: {1}
+!ErrorCreatingDir  = Fehler beim erstellen des Verzeichnisses {0}: {1}
+!NoMapsFound       = Keine Maps in {0} gefunden 
+# The following two constants correspond to a Result - Success, or Failure
+!Result.Success = Erfolgreich
+!Result.Failure = Fehlgeschlagen
+
+[WizardPage]
+!Title     = Bloodlines Resurgence Tools Assistent
+WizardTitle = Bloodlines Resurgence Tools
+# This next one shouldn't appear, so don't worry about translating it.
+# It's more of a warning to the developer that they forgot to set a description.
+WizardDescription = (DEBUG) You forgot to set the WizardDescription!
+# The "&" in the next two lines is the 'accelerator', and pressing ALT+(key after &) will "click" the button.
+# Eg, In the following, &B means you'd presss ALT+B to "click" the button. Try to ensure that multiple buttons
+# and text boxes don't have the same "accelerator". The & may be anywhere in the text, as long as a letter follows it.
+BackButton = << &Zurück
+NextButton = &Weiter >>
+CancelWizardButton = Abbrechen
+LanguageButton     = Sprache ...
+
+[Preparing]
+!Title       = Bloodlines Resurgence Toolkit
+Description  = Dateien vorbereiten, bitte warten...
+
+[Welcome]
+WizardDescription = Wilkommen beim Bloodlines Resurgence Toolkit!
+Understand        = Ich verstehe die oben genannten Bedingungen
+!WelcomeDocNotFound = Welcome-Dokument für Ihre Sprache nicht gefunden. Erwartete Datei: {0}
+
+[FinalPage]
+WizardDescription = Installation abgeschlossen.
+!FinalDocNotFound = Final-Dokument für Ihre Sprache nicht gefunden. Erwartete Datei: {0}
+
+[SelectPaths]
+WizardDescription = Verzeichnisse festlegen
+SupplyWizard      = Bitte geben Sie im Assistenten folgenden Informationen ein:
+SelectVampireDirectory = Vampire: Bloodlines Verzeichnis:
+SelectSteamDirectory  = Steam Verzeichnis:
+BloodlinesNotFound = Vampire: Bloodlines in diesem Verzeichnis nicht gefunden.
+SteamNotFound      = Steam in diesem Verzeichnis nicht gefunden.
+SelectTemporaryDirectory = Temporäre Dateien Verzeichnis:
+TempNotFound       = Temporäres Dateien Verzeichnis nicht gefunden.
+CreateTempDirectory = Erstellen
+!CreateFailed       = Erstellung fehlgeschlagen:
+
+[ModDetails]
+WizardDescription  = Mod Details festlegen
+Info               = Weitere Details sind erforderlich. Bitte stellen Sie sicher, dass Sie in Steam "Create A Mod wizard" ausgeführt haben bevor Sie zum nächsten Programmschritt übergehen.
+SelectSourceModDirectory = SourceMod Verzeichnisname:
+ModDirectoryHint   = (Name der bereits ertstellten Mod.)
+ModType            = Source Engine Mod-Typ wählen:
+EpisodeOneOption   = Episode 1 (älter, mehr stabil)
+OrangeBoxOption    = Orange Box (letzte, unstabil, fehlende Funktionen)
+ModNotFound        = Fehler: Mod nicht gefunden. Stellen Sie sicher, dass Sie die Mod erstellt haben.
+InstallTo          = Bloodlines Resurgence wird installiert nach:
+
+[SelectSteps]
+!Recreate_VPK_Indexes              = VPK Indexe wiederherstellen
+!Recreate_VPK_Indexes_Description  = Wiederherstellung aller notwendigen VPK Indexe.
+!Extract_General_Files             = Hauptdateien entpacken
+!Extract_General_Files_Description = Entpackt alle Hauptdateien die keine Anpassungen benötigen.
+!Copy_Original_Files         = Kopiere original Dateien
+!Copy_Original_Files_Description   = Kopiert alle Hauptdateien die nicht aus den VPK Dateien stammen.
+!Extract_Materials                 = Materials entpacken (Texturen)
+!Extract_Materials_Description     = Entpackt alle Materials (Texturen) zum konvertieren in ein Temporäres Verzeichnis.
+!Convert_And_Copy_Materials        = Materials (Texturen) konvertieren und kopieren 
+!Convert_And_Copy_Materials_Description = Konvertiert alle Materials (Texturen) und speichert sie im Zielverzeichnis.
+!Decompile_Maps                    = Maps dekompilieren
+!Decompile_Maps_Description        = Dekompiliert Maps in .VMF Dateien (Ladbar im Hammer).
+!Fix_Decompiled_Maps               = Dekompilierte Maps updaten
+!Fix_Decompiled_Maps_Description   = Behebt einige Fehler dekompilierter Maps und kopiert diese ins Mod-Map Verzeichnis.
+!Copy_Replacement_Files            = Ersetze Dateien
+!Copy_Replacement_Files_Description = Kopiert neue und ersetze Dateien vom "Bloodlines Resurgence Team" in das Zielverzeichnis.
+!Extract_Original_Models           = Original Models entpacken (optional)
+!Extract_Original_Models_Description = (Optional) Entpackt original Game Models. Die Models können ohne Dekompilierung nicht genutzt werden.
+!Copy_New_Models                   = Kopiert neue Models
+!Copy_New_Models_Description       = Kopiert neue (korrigierte und funkioniernde) Models ins Zielverzeichniss.
+WizardDescription  = Programmschritt Auswahl
+Instruction        = Wählen Sie die Programmschritte die ausgeführt werden sollen:
+DescriptionBox     = Programmschritt Beschreibung
+Description        = Bewegen Sie die Maus über einen Punkt für dessen Beschreibung.
+AutoProceed        = Automatisch zum nächsten Dialogfenster springen wenn ein Programmschritt endet
+
+[ExtractGeneralFiles]
+WizardDescription  = Hauptdateien entpacken
+Description        = Entpacke Hauptdateien...
+
+[CopyOriginalFiles]
+WizardDescription  = Kopiert original Dateien
+Description        = Kopiert einzelne Dateien - nicht gepackt in VPK Dateien
+!StageOne          = Suche zu kopierende Dateien...
+!StageTwo          = Kopiere Dateien ins Mod Verzeichnis...
+!StageTwoCopy      = kopiert
+
+[ExtractMaterials]
+WizardDescription  = Materials entpacken
+Description        = Entpacke Materials ins temporäre Verzeichnis...
+
+[ConvertAndCopyMaterials]
+WizardDescription  = Materials konvertieren und kopieren 
+Description         = Diese Phase könnte etwas Zeit in Anspruch nehmen. Zum beginnen Start drücken.
+!StageOne         = Phase Eins: Alle Materials Verzeichnisse finden...
+!StageOneDone      = Beendet: {0} Verzeichnisse gefunden.
+!StageTwo          = Phase Zwei: Konvertiere und kopiere Materials...
+!StageTwoConvert   = Konvertiere Verzeichnis: {0}...
+!StageTwoCopy      = Ins MOD Verzeichnis kopieren...
+!StageTwoDone      = Beendet. {0} Materials im Verzeichnis {1} konvertiert und kopiert.
+
+[DecompileMaps]
+WizardDescription  = Maps dekompilieren
+Description        = Maps dekompilieren um Sie mit "Hammer" zu öffnen 
+!StageOne          = Phase Eins: Entpacke vmex Support-Dateien...
+!StageOneDone      = Fertig.
+!Decompiling       = Dekompiliere Map: {0}
+!DecompilingDone   = Maps dekompilieren beendet.
+
+[FixDecompiledMaps]
+WizardDescription  = Dekompilierete Maps updaten
+Description        = Dekompilierete Maps updaten und ins Mod Verzeichnis verschieben
+!StageOne          = Suche nach Maps...
+!StageOneDone      = {0} Maps gefunden.
+!StageTwoFix       = Update {0}...
+!StageTwoCopy      = verschiebe...
+!Done              = Fertig.
+
+[CopyReplacementFiles]
+WizardDescription  = Ersetze Dateien
+Description        = Ersetze Dateien im Mod Verzeichnis.
+!Starting          = Entpacke...
+
+[ExtractModels]
+WizardDescription  = Models entpacken
+Description        = Enpackt Models ins angegeben Mod Verzeichnis.
+!Starting          = Models entpacken nach {0}

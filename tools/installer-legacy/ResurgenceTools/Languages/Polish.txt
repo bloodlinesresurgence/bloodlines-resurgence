@@ -1,0 +1,171 @@
+﻿# This is the English translation text for the Bloodlines Resurgence Installer.
+#
+# How to use this file (or create your own):
+#  - Any line starting with # is a comment
+#  - Only replace the text after the = sign, nothing before it.
+#  - Do not replace any lines starting with [, or any lines that looks like [frmWizard]
+#  - Do not replace text (usually a number) inside a pair of { } - eg, {0}
+#    - These represent text that is filled in during execution.
+#    - You can however, re-order them. Instead of:
+#        Copying = Copying file {0}...
+#           You could use
+#        Copying = {0} being copied...
+#  - Replace only the text after the = sign
+#
+# Happy Vampirism!
+# - Daedalus
+
+[!Globals]
+!AppTitle = Bloodlines Resurgence Tools
+!Browse = Przeglądaj...
+!OK     = OK
+!Cancel = Zakończ
+!Start  = Start
+!Cancelling        = Kończenie...
+!Cancelled         = Zakończono.
+!Terminating       = Kończenie procesu...
+!SelectVampireDirectoryMessage = Wybierz lokalizację folderu Vampire: Bloodlines.
+!SelectSteamDirectoryMessage   = Wybierz lokalizację folderu Steam.
+!SelectTempDirectoryMessage    = Wybierz miejsce do przechowania plików tymczasowych.
+!ConfirmQuit                   = Na pewno chcesz zakończyć?
+!ConfirmTitle                  = Bloodlines Resurgence Tools Wizard
+!Vextract_Ready                = Naciśnij Start, by wypakować pliki.
+# The following line could also be written as: {1} files remaining
+!VextractFilestoGo             = Pozostało {1} plików.
+!Vextract_Done                 = Ukończono. {0} Plików/lokalizacji wypakowano.
+!Vextract_VPKIndex			   = Tworzę index VPK ...
+!Vextract_VPKIndex_Done        = Ukończono.
+!ErrorCopyingFile  = Problem w skopiowaniu pliku {0}: {1}
+!ErrorCreatingDir  = Problem w utworzeniu lokalizacji {0}: {1}
+!NoMapsFound       = Nie znaleziono Maps w {0}.
+# The following two constants correspond to a Result - Success, or Failure
+!Result.Success = Sukces
+!Result.Failure = Porażka
+
+[WizardPage]
+!Title     = Bloodlines Resurgence Tools Wizard
+WizardTitle = Bloodlines Resurgence Tools
+# This next one shouldn't appear, so don't worry about translating it.
+# It's more of a warning to the developer that they forgot to set a description.
+WizardDescription = (DEBUG) You forgot to set the WizardDescription!
+# The "&" in the next two lines is the 'accelerator', and pressing ALT+(key after &) will "click" the button.
+# Eg, In the following, &B means you'd presss ALT+B to "click" the button. Try to ensure that multiple buttons
+# and text boxes don't have the same "accelerator". The & may be anywhere in the text, as long as a letter follows it.
+BackButton = << &Cofnij
+NextButton = &Dalej >>
+CancelWizardButton = Zakończ
+LanguageButton     = Język ...
+
+[Preparing]
+!Title       = Bloodlines Resurgence Toolkit
+Description  = Przygotowuję dane, proszę czekać...
+
+[Welcome]
+WizardDescription = Witamy w Bloodlines Resurgence Toolkit!
+Understand        = Rozumiem powyższe postanowienia.
+!WelcomeDocNotFound = Welcome-Document dla Twojego języka nieznaleziony. Wymagany plik: {0}
+
+[FinalPage]
+WizardDescription = Instalacja zakończona.
+!FinalDocNotFound = Final-Document dla Twojego języka nieznaleziony. Wymagany plik: {0}
+
+[SelectPaths]
+WizardDescription = Określenie lokalizacji plików 
+SupplyWizard      = Proszę określ lokalizacje poniższych:
+SelectVampireDirectory = Lokalizacja Vampire: Bloodlines:
+SelectSteamDirectory  = Lokalizacja Steam:
+BloodlinesNotFound = Nie znaleziono Vampire: Bloodlines w tej lokalizacji.
+SteamNotFound      = Nie znaleziono Steam w tej lokalizacji.
+SelectTemporaryDirectory = Lokalizacja przechowywania plików tymczasowych VtM: Bloodlines:
+TempNotFound       = Lokalizacja plików tymczasowych nie znaleziona.
+CreateTempDirectory = Utwórz
+!CreateFailed       = Nie udało się utworzyć:
+
+[ModDetails]
+WizardDescription  = Określenie szczegółów związanych z Modem
+Info               = Więcej szczegółów jest wymaganych. Przed kontynuowaniem upewnij się, że użyłeś 'Create A Mod wizard' w Steam.
+SelectSourceModDirectory = Nazwa lokalizacji SourceMod:
+ModDirectoryHint      = (To jest nazwa Moda utworzonego przez Ciebie)
+ModType            = Wybierz typ moda do instalacji:
+EpisodeOneOption   = Episode 1 (Starszy, bardziej stabilny)
+OrangeBoxOption    = Orange Box (Najnowszy, niestabilny, brakujące funkcje)
+ModNotFound        = Błąd: Nie znaleziono Moda. Upewnij się, że utworzyłeś Moda.
+InstallTo          = Bloodlines Resurgence zostanie zainstalowany w:
+
+[SelectSteps]
+!Recreate_VPK_Indexes              = Ponowne tworzenie indexów VPK
+!Recreate_VPK_Indexes_Description  = Ponowne tworzenie wymaganych danych indexu VPK.
+!Extract_General_Files             = Wypakuj główne pliki
+!Extract_General_Files_Description = Wypakowuje wszystkie główne pliki gry które nie wymagają konwersacji.
+!Copy_Original_Files			   = Kopiuj oryginalne pliki gry
+!Copy_Original_Files_Description   = Kopiuje wszystkie główne pliki gry które nie były zamieszczone w plikach VPK.
+!Extract_Materials                 = Wypakuj materiały gry (tekstury)
+!Extract_Materials_Description     = Wypakowuje wszystkie materiały gry (tekstury) do tymczasowej lokalizacji w celu konwersji.
+!Convert_And_Copy_Materials        = Konwertuj i kopiuj materiały gry (tekstury)
+!Convert_And_Copy_Materials_Description = Konwertuje wszystkie materiały gry (tekstury) i umieszcza je w lokalizacji docelowej.
+!Decompile_Maps                    = Dekompiluj mapy
+!Decompile_Maps_Description        = Dekompiluje mapy do plików .VMF ładowanych przez Hammer.
+!Fix_Decompiled_Maps               = Napraw dekompilowane mapy
+!Fix_Decompiled_Maps_Description   = Naprawia różne problemy z dekompilacją map i kopiuje je do lokalizacji map Moda.
+!Copy_Replacement_Files            = Kopiuj pliki zastępcze
+!Copy_Replacement_Files_Description = Kopiuje nowe i zastępcze pliki stworzone przez zespół Bloodlines Resurgence do lokalizacji docelowej.
+!Extract_Original_Models           = Wypakuj oryginalne modele (opcjonalne)
+!Extract_Original_Models_Description = (Opcjonalne) Wypakowuje oryginalne modele gry. Te modele nie mogą być użyte bez dekompilowania ich.
+!Copy_New_Models                   = Kopiuj nowe modele
+!Copy_New_Models_Description       = Kopiuje nowe (poprawione i działające) modele do lokalizacji docelowej.
+WizardDescription  = Kolejne kroki do wyboru
+Instruction        = Wybierz opcje (kroki) do uruchomienia z listy poniżej:
+DescriptionBox     = Opis opcji (kroku)
+Description        = Przesuń kursor myszy nad opcję (krok) by zobaczyć jej opis.
+AutoProceed        = Przejdź do następnego okna automatycznie po każdym kroku.
+
+[ExtractGeneralFiles]
+WizardDescription  = Wypakuj główne pliki
+Description        = Wypakowuję główne pliki...
+
+[CopyOriginalFiles]
+WizardDescription  = Kopiuj oryginalne pliki
+Description        = Kopiuj luźne pliki nie zamieszczone w plikach VPK.
+!StageOne          = Szukam plików do kopiowania...
+!StageTwo          = Kopiowanie plików do lokalizacji moda...
+!StageTwoCopy      = Kopiowanie
+
+[ExtractMaterials]
+WizardDescription  = Wypakuj materiały
+Description        = Wypakowywanie materiałów do lokalizacji tymczasowej...
+
+[ConvertAndCopyMaterials]
+WizardDescription  = Konwertuj i kopiuj materiały
+Description		   = To może trochę potrwać. Naciśnij start by rozpocząć.
+!StageOne		   = Stopień pierwszy: znajdywanie wszystkich lokalizacji materiałów...
+!StageOneDone      = Ukończono: Znaleziono {0} lokalizacji.
+!StageTwo          = Stopień drugi: Konwertowanie i kopiowanie materiałów...
+!StageTwoConvert   = Konwertowanie folderu: {0}...
+!StageTwoCopy      = Kopiowanie do folderu Moda...
+!StageTwoDone      = Ukończono. Przekonwertowano i skopiowano {0} materiałów w {1} folderach.
+
+[DecompileMaps]
+WizardDescription  = Dekompiluj mapy
+Description        = Dekompiluje mapy by mogły być załadowane w Hammerze.
+!StageOne          = Stopień pierwszy: Wypakowywanie plików pomocniczych vmex...
+!StageOneDone      = Ukończono.
+!Decompiling       = Dekompilowanie mapy: {0}
+!DecompilingDone   = Ukończono dekompilację map.
+
+[FixDecompiledMaps]
+WizardDescription  = Napraw dekompilowane mapy
+Description        = Naprawia dekompilowane mapy i przenosi je do lokalizacji Moda.
+!StageOne          = Szukanie map do naprawy...
+!StageOneDone      = Znaleziono {0} map.
+!StageTwoFix       = Naprawianie {0}...
+!StageTwoCopy      = Przenoszenie...
+!Done              = Ukończono.
+[CopyReplacementFiles]
+WizardDescription  = Kopiuj pliki zastępcze
+Description        = Kopiuje pliki zastępcze i przenosi je do lokalizacji Moda.
+!Starting          = Wypakowywanie...
+
+[ExtractModels]
+WizardDescription  = Wypakuj modele
+Description        = Wypakowywuje modele do wybranej lokalizacji Moda.
+!Starting          = Wypakowywanie modeli do {0}

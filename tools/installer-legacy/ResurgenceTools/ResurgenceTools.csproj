@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09104D34-9DA0-48AB-BC1C-61F78D7171E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RevivalTools</RootNamespace>
+    <AssemblyName>RevivalTools</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\ProjectOutput\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RevivalTools.XML</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\RevivalTools.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\ProjectOutput\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\RevivalTools.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\RevivalTools.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DaedalusLib, Version=1.1.2.100, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependancies\DaedalusLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenericRunProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericRunProcess.Designer.cs">
+      <DependentUpon>GenericRunProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibCommunications.cs" />
+    <Compile Include="Preparing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preparing.Designer.cs">
+      <DependentUpon>Preparing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GenericRunProcess.resx">
+      <DependentUpon>GenericRunProcess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparing.resx">
+      <DependentUpon>Preparing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResurgenceWizardPage.resx">
+      <DependentUpon>ResurgenceWizardPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericExtractFiles.resx">
+      <DependentUpon>GenericExtractFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectLanguage.resx">
+      <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steps\ConvertAndCopyMaterials.resx">
+      <DependentUpon>ConvertAndCopyMaterials.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steps\CopyOriginalFiles.resx">
+      <DependentUpon>CopyOriginalFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steps\DecompileMaps.resx">
+      <DependentUpon>DecompileMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steps\ExtractGeneralFiles.resx">
+      <DependentUpon>ExtractGeneralFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steps\ExtractMaterials.resx">
+      <DependentUpon>ExtractMaterials.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Steps\FixDecompiledMaps.resx">
+      <DependentUpon>FixDecompiledMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPages\FinalPage.resx">
+      <DependentUpon>FinalPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPages\ModDetails.resx">
+      <DependentUpon>ModDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPages\SelectPaths.resx">
+      <DependentUpon>SelectPaths.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPages\SelectSteps.resx">
+      <DependentUpon>SelectSteps.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPages\Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="Languages\Documents\Finish-English.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Documents\Welcome-English.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Documents\Finish-Русский %28Russian%29.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Documents\Welcome-Русский %28Russian%29.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Languages\Documents\Finish-Español %28Spanish%29.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\Documents\Finish-Polish.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\Documents\Welcome-Español %28Spanish%29.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Languages\Documents\Welcome-Polish.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Tools\content-ob.rar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\content-ep1.rar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\ikvm-0.38.0.2-small.rar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\replacements.rar">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResurgenceWizardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResurgenceWizardPage.Designer.cs">
+      <DependentUpon>ResurgenceWizardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectLanguage.Designer.cs">
+      <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Steps\ConvertAndCopyMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\ConvertAndCopyMaterials.Designer.cs">
+      <DependentUpon>ConvertAndCopyMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\CopyOriginalFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\CopyOriginalFiles.Designer.cs">
+      <DependentUpon>CopyOriginalFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\CopyReplacementFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\CopyReplacementFiles.Designer.cs">
+      <DependentUpon>CopyReplacementFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\DecompileMaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\DecompileMaps.Designer.cs">
+      <DependentUpon>DecompileMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\ExtractGeneralFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\ExtractGeneralFiles.Designer.cs">
+      <DependentUpon>ExtractGeneralFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericExtractFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenericExtractFiles.Designer.cs">
+      <DependentUpon>GenericExtractFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\ExtractMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\ExtractMaterials.Designer.cs">
+      <DependentUpon>ExtractMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\ExtractModels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\ExtractModels.Designer.cs">
+      <DependentUpon>ExtractModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\FixDecompiledMaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\FixDecompiledMaps.Designer.cs">
+      <DependentUpon>FixDecompiledMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardPages\FinalPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPages\FinalPage.Designer.cs">
+      <DependentUpon>FinalPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardPages\ModDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPages\ModDetails.Designer.cs">
+      <DependentUpon>ModDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardPages\SelectPaths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPages\SelectPaths.Designer.cs">
+      <DependentUpon>SelectPaths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardPages\SelectSteps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPages\SelectSteps.Designer.cs">
+      <DependentUpon>SelectSteps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardPages\Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPages\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Languages\English.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Español %28Spanish%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Deutsch %28German%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Polish.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Русский %28Russian%29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\ttz2vtf.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\UnRAR-license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\UnRAR.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\vmex.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\zlib1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ResurgenceLib\ResurgenceLib.csproj">
+      <Project>{D35E56E2-970D-4EE2-8C81-FE7E53EA1EC6}</Project>
+      <Name>ResurgenceLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

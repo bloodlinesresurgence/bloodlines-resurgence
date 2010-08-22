@@ -1,0 +1,4 @@
+﻿25th March 2009:
+	- Translation.currentLanguage defaults to Translation.FallbackLanguage
+	- Fixed VPKIndexEntry.InvalidEntry not using the correct constructor.
+	- Started changelog.

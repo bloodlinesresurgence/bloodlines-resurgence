@@ -1,0 +1,12 @@
+Aumpel.cs
+LameWrapper.cs
+LameWriter.cs
+LibsndfileWrapper.cs
+MadlldlibWrapper.cs
+MadnpsrvWrapper.cs
+Makefile
+Manifest
+MP3Check.cs
+readme.txt
+tests\madnpsrv.exe
+tests\TestForm.cs

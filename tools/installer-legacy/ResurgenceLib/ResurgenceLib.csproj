@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D35E56E2-970D-4EE2-8C81-FE7E53EA1EC6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RevivalLib</RootNamespace>
+    <AssemblyName>RevivalLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RevivalLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\RevivalLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\ProjectOutput\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\RevivalLib.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\RevivalLib.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DaedalusLib, Version=1.1.2.100, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependancies\DaedalusLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assemblies.cs" />
+    <Compile Include="Exceptions\InvalidTranslationLineException.cs" />
+    <Compile Include="Exceptions\LibCommunicationsNotSetException.cs" />
+    <Compile Include="Exceptions\TranslationLoadException.cs" />
+    <Compile Include="Exceptions\VPKIndexNotFound.cs" />
+    <Compile Include="Exported.cs" />
+    <Compile Include="Info.cs" />
+    <Compile Include="ILibCommunications.cs" />
+    <Compile Include="Lib.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="RTFHelper.cs" />
+    <Compile Include="Threading\ProgressBars.cs" />
+    <Compile Include="Tools\Mapfix\Entity.cs" />
+    <Compile Include="Tools\Mapfix\Mapfix.cs" />
+    <Compile Include="Tools\Vextract\Vextract.cs" />
+    <Compile Include="Tools\Vextract\VPKFile.cs" />
+    <Compile Include="Tools\Vextract\VPKIndex.cs" />
+    <Compile Include="Tools\Vextract\VPKSupport\DirectoryEntry.cs" />
+    <Compile Include="Tools\Vextract\VPKSupport\DirectoryInfo.cs" />
+    <Compile Include="TranslatedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TranslatedControl.Designer.cs">
+      <DependentUpon>TranslatedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranslatedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TranslatedForm.Designer.cs">
+      <DependentUpon>TranslatedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VextractStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VextractStatus.Designer.cs">
+      <DependentUpon>VextractStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WildMatch.cs" />
+    <Compile Include="WizardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardPage.Designer.cs">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generics\HashList.cs" />
+    <Compile Include="Generics\TranslationItemList.cs" />
+    <Compile Include="GlobalOptions.cs" />
+    <Compile Include="RevivalTool.cs" />
+    <Compile Include="XMLTable.cs" />
+    <Compile Include="xToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xToolWindow.Designer.cs">
+      <DependentUpon>xToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranslationProvider.cs" />
+    <Compile Include="Translation\TranslationCollection.cs" />
+    <Compile Include="Translation\TranslationEngine.cs" />
+    <Compile Include="Translation\TranslationItem.cs" />
+    <Compile Include="Translation\LanguageFile.cs" />
+    <Compile Include="Translation\Translation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VextractStatus.resx">
+      <DependentUpon>VextractStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardPage.resx">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
