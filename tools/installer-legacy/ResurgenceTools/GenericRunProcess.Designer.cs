@@ -94,7 +94,7 @@
             // 
             this.Progress.Location = new System.Drawing.Point(15, 212);
             this.Progress.Name = "Progress";
-            this.Progress.Size = new System.Drawing.Size(375, 22);
+            this.Progress.Size = new System.Drawing.Size(371, 22);
             this.Progress.TabIndex = 7;
             // 
             // GenericRunProcess

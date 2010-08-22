@@ -101,7 +101,8 @@ namespace ResurgenceTools
             // Set standard options
             info.UseShellExecute = false;
             info.CreateNoWindow = true;
-            //info.RedirectStandardOutput = true;
+            info.RedirectStandardOutput = true;
+            info.RedirectStandardError = true;
 
             AppendText(info.FileName + " " + info.Arguments);
 
@@ -156,7 +157,7 @@ namespace ResurgenceTools
                     buffer += (char)b;
                 }
                 if (buffer.Length > 0) ;
-                    //AppendText(buffer);
+                    AppendText(buffer);
             }
         }
 
