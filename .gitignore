@@ -1,3 +1,22 @@
 *.swp
 tools/installer/obj/*
 tools/installer/bin/*
+tools/installer-legacy/AumpLib/bin/*
+tools/installer-legacy/AumpLib/obj/*
+tools/installer-legacy/ProjectOutput/*
+tools/installer-legacy/RevivalLib/bin/*
+tools/installer-legacy/RevivalLib/obj/*
+tools/installer-legacy/RevivalTools/bin/*
+tools/installer-legacy/RevivalTools/obj/*
+tools/installer-legacy/RunMapFix/bin/*
+tools/installer-legacy/RunMapFix/obj/*
+tools/installer-legacy/Tests/bin/*
+tools/installer-legacy/Tests/obj/*
+tools/installer-legacy/TestTool/bin/*
+tools/installer-legacy/TestTool/obj/*
+tools/installer-legacy/TestVMEX/bin/*
+tools/installer-legacy/TestVMEX/obj/*
+tools/installer-legacy/VMF Explorer/bin/*
+tools/installer-legacy/VMF Explorer/obj/*
+tools/installer-legacy/XMLTableTest/bin/*
+tools/installer-legacy/XMLTableTest/obj/*
