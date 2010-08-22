@@ -75,7 +75,7 @@ namespace ResurgenceTools.WizardPages
 #endif
 
 #if !FULL_TOOLSET
-            Program.NextForm = new SelectSteps(TranslationProvider);
+            Program.NextForm = new SelectOperation(TranslationProvider);
 #else
             Hide();
             (new SelectSteps(TranslationProvider)).Show(Program.MainForm);
