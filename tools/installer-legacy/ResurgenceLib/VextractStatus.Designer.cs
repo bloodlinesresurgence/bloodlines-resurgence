@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.VextractWorker = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.StartButton = new System.Windows.Forms.Button();
             this.Progress = new System.Windows.Forms.ProgressBar();
             this.CancelButton = new System.Windows.Forms.Button();
             this.UpdateUITimer = new System.Windows.Forms.Timer(this.components);
             this.Log = new System.Windows.Forms.RichTextBox();
-            this.StartButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 23);
             this.panel1.TabIndex = 2;
+            // 
+            // StartButton
+            // 
+            this.StartButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.StartButton.Enabled = false;
+            this.StartButton.Location = new System.Drawing.Point(150, 0);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(75, 23);
+            this.StartButton.TabIndex = 4;
+            this.StartButton.Text = "#Start#";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Visible = false;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // Progress
             // 
@@ -90,18 +103,6 @@
             this.Log.Size = new System.Drawing.Size(300, 147);
             this.Log.TabIndex = 3;
             this.Log.Text = "";
-            // 
-            // StartButton
-            // 
-            this.StartButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.StartButton.Enabled = false;
-            this.StartButton.Location = new System.Drawing.Point(150, 0);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(75, 23);
-            this.StartButton.TabIndex = 4;
-            this.StartButton.Text = "#Start#";
-            this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // VextractStatus
             // 
