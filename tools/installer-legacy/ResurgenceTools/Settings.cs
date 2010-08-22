@@ -368,8 +368,22 @@ namespace ResurgenceTools
         /// </summary>
         internal string DestinationDirectory
         {
-            get { return 
-                String.Format(@"{0}\SteamApps\SourceMods\{1}", Program.Settings.SteamDirectory, Program.Settings.ModDirectory); }
+            get
+            {
+                string def = String.Format(@"{0}\SteamApps\SourceMods\{1}", Program.Settings.SteamDirectory, 
+                    Program.Settings.ModDirectory);
+#if DEBUG
+                return this["DebugInstallationDirectory", def] as string;
+#else
+                return def;
+#endif
+            }
+            set
+            {
+#if DEBUG
+                this["DebugInstallationDirectory"] = value;
+#endif
+            }
         }
 
         /// <summary>
@@ -460,6 +474,14 @@ namespace ResurgenceTools
         internal string IKVM_Rar
         {
             get { return this["IKVM_Rar", "ikvm-0.38.0.2-small.rar"] as string; }
+        }
+
+        /// <summary>
+        /// Gets the smallgit rar filename.
+        /// </summary>
+        internal string smallgit_Rar
+        {
+            get { return this["smallgit_Rar", "smallgit.rar"] as string; }
         }
 
         /// <summary>
@@ -555,6 +577,25 @@ namespace ResurgenceTools
             }
             set {
                 this["WindowPosition"] = value;
+            }
+        }
+
+        /// <summary>
+        /// Stores whether an installation has been completed or not.
+        /// </summary>
+        internal bool HasCompletedInstallation
+        {
+            get
+            {
+                if (null == this["hasCompletedInstallation"])
+                {
+                    this["hasCompletedInstallation"] = false;
+                }
+                return (bool)this["hasCompletedInstallation"];
+            }
+            set
+            {
+                this["hasCompletedInstallation"] = value;
             }
         }
 

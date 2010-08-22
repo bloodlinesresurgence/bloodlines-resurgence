@@ -32,6 +32,9 @@ namespace ResurgenceTools.WizardPages
             SourceModDirectory.Text = Program.Settings.ModDirectory;
             updateInstallPath();
 
+#if DEBUG
+            Destination.ReadOnly = false;
+#endif
             ModVersion version = Program.Settings.ModVersion;
             EpisodeOneOption.Checked = (version == ModVersion.EPISODE_ONE_MOD);
             OrangeBoxOption.Checked = (version == ModVersion.ORANGE_BOX_MOD);
@@ -69,6 +72,10 @@ namespace ResurgenceTools.WizardPages
 
         private void NextButton_Click(object sender, EventArgs e)
         {
+#if DEBUG
+            // Allow install override
+            Program.Settings.DestinationDirectory = Destination.Text;
+#endif
             if (EpisodeOneOption.Checked)
                 Program.Settings.ModVersion = ModVersion.EPISODE_ONE_MOD;
             else if (OrangeBoxOption.Checked)
