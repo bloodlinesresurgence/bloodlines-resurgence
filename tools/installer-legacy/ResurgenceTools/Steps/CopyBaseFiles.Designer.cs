@@ -1,6 +1,6 @@
 ﻿namespace ResurgenceTools.Steps
 {
-    partial class CopyReplacementFiles
+    partial class CopyBaseFiles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ContentPanel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // CopyBaseFiles
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(494, 350);
+            this.Name = "CopyBaseFiles";
             this.Text = "CopyReplacementFiles";
-            this.Name = "CopyReplacementFiles";
+            this.ContentPanel.ResumeLayout(false);
+            this.ContentPanel.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

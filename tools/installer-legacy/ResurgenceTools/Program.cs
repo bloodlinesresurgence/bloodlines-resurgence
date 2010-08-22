@@ -264,10 +264,12 @@ namespace ResurgenceTools
                 constructedSteps.Add(typeof(DecompileMaps));
             if ((steps & WizardSteps.Fix_Decompiled_Maps) != 0)
                 constructedSteps.Add(typeof(FixDecompiledMaps));
-            if ((steps & WizardSteps.Copy_Replacement_Files) != 0)
-                constructedSteps.Add(typeof(CopyReplacementFiles));
+            if ((steps & WizardSteps.Extract_Base_Files) != 0)
+                constructedSteps.Add(typeof(CopyBaseFiles));
             if ((steps & WizardSteps.Extract_Original_Models) != 0)
                 constructedSteps.Add(typeof(ExtractModels));
+            if ((steps & WizardSteps.Update_And_Patch_Files) != 0)
+                constructedSteps.Add(typeof(UpdateAndPatchFiles));
 
             StepsToRun = constructedSteps.ToArray();
         }
@@ -347,20 +349,32 @@ namespace ResurgenceTools
         Convert_And_Copy_Materials = 1 << 5,
         Decompile_Maps = 1 << 6,
         Fix_Decompiled_Maps = 1 << 7,
-        Copy_Replacement_Files = 1 << 8,
+        Extract_Base_Files = 1 << 8,
         Extract_Original_Models = 1 << 9,
         //Copy_New_Models = 1 << 9,
+        Update_And_Patch_Files = 1 << 10,
 
-        All = 
-            Extract_General_Files
+        All = NONE
+            | Extract_General_Files
             | Copy_Original_Files 
             | Extract_Materials
             | Convert_And_Copy_Materials
             | Decompile_Maps
             | Fix_Decompiled_Maps
-            | Copy_Replacement_Files
+            | Extract_Base_Files
             | Extract_Original_Models
             // | Copy_New_Models
+            | Update_And_Patch_Files,
+
+        INSTALL = NONE
+            | Extract_General_Files
+            | Copy_Original_Files
+            | Extract_Materials
+            | Convert_And_Copy_Materials
+            | Decompile_Maps
+            | Fix_Decompiled_Maps
+            | Extract_Base_Files
+            | Update_And_Patch_Files,
     }
 
     /// <summary>

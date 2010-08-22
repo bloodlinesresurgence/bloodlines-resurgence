@@ -11,15 +11,15 @@ using System.Diagnostics;
 
 namespace ResurgenceTools.Steps
 {
-    internal partial class CopyReplacementFiles 
+    internal partial class CopyBaseFiles 
         : GenericRunProcess
     {
-        public CopyReplacementFiles()
+        public CopyBaseFiles()
         {
             InitializeComponent();
         }
 
-        public CopyReplacementFiles(TranslationProvider Provider)
+        public CopyBaseFiles(TranslationProvider Provider)
             : base(Provider)
         { }
 
@@ -32,18 +32,7 @@ namespace ResurgenceTools.Steps
 
         protected override Result DoWork()
         {
-            ExtractRar("replacements.rar");
-
-            switch (Program.Settings.ModVersion)
-            {
-                case ModVersion.EPISODE_ONE_MOD:
-                    ExtractRar("content-ep1.rar");
-                    break;
-
-                case ModVersion.ORANGE_BOX_MOD:
-                    ExtractRar("content-ob.rar");
-                    break;
-            }
+            ExtractRar("base.rar");
 
             return Result.Success;
         }
@@ -63,6 +52,8 @@ namespace ResurgenceTools.Steps
             RunProcess(info);
 
             SetProgressStyle(ProgressBarStyle.Blocks);
+
+            Program.Settings.HasCompletedInstallation = true;
         }
     }
 }
