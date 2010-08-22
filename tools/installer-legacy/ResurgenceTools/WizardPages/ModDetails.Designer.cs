@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.SelectSourceModDirectory = new System.Windows.Forms.Label();
-            this.OrangeBoxOption = new System.Windows.Forms.RadioButton();
-            this.ModType = new System.Windows.Forms.Label();
             this.SourceModDirectory = new System.Windows.Forms.TextBox();
-            this.EpisodeOneOption = new System.Windows.Forms.RadioButton();
             this.Destination = new System.Windows.Forms.TextBox();
             this.InstallTo = new System.Windows.Forms.Label();
             this.ModNotFound = new System.Windows.Forms.Label();
@@ -54,14 +51,8 @@
             this.ContentPanel.Controls.Add(this.Destination);
             this.ContentPanel.Controls.Add(this.InstallTo);
             this.ContentPanel.Controls.Add(this.SelectSourceModDirectory);
-            this.ContentPanel.Controls.Add(this.OrangeBoxOption);
-            this.ContentPanel.Controls.Add(this.ModType);
             this.ContentPanel.Controls.Add(this.SourceModDirectory);
-            this.ContentPanel.Controls.Add(this.EpisodeOneOption);
-            this.ContentPanel.Controls.SetChildIndex(this.EpisodeOneOption, 0);
             this.ContentPanel.Controls.SetChildIndex(this.SourceModDirectory, 0);
-            this.ContentPanel.Controls.SetChildIndex(this.ModType, 0);
-            this.ContentPanel.Controls.SetChildIndex(this.OrangeBoxOption, 0);
             this.ContentPanel.Controls.SetChildIndex(this.SelectSourceModDirectory, 0);
             this.ContentPanel.Controls.SetChildIndex(this.InstallTo, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Destination, 0);
@@ -83,28 +74,9 @@
             this.SelectSourceModDirectory.AutoSize = true;
             this.SelectSourceModDirectory.Location = new System.Drawing.Point(28, 46);
             this.SelectSourceModDirectory.Name = "SelectSourceModDirectory";
-            this.SelectSourceModDirectory.Size = new System.Drawing.Size(128, 13);
+            this.SelectSourceModDirectory.Size = new System.Drawing.Size(141, 13);
             this.SelectSourceModDirectory.TabIndex = 20;
             this.SelectSourceModDirectory.Text = "SourceMod Directory Name:";
-            // 
-            // OrangeBoxOption
-            // 
-            this.OrangeBoxOption.AutoSize = true;
-            this.OrangeBoxOption.Location = new System.Drawing.Point(51, 133);
-            this.OrangeBoxOption.Name = "OrangeBoxOption";
-            this.OrangeBoxOption.Size = new System.Drawing.Size(246, 17);
-            this.OrangeBoxOption.TabIndex = 23;
-            this.OrangeBoxOption.Text = "Orange Box (Latest, unstable, missing features)";
-            this.OrangeBoxOption.UseVisualStyleBackColor = true;
-            // 
-            // ModType
-            // 
-            this.ModType.AutoSize = true;
-            this.ModType.Location = new System.Drawing.Point(28, 94);
-            this.ModType.Name = "ModType";
-            this.ModType.Size = new System.Drawing.Size(145, 13);
-            this.ModType.TabIndex = 22;
-            this.ModType.Text = "Select the mod type to install:";
             // 
             // SourceModDirectory
             // 
@@ -115,21 +87,9 @@
             this.SourceModDirectory.Text = "BloodlinesResurgence";
             this.SourceModDirectory.TextChanged += new System.EventHandler(this.SourceModDirectory_TextChanged);
             // 
-            // EpisodeOneOption
-            // 
-            this.EpisodeOneOption.AutoSize = true;
-            this.EpisodeOneOption.Checked = true;
-            this.EpisodeOneOption.Location = new System.Drawing.Point(51, 110);
-            this.EpisodeOneOption.Name = "EpisodeOneOption";
-            this.EpisodeOneOption.Size = new System.Drawing.Size(166, 17);
-            this.EpisodeOneOption.TabIndex = 21;
-            this.EpisodeOneOption.TabStop = true;
-            this.EpisodeOneOption.Text = "Episode 1 (Older, more stable)";
-            this.EpisodeOneOption.UseVisualStyleBackColor = true;
-            // 
             // Destination
             // 
-            this.Destination.Location = new System.Drawing.Point(31, 185);
+            this.Destination.Location = new System.Drawing.Point(31, 116);
             this.Destination.Name = "Destination";
             this.Destination.ReadOnly = true;
             this.Destination.Size = new System.Drawing.Size(446, 20);
@@ -138,19 +98,18 @@
             // InstallTo
             // 
             this.InstallTo.AutoSize = true;
-            this.InstallTo.Location = new System.Drawing.Point(28, 169);
+            this.InstallTo.Location = new System.Drawing.Point(28, 100);
             this.InstallTo.Name = "InstallTo";
-            this.InstallTo.Size = new System.Drawing.Size(155, 13);
+            this.InstallTo.Size = new System.Drawing.Size(177, 13);
             this.InstallTo.TabIndex = 24;
             this.InstallTo.Text = "Bloodlines Resurgence will install to:";
             // 
             // ModNotFound
             // 
-            this.ModNotFound.AutoSize = true;
             this.ModNotFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModNotFound.Location = new System.Drawing.Point(12, 215);
+            this.ModNotFound.Location = new System.Drawing.Point(31, 146);
             this.ModNotFound.Name = "ModNotFound";
-            this.ModNotFound.Size = new System.Drawing.Size(465, 13);
+            this.ModNotFound.Size = new System.Drawing.Size(451, 33);
             this.ModNotFound.TabIndex = 26;
             this.ModNotFound.Text = "Error: Mod not found. Check directory name, and ensure you have created the mod.";
             // 
@@ -160,8 +119,8 @@
             this.Info.Name = "Info";
             this.Info.Size = new System.Drawing.Size(465, 33);
             this.Info.TabIndex = 27;
-            this.Info.Text = "Some more details are required. Please ensure you have used the Create A Mod wiza" +
-                "rd in Steam before continuing past this step.";
+            this.Info.Text = "Please ensure you have used the Create A Mod wizard in Steam before continuing pa" +
+                "st this step.";
             // 
             // ModDirectoryHint
             // 
@@ -188,10 +147,7 @@
         #endregion
 
         private System.Windows.Forms.Label SelectSourceModDirectory;
-        private System.Windows.Forms.RadioButton OrangeBoxOption;
-        private System.Windows.Forms.Label ModType;
         private System.Windows.Forms.TextBox SourceModDirectory;
-        private System.Windows.Forms.RadioButton EpisodeOneOption;
         private System.Windows.Forms.TextBox Destination;
         private System.Windows.Forms.Label InstallTo;
         private System.Windows.Forms.Label ModDirectoryHint;
