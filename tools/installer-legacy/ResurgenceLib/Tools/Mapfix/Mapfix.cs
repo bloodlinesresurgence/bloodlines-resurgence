@@ -49,7 +49,7 @@ namespace ResurgenceLib.Tools.Mapfix
         public static Result Fix(string source, string destination)
         {
             string[] buffer = File.ReadAllLines(source);
-            StreamWriter output = new StreamWriter(destination);
+            StringBuilder output = new StringBuilder(); 
             Flags flags = Flags.NONE;
             int depth = 0;
             Entity entity = new Entity();
@@ -61,7 +61,7 @@ namespace ResurgenceLib.Tools.Mapfix
                 {
                     case "{":
                         depth++;
-                        output.WriteLine(line);
+                        output.Append(line);
                         break;
 
                     case "}":
@@ -69,7 +69,6 @@ namespace ResurgenceLib.Tools.Mapfix
                         if (depth < 0)
                         {
                             LastError = "Error: Under depth!";
-                            output.Close();
                             return Result.Failure;
                         }
                         else if (depth == 0)
@@ -77,13 +76,13 @@ namespace ResurgenceLib.Tools.Mapfix
                             // Back to 0 depth, flush entity
                             if (flags == Flags.ENTITY)
                             {
-                                output.Write(entity.Generate());
+                                output.Append(entity.Generate());
                                 entity.Reset();
                             }
                             flags = Flags.NONE;
                         }
 
-                        output.WriteLine(line);
+                        output.Append(line);
 
                         break;
 
@@ -97,12 +96,12 @@ namespace ResurgenceLib.Tools.Mapfix
                                     flags = Flags.ENTITY;
                                 else
                                     flags = Flags.GENERIC;
-                                output.WriteLine(line);
+                                output.Append(line);
                                 break;
 
                             case Flags.GENERIC:
                                 // Generic data, just write it
-                                output.WriteLine(line);
+                                output.Append(line);
                                 break;
 
                             case Flags.ENTITY:
@@ -114,7 +113,9 @@ namespace ResurgenceLib.Tools.Mapfix
                 } /* switch(line) */
             } /* while (input.EndOfStream == false) */
 
-            output.Close();
+            StreamWriter sw = new StreamWriter(destination);
+            sw.Write(output.ToString());
+            sw.Close();
 
             return Result.Success;
         }
