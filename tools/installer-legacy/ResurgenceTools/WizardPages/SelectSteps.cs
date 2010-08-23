@@ -44,8 +44,13 @@ namespace ResurgenceTools.WizardPages
             {
                 WizardStepItem listitem = new WizardStepItem(TranslationProvider, enumName, this.Name);
 
-                if (listitem.Step == WizardSteps.All || listitem.Step == WizardSteps.NONE)
-                    continue;
+                switch (listitem.Step)
+                {
+                    case WizardSteps.All:
+                    case WizardSteps.NONE:
+                    case WizardSteps.INSTALL:
+                        continue;
+                }
 
                 bool shouldSelect = (Program.SelectedSteps & listitem.Step) == listitem.Step;
                 Steps.Items.Add(listitem, shouldSelect);
