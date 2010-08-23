@@ -82,6 +82,7 @@
     <Compile Include="Lib.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="RTFHelper.cs" />
+    <Compile Include="Smallgit.cs" />
     <Compile Include="Threading\ProgressBars.cs" />
     <Compile Include="Tools\Mapfix\Entity.cs" />
     <Compile Include="Tools\Mapfix\Mapfix.cs" />
