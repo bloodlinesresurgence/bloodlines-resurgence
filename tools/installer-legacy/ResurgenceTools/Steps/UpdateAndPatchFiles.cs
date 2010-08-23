@@ -34,19 +34,21 @@ namespace ResurgenceTools.Steps
         {
             prepareSmallgit();
 
+            this.CaptureOutput = true;
+
             // Stage 1: git stash
             //          Store changes to tracked files
-            AppendText("Saving any changes...");
+            AppendText("Saving any changes...\n");
             git("stash");
 
             // Stage 2: git pull
             //          Download and apply any changes
-            AppendText("Downloading and applying changes...");
+            AppendText("\nDownloading and applying changes...\n");
             git("pull");
 
             // Stage 3: git stash pop
             //          Retrieve stored changes and reapply them
-            AppendText("Restoring changes made prior to update");
+            AppendText("\nRestoring changes made prior to update\n");
             git("stash pop");
 
             return Result.Success;
@@ -72,7 +74,7 @@ namespace ResurgenceTools.Steps
 
             RunProcess(info);
 
-            AppendText(TranslationProvider.Translate("!StageOneDone", this.Name) + "\n");
+            //AppendText(TranslationProvider.Translate("!StageOneDone", this.Name) + "\n");
         }
     }
 }
