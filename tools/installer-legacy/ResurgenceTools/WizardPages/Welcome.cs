@@ -27,13 +27,6 @@ namespace ResurgenceTools.WizardPages
         {
             base.DoInitializeComponent();
             InitializeComponent();
-
-            // Load the welcome document for the specified language.
-            string doc = Program.Settings.WelcomeDocument;
-            if (File.Exists(doc))
-                Document.LoadFile(doc);
-            else
-                Document.Text = String.Format(Translate("!WelcomeDocNotFound"), doc);
         }
 
         private void NextButton_Click(object sender, EventArgs e)
@@ -41,16 +34,6 @@ namespace ResurgenceTools.WizardPages
             Hide();
             Program.NextForm = new SelectPaths(TranslationProvider);
             Close();
-        }
-
-        private void Understand_CheckedChanged(object sender, EventArgs e)
-        {
-            NextButton.Enabled = Understand.Checked;
-        }
-
-        private void Document_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(e.LinkText);
         }
     }
 }

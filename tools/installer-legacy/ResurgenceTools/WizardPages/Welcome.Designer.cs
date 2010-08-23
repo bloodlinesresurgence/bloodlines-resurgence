@@ -28,21 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Document = new System.Windows.Forms.RichTextBox();
-            this.Understand = new System.Windows.Forms.CheckBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.ContentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Controls.Add(this.Document);
-            this.ContentPanel.Controls.Add(this.Understand);
-            this.ContentPanel.Controls.SetChildIndex(this.Understand, 0);
-            this.ContentPanel.Controls.SetChildIndex(this.Document, 0);
+            this.ContentPanel.Controls.Add(this.webBrowser1);
+            this.ContentPanel.Controls.SetChildIndex(this.webBrowser1, 0);
             // 
             // NextButton
             // 
-            this.NextButton.Enabled = false;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // BackButton
@@ -55,27 +51,15 @@
             // 
             this.CancelWizardButton.Location = new System.Drawing.Point(212, 12);
             // 
-            // Document
+            // webBrowser1
             // 
-            this.Document.Location = new System.Drawing.Point(12, 16);
-            this.Document.Name = "Document";
-            this.Document.ReadOnly = true;
-            this.Document.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.Document.Size = new System.Drawing.Size(469, 196);
-            this.Document.TabIndex = 3;
-            this.Document.Text = "";
-            this.Document.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.Document_LinkClicked);
-            // 
-            // Understand
-            // 
-            this.Understand.AutoSize = true;
-            this.Understand.Location = new System.Drawing.Point(12, 218);
-            this.Understand.Name = "Understand";
-            this.Understand.Size = new System.Drawing.Size(187, 17);
-            this.Understand.TabIndex = 4;
-            this.Understand.Text = "I understand the above conditions";
-            this.Understand.UseVisualStyleBackColor = true;
-            this.Understand.CheckedChanged += new System.EventHandler(this.Understand_CheckedChanged);
+            this.webBrowser1.Location = new System.Drawing.Point(15, 14);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(467, 220);
+            this.webBrowser1.TabIndex = 3;
+            this.webBrowser1.Url = new System.Uri("http://www.bloodlinesresurgence.com/patchnotes.html", System.UriKind.Absolute);
             // 
             // Welcome
             // 
@@ -85,14 +69,13 @@
             this.Name = "Welcome";
             this.Text = "Welcome";
             this.ContentPanel.ResumeLayout(false);
-            this.ContentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox Document;
-        private System.Windows.Forms.CheckBox Understand;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+
     }
 }

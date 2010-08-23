@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Document = new System.Windows.Forms.RichTextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.ContentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Controls.Add(this.Document);
-            this.ContentPanel.Controls.SetChildIndex(this.Document, 0);
+            this.ContentPanel.Controls.Add(this.webBrowser1);
+            this.ContentPanel.Controls.SetChildIndex(this.webBrowser1, 0);
             // 
             // NextButton
             // 
@@ -55,14 +55,14 @@
             this.FinishButton.Visible = true;
             this.FinishButton.Click += new System.EventHandler(this.FinishButton_Click);
             // 
-            // Document
+            // webBrowser1
             // 
-            this.Document.Location = new System.Drawing.Point(12, 6);
-            this.Document.Name = "Document";
-            this.Document.Size = new System.Drawing.Size(470, 228);
-            this.Document.TabIndex = 6;
-            this.Document.Text = "";
-            this.Document.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.Document_LinkClicked);
+            this.webBrowser1.Location = new System.Drawing.Point(15, 14);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(467, 220);
+            this.webBrowser1.TabIndex = 3;
+            this.webBrowser1.Url = new System.Uri("http://www.bloodlinesresurgence.com/patchdone.html", System.UriKind.Absolute);
             // 
             // FinalPage
             // 
@@ -78,6 +78,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox Document;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+
     }
 }
