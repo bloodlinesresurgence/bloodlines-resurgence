@@ -51,8 +51,8 @@ namespace ResurgenceTools.WizardPages
 
             bool pathExists = Directory.Exists(path);
 
-            NextButton.Enabled = pathExists;
-            ModNotFound.Visible = !pathExists;
+            //NextButton.Enabled = pathExists;
+            ModNotFound1.Visible = !pathExists;
 
             return pathExists;
         }

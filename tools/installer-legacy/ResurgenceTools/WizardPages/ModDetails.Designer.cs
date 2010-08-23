@@ -32,8 +32,8 @@
             this.SourceModDirectory = new System.Windows.Forms.TextBox();
             this.Destination = new System.Windows.Forms.TextBox();
             this.InstallTo = new System.Windows.Forms.Label();
-            this.ModNotFound = new System.Windows.Forms.Label();
-            this.Info = new System.Windows.Forms.Label();
+            this.ModNotFound1 = new System.Windows.Forms.Label();
+            this.Info1 = new System.Windows.Forms.Label();
             this.ModDirectoryHint = new System.Windows.Forms.Label();
             this.ContentPanel.SuspendLayout();
             this.SuspendLayout();
@@ -46,8 +46,8 @@
             // ContentPanel
             // 
             this.ContentPanel.Controls.Add(this.ModDirectoryHint);
-            this.ContentPanel.Controls.Add(this.Info);
-            this.ContentPanel.Controls.Add(this.ModNotFound);
+            this.ContentPanel.Controls.Add(this.Info1);
+            this.ContentPanel.Controls.Add(this.ModNotFound1);
             this.ContentPanel.Controls.Add(this.Destination);
             this.ContentPanel.Controls.Add(this.InstallTo);
             this.ContentPanel.Controls.Add(this.SelectSourceModDirectory);
@@ -56,13 +56,12 @@
             this.ContentPanel.Controls.SetChildIndex(this.SelectSourceModDirectory, 0);
             this.ContentPanel.Controls.SetChildIndex(this.InstallTo, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Destination, 0);
-            this.ContentPanel.Controls.SetChildIndex(this.ModNotFound, 0);
-            this.ContentPanel.Controls.SetChildIndex(this.Info, 0);
+            this.ContentPanel.Controls.SetChildIndex(this.ModNotFound1, 0);
+            this.ContentPanel.Controls.SetChildIndex(this.Info1, 0);
             this.ContentPanel.Controls.SetChildIndex(this.ModDirectoryHint, 0);
             // 
             // NextButton
             // 
-            this.NextButton.Enabled = false;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // BackButton
@@ -104,23 +103,24 @@
             this.InstallTo.TabIndex = 24;
             this.InstallTo.Text = "Bloodlines Resurgence will install to:";
             // 
-            // ModNotFound
+            // ModNotFound1
             // 
-            this.ModNotFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModNotFound.Location = new System.Drawing.Point(31, 146);
-            this.ModNotFound.Name = "ModNotFound";
-            this.ModNotFound.Size = new System.Drawing.Size(451, 33);
-            this.ModNotFound.TabIndex = 26;
-            this.ModNotFound.Text = "Error: Mod not found. Check directory name, and ensure you have created the mod.";
+            this.ModNotFound1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModNotFound1.Location = new System.Drawing.Point(31, 146);
+            this.ModNotFound1.Name = "ModNotFound1";
+            this.ModNotFound1.Size = new System.Drawing.Size(451, 33);
+            this.ModNotFound1.TabIndex = 26;
+            this.ModNotFound1.Text = "Warning: Mod not found. Check directory name, and ensure you have created the mod" +
+                ".";
             // 
-            // Info
+            // Info1
             // 
-            this.Info.Location = new System.Drawing.Point(12, 13);
-            this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(465, 33);
-            this.Info.TabIndex = 27;
-            this.Info.Text = "Please ensure you have used the Create A Mod wizard in Steam before continuing pa" +
-                "st this step.";
+            this.Info1.Location = new System.Drawing.Point(12, 13);
+            this.Info1.Name = "Info1";
+            this.Info1.Size = new System.Drawing.Size(465, 33);
+            this.Info1.TabIndex = 27;
+            this.Info1.Text = "(Optional) If you wish to use the Hammer editor with Bloodlines, please create a " +
+                "mod using the Source SDK and specify the details below.";
             // 
             // ModDirectoryHint
             // 
@@ -151,7 +151,7 @@
         private System.Windows.Forms.TextBox Destination;
         private System.Windows.Forms.Label InstallTo;
         private System.Windows.Forms.Label ModDirectoryHint;
-        private System.Windows.Forms.Label Info;
-        private System.Windows.Forms.Label ModNotFound;
+        private System.Windows.Forms.Label Info1;
+        private System.Windows.Forms.Label ModNotFound1;
     }
 }
