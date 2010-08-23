@@ -25,6 +25,8 @@ namespace ResurgenceTools
         /// </summary>
         protected volatile bool CancelProcess = false;
         private volatile bool Running = false;
+
+        protected bool CaptureOutput = false;
         
         /// <summary>
         /// 
@@ -101,10 +103,15 @@ namespace ResurgenceTools
             // Set standard options
             info.UseShellExecute = false;
             info.CreateNoWindow = true;
-            info.RedirectStandardOutput = true;
-            info.RedirectStandardError = true;
+            if (this.CaptureOutput)
+            {
+                info.RedirectStandardOutput = false;
+                info.RedirectStandardError = true;
+            }
 
+#if DEBUG
             AppendText(info.FileName + " " + info.Arguments);
+#endif
 
             Process p = Process.Start(info);
 
@@ -156,7 +163,7 @@ namespace ResurgenceTools
                         break;
                     buffer += (char)b;
                 }
-                if (buffer.Length > 0) ;
+                if (buffer.Length > 0 && this.CaptureOutput)
                     AppendText(buffer);
             }
         }
