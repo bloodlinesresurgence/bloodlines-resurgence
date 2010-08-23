@@ -36,6 +36,7 @@
             // 
             // LanguageButton
             // 
+            this.LanguageButton.Visible = false;
             this.LanguageButton.Click += new System.EventHandler(this.LanguageButton_Click);
             // 
             // ResurgenceWizardPage
