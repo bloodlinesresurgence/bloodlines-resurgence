@@ -28,7 +28,6 @@ namespace ResurgenceTools.Steps
         protected override void DoInitializeComponent()
         {
             base.DoInitializeComponent();
-            AutoProceedStep = true;
             InitializeComponent();
         }
 

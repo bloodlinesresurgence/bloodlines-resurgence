@@ -88,6 +88,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preparing.resx">
       <DependentUpon>Preparing.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +105,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectLanguage.resx">
       <DependentUpon>SelectLanguage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\ConvertAndCopyMaterials.resx">
       <DependentUpon>ConvertAndCopyMaterials.cs</DependentUpon>
@@ -119,9 +121,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\DecompileMaps.resx">
       <DependentUpon>DecompileMaps.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\ExtractGeneralFiles.resx">
       <DependentUpon>ExtractGeneralFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\ExtractMaterials.resx">
       <DependentUpon>ExtractMaterials.cs</DependentUpon>
@@ -129,6 +133,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\FixDecompiledMaps.resx">
       <DependentUpon>FixDecompiledMaps.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Steps\UpdateAndPatchFiles.resx">
       <DependentUpon>UpdateAndPatchFiles.cs</DependentUpon>
@@ -136,6 +141,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\FinalPage.resx">
       <DependentUpon>FinalPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\ModDetails.resx">
       <DependentUpon>ModDetails.cs</DependentUpon>
@@ -155,6 +161,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -359,6 +366,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\nodecs\NodeCS.csproj">
+      <Project>{21310134-5DAD-4266-BF59-84890BF6FF3C}</Project>
+      <Name>NodeCS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ResurgenceLib\ResurgenceLib.csproj">
       <Project>{D35E56E2-970D-4EE2-8C81-FE7E53EA1EC6}</Project>
       <Name>ResurgenceLib</Name>
