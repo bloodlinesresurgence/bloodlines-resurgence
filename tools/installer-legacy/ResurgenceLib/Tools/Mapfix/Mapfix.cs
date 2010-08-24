@@ -55,13 +55,15 @@ namespace ResurgenceLib.Tools.Mapfix
             Entity entity = new Entity();
             LastError = "";
 
+            
+
             foreach(string line in buffer)
             {
                 switch (line)
                 {
                     case "{":
                         depth++;
-                        output.Append(line);
+                        output.Append(line + Environment.NewLine);
                         break;
 
                     case "}":
@@ -82,7 +84,7 @@ namespace ResurgenceLib.Tools.Mapfix
                             flags = Flags.NONE;
                         }
 
-                        output.Append(line);
+                        output.Append(line + Environment.NewLine);
 
                         break;
 
@@ -96,12 +98,12 @@ namespace ResurgenceLib.Tools.Mapfix
                                     flags = Flags.ENTITY;
                                 else
                                     flags = Flags.GENERIC;
-                                output.Append(line);
+                                output.Append(line + Environment.NewLine);
                                 break;
 
                             case Flags.GENERIC:
                                 // Generic data, just write it
-                                output.Append(line);
+                                output.Append(line + Environment.NewLine);
                                 break;
 
                             case Flags.ENTITY:
