@@ -180,18 +180,18 @@
     <Content Include="Languages\Documents\Welcome-Русский %28Russian%29.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="..\Dependancies\base.rar">
+    <Content Include="..\Dependancies\base.rar">
       <Link>Tools\base.rar</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Dependancies\ikvm-0.38.0.2-small.rar">
+    </Content>
+    <Content Include="..\Dependancies\ikvm-0.38.0.2-small.rar">
       <Link>Tools\ikvm-0.38.0.2-small.rar</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Dependancies\smallgit.rar">
+    </Content>
+    <Content Include="..\Dependancies\smallgit.rar">
       <Link>Tools\smallgit.rar</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="Languages\Documents\Finish-Español %28Spanish%29.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
