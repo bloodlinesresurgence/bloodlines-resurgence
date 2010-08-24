@@ -333,6 +333,50 @@ namespace ResurgenceTools
             form.Show(MainForm);
 #endif
         }
+
+        internal delegate void UpdateCheckCallback(string updateURL);
+        private static string updateURL = null;
+        internal static void checkForUpdate(UpdateCheckCallback callback)
+        {
+            // Check for updates :)
+            if (null != updateURL)
+            {
+                if ("" != updateURL) callback(updateURL);
+                return;
+            }
+
+            NodeCS.Async.run(delegate()
+            {
+                string url = "http://www.bloodlinesresurgence.com/patcher.txt";
+                System.Net.WebClient client = new System.Net.WebClient();
+                client.Proxy = null;
+
+                string contents;
+
+                try
+                {
+                    contents = client.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+
+                string[] parts = contents.Split(',');
+                if (parts.Length == 2)
+                {
+                    if (Application.ProductVersion != parts[0])
+                    {
+                        updateURL = parts[1];
+                        callback(parts[1]);
+                    }
+                    else
+                    {
+                        updateURL = "";
+                    }
+                }
+            });
+        }
     }
 
     /// <summary>

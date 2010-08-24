@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.CheckForUpdates = new System.Windows.Forms.Timer(this.components);
+            this.UpdateCheck = new System.Windows.Forms.LinkLabel();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CancelWizardButton
@@ -36,8 +40,36 @@
             // 
             // LanguageButton
             // 
+            this.LanguageButton.Location = new System.Drawing.Point(111, 12);
             this.LanguageButton.Visible = false;
             this.LanguageButton.Click += new System.EventHandler(this.LanguageButton_Click);
+            // 
+            // ControlPanel
+            // 
+            this.ControlPanel.Controls.Add(this.UpdateCheck);
+            this.ControlPanel.Controls.SetChildIndex(this.UpdateCheck, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.BackButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.CancelWizardButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.LanguageButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.FinishButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.NextButton, 0);
+            // 
+            // CheckForUpdates
+            // 
+            this.CheckForUpdates.Enabled = true;
+            this.CheckForUpdates.Tick += new System.EventHandler(this.CheckForUpdates_Tick);
+            // 
+            // UpdateCheck
+            // 
+            this.UpdateCheck.AutoSize = true;
+            this.UpdateCheck.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.UpdateCheck.Location = new System.Drawing.Point(8, 17);
+            this.UpdateCheck.Name = "UpdateCheck";
+            this.UpdateCheck.Size = new System.Drawing.Size(112, 13);
+            this.UpdateCheck.TabIndex = 7;
+            this.UpdateCheck.Text = "Checking for update...";
+            this.UpdateCheck.Visible = false;
+            this.UpdateCheck.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateCheck_LinkClicked);
             // 
             // ResurgenceWizardPage
             // 
@@ -49,10 +81,15 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ResurgenceWizardPage_FormClosed);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ResurgenceWizardPage_FormClosing);
             this.LocationChanged += new System.EventHandler(this.ResurgenceWizardPage_LocationChanged);
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.LinkLabel UpdateCheck;
+        private System.Windows.Forms.Timer CheckForUpdates;
     }
 }

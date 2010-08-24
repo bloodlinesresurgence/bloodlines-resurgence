@@ -303,5 +303,26 @@ namespace ResurgenceTools
         private void LoadPosition() { }
 #endif
         #endregion
+
+        private void CheckForUpdates_Tick(object sender, EventArgs e)
+        {
+            CheckForUpdates.Enabled = false;
+
+            Program.checkForUpdate(delegate(string updateURL)
+            {
+                UpdateCheck.BeginInvoke(new MethodInvoker(delegate()
+                {
+                    UpdateCheck.Text = "An update is available.";
+                    UpdateCheck.Tag = updateURL;
+                    UpdateCheck.LinkArea = new LinkArea(0, UpdateCheck.Text.Length);
+                    UpdateCheck.Visible = true;
+                }));
+            });
+        }
+
+        private void UpdateCheck_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(UpdateCheck.Tag as string);
+        }
     }
 }
