@@ -56,7 +56,7 @@ namespace ResurgenceLib.Tools.Mapfix
             checkEntityData();
             string output = this.GenericData;
 
-            if (Mapfix.Disable_ConnectionFix == false)
+            if (Mapfix.Disable_ConnectionFix == false && this.Outputs.Length > 0)
             {
                 output += "        connections" + System.Environment.NewLine;
                 output += "        {" + System.Environment.NewLine;
