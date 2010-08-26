@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools.WizardPages
+﻿namespace Resurgence.WizardPages
 {
     partial class FinalPage
     {
@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Browser = new System.Windows.Forms.WebBrowser();
+            this.Document = new System.Windows.Forms.RichTextBox();
             this.ContentPanel.SuspendLayout();
-            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Controls.Add(this.Browser);
-            this.ContentPanel.Controls.SetChildIndex(this.Browser, 0);
+            this.ContentPanel.Controls.Add(this.Document);
+            this.ContentPanel.Controls.SetChildIndex(this.Document, 0);
             // 
             // NextButton
             // 
@@ -56,14 +55,14 @@
             this.FinishButton.Visible = true;
             this.FinishButton.Click += new System.EventHandler(this.FinishButton_Click);
             // 
-            // Browser
+            // Document
             // 
-            this.Browser.Location = new System.Drawing.Point(15, 14);
-            this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.Browser.Name = "Browser";
-            this.Browser.Size = new System.Drawing.Size(467, 220);
-            this.Browser.TabIndex = 3;
-            this.Browser.Url = new System.Uri("http://www.bloodlinesresurgence.com/patchdone.html", System.UriKind.Absolute);
+            this.Document.Location = new System.Drawing.Point(12, 6);
+            this.Document.Name = "Document";
+            this.Document.Size = new System.Drawing.Size(470, 228);
+            this.Document.TabIndex = 6;
+            this.Document.Text = "";
+            this.Document.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.Document_LinkClicked);
             // 
             // FinalPage
             // 
@@ -73,15 +72,12 @@
             this.Name = "FinalPage";
             this.Text = "FinalPage";
             this.ContentPanel.ResumeLayout(false);
-            this.ControlPanel.ResumeLayout(false);
-            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser Browser;
-
+        private System.Windows.Forms.RichTextBox Document;
     }
 }
