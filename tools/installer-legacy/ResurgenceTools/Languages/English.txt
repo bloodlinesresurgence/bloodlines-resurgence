@@ -115,6 +115,8 @@ InstallTo          = Bloodlines Resurgence will install to:
 !Copy_New_Models_Description       = Copies new (fixed and working) models to the destination directory.
 !Update_And_Patch_Files            = Update and Patch Files
 !Update_And_Patch_Files_Description = Updates game files to the latest version
+!View_Changelog                    = View Changelog
+!View_Changelog_Description        = View the latest changes
 WizardDescription  = Step Selection
 Instruction        = Select the steps to run from the list below:
 DescriptionBox     = Step Description
@@ -127,7 +129,7 @@ Description        = Exactracting general files...
 
 [CopyOriginalFiles]
 WizardDescription  = Copy Original Files
-Description        = Copy loose files not packaged in VPK files
+Description        = Copying loose files not packaged in VPK files
 !StageOne          = Searching for files to copy...
 !StageTwo          = Copying files to mod directory...
 !StageTwoCopy      = Copying
@@ -148,7 +150,7 @@ Description		   = Converting materials, this will take some time...
 
 [DecompileMaps]
 WizardDescription  = Decompile Maps
-Description        = Decompile maps so they may be loaded in Hammer
+Description        = Decompiling maps so they may be loaded in Hammer
 !StageOne          = Stage One: Extracting vmex support files...
 !StageOneDone      = Done.
 !Decompiling       = Decompiling map: {0}
@@ -156,7 +158,7 @@ Description        = Decompile maps so they may be loaded in Hammer
 
 [FixDecompiledMaps]
 WizardDescription  = Fix Decompiled Maps
-Description        = Fixes decompiled maps and moves them to the mod directory
+Description        = Fixing decompiled maps and moving them to the mod directory
 !StageOne          = Searching for maps to fix...
 !StageOneDone      = found {0} maps.
 !StageTwoFix       = Fixing {0}...
@@ -165,10 +167,22 @@ Description        = Fixes decompiled maps and moves them to the mod directory
 
 [CopyBaseFiles]
 WizardDescription  = Copy Base Files
-Description        = Copies base required files to the mod directory.
+Description        = Copying base required files to the game directory.
 !Starting          = Extracting...
 
 [ExtractModels]
 WizardDescription  = Extract Models
-Description        = Extracts models to specified mod directory.
+Description        = Extracting models to specified mod directory.
 !Starting          = Extracting models to {0}
+
+[UpdateAndPatchFiles]
+WizardDescription  = Update and Patch Files
+Description        =
+!Starting          = Preparing updater...
+!Stash             = Saving any changes you have made...
+!Pull              = Downloading updates...
+!Pop               = Re-applying your changes...
+
+[ViewChangelog]
+WizardDescription  = View Changelog
+Description        = View the update notes
