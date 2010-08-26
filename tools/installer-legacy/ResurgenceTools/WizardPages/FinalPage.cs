@@ -30,6 +30,8 @@ namespace ResurgenceTools.WizardPages
         {
             base.DoInitializeComponent();
             InitializeComponent();
+
+            Browser.Navigate("http://www.bloodlinesresurgence.com/patchdone.html");
         }
 
         private void FinishButton_Click(object sender, EventArgs e)

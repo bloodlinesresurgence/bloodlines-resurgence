@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.Browser = new System.Windows.Forms.WebBrowser();
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Controls.Add(this.webBrowser1);
-            this.ContentPanel.Controls.SetChildIndex(this.webBrowser1, 0);
+            this.ContentPanel.Controls.Add(this.Browser);
+            this.ContentPanel.Controls.SetChildIndex(this.Browser, 0);
             // 
             // NextButton
             // 
@@ -55,14 +56,14 @@
             this.FinishButton.Visible = true;
             this.FinishButton.Click += new System.EventHandler(this.FinishButton_Click);
             // 
-            // webBrowser1
+            // Browser
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(15, 14);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(467, 220);
-            this.webBrowser1.TabIndex = 3;
-            this.webBrowser1.Url = new System.Uri("http://www.bloodlinesresurgence.com/patchdone.html", System.UriKind.Absolute);
+            this.Browser.Location = new System.Drawing.Point(15, 14);
+            this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.Browser.Name = "Browser";
+            this.Browser.Size = new System.Drawing.Size(467, 220);
+            this.Browser.TabIndex = 3;
+            this.Browser.Url = new System.Uri("http://www.bloodlinesresurgence.com/patchdone.html", System.UriKind.Absolute);
             // 
             // FinalPage
             // 
@@ -72,13 +73,15 @@
             this.Name = "FinalPage";
             this.Text = "FinalPage";
             this.ContentPanel.ResumeLayout(false);
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser Browser;
 
     }
 }
