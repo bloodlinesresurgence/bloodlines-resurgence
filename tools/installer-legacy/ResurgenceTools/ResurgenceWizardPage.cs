@@ -241,8 +241,15 @@ namespace ResurgenceTools
                 // Value may have changed, check again.
                 if (AutoProceedStep && Program.Settings.AutoProceed && autoProceedOccurred == false)
                 {
-                    autoProceedOccurred = true;
-                    form.Invoke(new AutoProceed_Start_Delegate(AutoProceed_Start));
+                    try
+                    {
+                        form.Invoke(new AutoProceed_Start_Delegate(AutoProceed_Start));
+                        autoProceedOccurred = true;
+                    }
+                    catch (Exception)
+                    {
+                        autoProceedThreadFunction(ownerForm);
+                    }
                 }
             }
             else
