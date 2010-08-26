@@ -43,6 +43,7 @@
             this.TemporaryDirectory = new System.Windows.Forms.TextBox();
             this.CreateTempDirectory = new System.Windows.Forms.Button();
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WizardDescription
@@ -183,6 +184,7 @@
             this.TempNotFound.Size = new System.Drawing.Size(338, 33);
             this.TempNotFound.TabIndex = 19;
             this.TempNotFound.Text = "The temporary files directory was not found.";
+            this.TempNotFound.Visible = false;
             // 
             // SelectTemporaryDirectory
             // 
@@ -192,6 +194,7 @@
             this.SelectTemporaryDirectory.Size = new System.Drawing.Size(126, 13);
             this.SelectTemporaryDirectory.TabIndex = 16;
             this.SelectTemporaryDirectory.Text = "Temporary files Directory:";
+            this.SelectTemporaryDirectory.Visible = false;
             // 
             // BrowseTempDirectoryButton
             // 
@@ -201,6 +204,7 @@
             this.BrowseTempDirectoryButton.TabIndex = 18;
             this.BrowseTempDirectoryButton.Text = "#Browse#";
             this.BrowseTempDirectoryButton.UseVisualStyleBackColor = true;
+            this.BrowseTempDirectoryButton.Visible = false;
             this.BrowseTempDirectoryButton.Click += new System.EventHandler(this.BrowseTempDirectoryButton_Click);
             // 
             // TemporaryDirectory
@@ -210,6 +214,7 @@
             this.TemporaryDirectory.ReadOnly = true;
             this.TemporaryDirectory.Size = new System.Drawing.Size(335, 20);
             this.TemporaryDirectory.TabIndex = 17;
+            this.TemporaryDirectory.Visible = false;
             this.TemporaryDirectory.TextChanged += new System.EventHandler(this.TemporaryDirectory_TextChanged);
             // 
             // CreateTempDirectory
@@ -220,6 +225,7 @@
             this.CreateTempDirectory.TabIndex = 18;
             this.CreateTempDirectory.Text = "Create";
             this.CreateTempDirectory.UseVisualStyleBackColor = true;
+            this.CreateTempDirectory.Visible = false;
             this.CreateTempDirectory.Click += new System.EventHandler(this.CreateTempDirectory_Click);
             // 
             // SelectPaths
@@ -231,6 +237,8 @@
             this.Text = "SelectPaths";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

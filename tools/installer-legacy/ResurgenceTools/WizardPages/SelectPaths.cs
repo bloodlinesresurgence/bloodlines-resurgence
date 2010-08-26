@@ -78,7 +78,7 @@ namespace ResurgenceTools.WizardPages
         {
             bool steamFound = checkSteamDirectory();
             bool vamprFound = checkVampireDirectory();
-            bool tempFound = checkTempDirectory();
+            bool tempFound = true;// checkTempDirectory();
             NextButton.Enabled = (steamFound && vamprFound && tempFound);
         }
 
@@ -117,6 +117,7 @@ namespace ResurgenceTools.WizardPages
 
         private void NextButton_Click(object sender, EventArgs e)
         {
+            CreateTempDirectory_Click(null, null);
             Hide();
 #if !FULL_TOOLSET
             Program.NextForm = new ModDetails(TranslationProvider);
