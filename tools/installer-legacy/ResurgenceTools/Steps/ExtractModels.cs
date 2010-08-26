@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ResurgenceLib;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     internal partial class ExtractModels : GenericExtractFiles
     {

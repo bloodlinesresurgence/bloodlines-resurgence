@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ResurgenceTools.Properties {
+namespace Resurgence.Properties {
     using System;
     
     

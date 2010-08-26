@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools.WizardPages
+﻿namespace Resurgence.WizardPages
 {
     partial class ModDetails
     {

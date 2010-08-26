@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using ResurgenceLib;
 using System.IO;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     /// <summary>
     /// Provides a Language Selection dialogue.

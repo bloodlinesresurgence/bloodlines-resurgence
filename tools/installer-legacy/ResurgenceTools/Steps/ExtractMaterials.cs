@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ResurgenceLib;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     /// <summary>
     /// Extracts the materials so they can be converted in a later step.

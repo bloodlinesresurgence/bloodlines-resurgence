@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using ResurgenceLib;
 using System.IO;
 
-namespace ResurgenceTools.WizardPages
+namespace Resurgence.WizardPages
 {
     public partial class Welcome 
         : ResurgenceWizardPage

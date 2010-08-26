@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using ResurgenceLib;
 using System.Diagnostics;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     internal partial class CopyBaseFiles 
         : GenericRunProcess

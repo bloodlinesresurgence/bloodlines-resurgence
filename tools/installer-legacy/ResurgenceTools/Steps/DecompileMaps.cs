@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.IO;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     /// <summary>
     /// Provides a map decompiler wizard step.

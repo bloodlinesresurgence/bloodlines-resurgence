@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ResurgenceLib;
 
-namespace ResurgenceTools.WizardPages
+namespace Resurgence.WizardPages
 {
     /// <summary>
     /// Provides a page for selecting steps to run.

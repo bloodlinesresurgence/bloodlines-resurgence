@@ -10,7 +10,7 @@ using Microsoft.Win32;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     /// <summary>
     /// Provides a serializable Settings class for various

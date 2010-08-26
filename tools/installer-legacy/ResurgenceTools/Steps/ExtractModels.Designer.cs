@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools.Steps
+﻿namespace Resurgence.Steps
 {
     partial class ExtractModels
     {

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using ResurgenceLib;
 using System.IO;
 
-namespace ResurgenceTools.WizardPages
+namespace Resurgence.WizardPages
 {
     internal partial class ModDetails 
         : ResurgenceWizardPage

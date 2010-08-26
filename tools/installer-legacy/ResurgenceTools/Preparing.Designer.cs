@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools
+﻿namespace Resurgence
 {
     partial class Preparing
     {

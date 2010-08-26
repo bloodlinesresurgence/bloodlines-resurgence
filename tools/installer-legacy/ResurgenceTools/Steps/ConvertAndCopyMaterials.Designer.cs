@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools.Steps
+﻿namespace Resurgence.Steps
 {
     partial class ConvertAndCopyMaterials
     {
@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ConvertAndCopyMaterials
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 350);
             this.Name = "ConvertAndCopyMaterials";
-            this.Text = "ConvertAndCopyMaterials";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

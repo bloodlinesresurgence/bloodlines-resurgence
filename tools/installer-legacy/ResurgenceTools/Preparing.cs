@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ResurgenceLib;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     /// <summary>
     /// Provides a Preparing progress dialogue.

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     /// <summary>
     /// Provides an extended base for Wizard Pages that more directly

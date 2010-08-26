@@ -10,7 +10,7 @@ using ResurgenceLib;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     public partial class CopyOriginalFiles
          : GenericRunProcess

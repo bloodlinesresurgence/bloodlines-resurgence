@@ -11,7 +11,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     /// <summary>
     /// Provides a wizard page to convert materials and copy them to the

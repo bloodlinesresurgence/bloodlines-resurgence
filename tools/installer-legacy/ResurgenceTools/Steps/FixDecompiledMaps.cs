@@ -10,7 +10,7 @@ using ResurgenceLib;
 using System.IO;
 using ResurgenceLib.Tools.Mapfix;
 
-namespace ResurgenceTools.Steps
+namespace Resurgence.Steps
 {
     internal partial class FixDecompiledMaps 
         : GenericRunProcess
