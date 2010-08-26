@@ -10,8 +10,9 @@ using ResurgenceLib;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
+using RevivalLib;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     /// <summary>
     /// Provides a wizard page to convert materials and copy them to the
@@ -101,22 +102,38 @@ namespace ResurgenceTools
         /// </summary>
         /// <param name="info">ProcessStartInfo to start.</param>
         /// <returns></returns>
-        protected void RunProcess(ProcessStartInfo info)
+        protected BinOutput RunProcess(ProcessStartInfo info)
         {
+            BinOutput output = new BinOutput();
+
             // Set standard options
             info.UseShellExecute = false;
             info.CreateNoWindow = true;
-            if (this.CaptureOutput)
-            {
-                info.RedirectStandardOutput = false;
-                info.RedirectStandardError = true;
-            }
+            info.RedirectStandardOutput = true;
+            info.RedirectStandardError = true;
 
 #if DEBUG
-            AppendText(info.FileName + " " + info.Arguments);
+            AppendText(info.FileName + " " + info.Arguments + "\n");
 #endif
 
-            Process p = Process.Start(info);
+            Process p = new Process();
+            p.StartInfo = info;
+            p.OutputDataReceived += delegate(object sender, DataReceivedEventArgs e)
+            {
+                output.StdOutput += e.Data + "\n";
+            };
+            p.ErrorDataReceived += delegate(object sender, DataReceivedEventArgs e)
+            {
+                output.StdError += e.Data + "\n";
+            };
+
+            p.Start();
+
+            if (CaptureOutput)
+            {
+                p.BeginOutputReadLine();
+                p.BeginErrorReadLine();
+            }
 
             while (p.HasExited == false)
             {
@@ -140,6 +157,8 @@ namespace ResurgenceTools
             }
 
             checkOutput(p, true);
+
+            return output;
         }
 
         /// <summary>
@@ -153,6 +172,8 @@ namespace ResurgenceTools
             // Only works if the RedirectStandardOutput flag is on.
             if (p.StartInfo.RedirectStandardOutput == false)
                 return;
+
+            if (CaptureOutput == true) return;
 
             if (p.StandardOutput.EndOfStream == false)
             {
@@ -341,6 +362,18 @@ namespace ResurgenceTools
         protected void ReportProgress(int percent, int raw)
         {
             BackgroundProcessor_ProgressChanged(null, new ProgressChangedEventArgs(percent, raw));
+        }
+
+        /// <summary>
+        /// Set the current status.
+        /// </summary>
+        /// <param name="status"></param>
+        protected void Status(string status)
+        {
+            Description.BeginInvoke(new MethodInvoker(delegate()
+            {
+                Description.Text = status;
+            }));
         }
     }
 }

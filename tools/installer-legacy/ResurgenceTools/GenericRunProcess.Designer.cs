@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools
+﻿namespace Resurgence
 {
     partial class GenericRunProcess
     {
@@ -42,6 +42,8 @@
             this.ContentPanel.Controls.Add(this.Progress);
             this.ContentPanel.Controls.Add(this.Description);
             this.ContentPanel.Controls.Add(this.Log);
+            this.ContentPanel.Controls.Add(this.StartStop);
+            this.ContentPanel.Controls.SetChildIndex(this.StartStop, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Log, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Description, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Progress, 0);
@@ -55,15 +57,9 @@
             // 
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // ControlPanel
+            // CancelWizardButton
             // 
-            this.ControlPanel.Controls.Add(this.StartStop);
-            this.ControlPanel.Controls.SetChildIndex(this.StartStop, 0);
-            this.ControlPanel.Controls.SetChildIndex(this.BackButton, 0);
-            this.ControlPanel.Controls.SetChildIndex(this.CancelWizardButton, 0);
-            this.ControlPanel.Controls.SetChildIndex(this.LanguageButton, 0);
-            this.ControlPanel.Controls.SetChildIndex(this.FinishButton, 0);
-            this.ControlPanel.Controls.SetChildIndex(this.NextButton, 0);
+            this.CancelWizardButton.Location = new System.Drawing.Point(208, 12);
             // 
             // Description
             // 
@@ -85,7 +81,7 @@
             // 
             // StartStop
             // 
-            this.StartStop.Location = new System.Drawing.Point(203, 12);
+            this.StartStop.Location = new System.Drawing.Point(396, 212);
             this.StartStop.Name = "StartStop";
             this.StartStop.Size = new System.Drawing.Size(86, 22);
             this.StartStop.TabIndex = 6;
@@ -124,10 +120,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Description;
-        private System.Windows.Forms.RichTextBox Log;
-        private System.Windows.Forms.Button StartStop;
         protected System.ComponentModel.BackgroundWorker BackgroundProcessor;
         protected System.Windows.Forms.ProgressBar Progress;
+        protected System.Windows.Forms.Label Description;
+        protected System.Windows.Forms.RichTextBox Log;
+        protected System.Windows.Forms.Button StartStop;
     }
 }
