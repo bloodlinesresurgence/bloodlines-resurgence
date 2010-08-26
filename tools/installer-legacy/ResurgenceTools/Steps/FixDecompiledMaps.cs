@@ -42,7 +42,7 @@ namespace ResurgenceTools.Steps
             if (files.Length == 0)
             {
                 AppendText(String.Format(Constant("!NoMapsFound"), src));
-                return Result.Failure;
+                return Result.Success;
             }
 
             AppendText(String.Format(Translate("!StageOneDone"), files.Length) + "\n");
