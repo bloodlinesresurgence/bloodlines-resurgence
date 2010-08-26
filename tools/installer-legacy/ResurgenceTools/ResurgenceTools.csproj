@@ -139,6 +139,10 @@
       <DependentUpon>UpdateAndPatchFiles.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Steps\ViewChangelog.resx">
+      <DependentUpon>ViewChangelog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="WizardPages\FinalPage.resx">
       <DependentUpon>FinalPage.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -175,10 +179,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Documents\Finish-Русский %28Russian%29.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Documents\Welcome-Русский %28Russian%29.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Dependancies\base.rar">
       <Link>Tools\base.rar</Link>
@@ -193,16 +195,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Languages\Documents\Finish-Español %28Spanish%29.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Languages\Documents\Finish-Polish.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Languages\Documents\Welcome-Español %28Spanish%29.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Languages\Documents\Welcome-Polish.rtf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -287,10 +285,16 @@
     <Compile Include="Steps\UpdateAndPatchFiles.Designer.cs">
       <DependentUpon>UpdateAndPatchFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Steps\ViewChangelog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Steps\ViewChangelog.Designer.cs">
+      <DependentUpon>ViewChangelog.cs</DependentUpon>
+    </Compile>
     <Compile Include="WizardPages\FinalPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WizardPages\FinalPage.Designer.cs">
+    <Compile Include="WizardPages\FinalPage.designer.cs">
       <DependentUpon>FinalPage.cs</DependentUpon>
     </Compile>
     <Compile Include="WizardPages\ModDetails.cs">
@@ -353,16 +357,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Español %28Spanish%29.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Deutsch %28German%29.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Polish.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Languages\Русский %28Russian%29.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using ResurgenceLib;
-using ResurgenceTools.WizardPages;
+using Resurgence.WizardPages;
 using System.ComponentModel;
-using ResurgenceTools.Steps;
+using Resurgence.Steps;
 using System.IO;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     /// <summary>
     /// Provides the startup routine for the program, as well as access to global
@@ -270,6 +270,8 @@ namespace ResurgenceTools
                 constructedSteps.Add(typeof(ExtractModels));
             if ((steps & WizardSteps.Update_And_Patch_Files) != 0)
                 constructedSteps.Add(typeof(UpdateAndPatchFiles));
+            if ((steps & WizardSteps.View_Changelog) != 0)
+                constructedSteps.Add(typeof(ViewChangelog));
 
             StepsToRun = constructedSteps.ToArray();
         }
@@ -397,6 +399,7 @@ namespace ResurgenceTools
         Extract_Original_Models = 1 << 9,
         //Copy_New_Models = 1 << 9,
         Update_And_Patch_Files = 1 << 10,
+        View_Changelog = 1 << 11,
 
         All = NONE
             | Extract_General_Files
@@ -409,6 +412,7 @@ namespace ResurgenceTools
             | Extract_Original_Models
             // | Copy_New_Models
             | Update_And_Patch_Files,
+            
 
         INSTALL = NONE
             | Extract_General_Files
