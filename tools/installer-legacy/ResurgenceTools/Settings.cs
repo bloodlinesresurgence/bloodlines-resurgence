@@ -402,6 +402,8 @@ namespace ResurgenceTools
 
                 // Read registry to find install path
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Valve\Steam");
+                if (null == key) return null;
+
                 string regEntry = key.GetValue("SteamPath") as string;
 
                 //string regEntry = Microsoft.Win32.Registry.CurrentUser.GetValue(
