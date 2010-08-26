@@ -34,16 +34,15 @@
             this.BackgroundProcessor = new System.ComponentModel.BackgroundWorker();
             this.Progress = new System.Windows.Forms.ProgressBar();
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
             // 
             this.ContentPanel.Controls.Add(this.Progress);
             this.ContentPanel.Controls.Add(this.Description);
-            this.ContentPanel.Controls.Add(this.StartStop);
             this.ContentPanel.Controls.Add(this.Log);
             this.ContentPanel.Controls.SetChildIndex(this.Log, 0);
-            this.ContentPanel.Controls.SetChildIndex(this.StartStop, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Description, 0);
             this.ContentPanel.Controls.SetChildIndex(this.Progress, 0);
             // 
@@ -56,10 +55,20 @@
             // 
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // ControlPanel
+            // 
+            this.ControlPanel.Controls.Add(this.StartStop);
+            this.ControlPanel.Controls.SetChildIndex(this.StartStop, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.BackButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.CancelWizardButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.LanguageButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.FinishButton, 0);
+            this.ControlPanel.Controls.SetChildIndex(this.NextButton, 0);
+            // 
             // Description
             // 
             this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(12, 13);
+            this.Description.Location = new System.Drawing.Point(59, 60);
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(69, 13);
             this.Description.TabIndex = 3;
@@ -67,15 +76,16 @@
             // 
             // Log
             // 
-            this.Log.Location = new System.Drawing.Point(15, 29);
+            this.Log.Location = new System.Drawing.Point(15, 131);
             this.Log.Name = "Log";
-            this.Log.Size = new System.Drawing.Size(467, 177);
+            this.Log.Size = new System.Drawing.Size(467, 75);
             this.Log.TabIndex = 4;
             this.Log.Text = "";
+            this.Log.Visible = false;
             // 
             // StartStop
             // 
-            this.StartStop.Location = new System.Drawing.Point(396, 212);
+            this.StartStop.Location = new System.Drawing.Point(203, 12);
             this.StartStop.Name = "StartStop";
             this.StartStop.Size = new System.Drawing.Size(86, 22);
             this.StartStop.TabIndex = 6;
@@ -92,7 +102,7 @@
             // 
             // Progress
             // 
-            this.Progress.Location = new System.Drawing.Point(15, 212);
+            this.Progress.Location = new System.Drawing.Point(62, 76);
             this.Progress.Name = "Progress";
             this.Progress.Size = new System.Drawing.Size(371, 22);
             this.Progress.TabIndex = 7;
@@ -106,6 +116,8 @@
             this.Text = "ConvertAndCopyMaterials";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

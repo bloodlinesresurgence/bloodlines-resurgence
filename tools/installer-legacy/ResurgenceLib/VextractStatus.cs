@@ -86,6 +86,10 @@ namespace ResurgenceLib
         public VextractStatus()
         {
             InitializeComponent();
+
+#if DEBUG
+            Log.Visible = true;
+#endif
         }
 
         /// <summary>
@@ -297,6 +301,7 @@ namespace ResurgenceLib
 
         private void AppendText(string text)
         {
+#if DEBUG
             if (Log.InvokeRequired == false)
             {
                 Log.AppendText(text);
@@ -309,6 +314,7 @@ namespace ResurgenceLib
             }
             else
                 Log.Invoke(new AppendTextDelegate(AppendText), new object[] { text });
+#endif
         }
         private delegate void AppendTextDelegate(string text);
 

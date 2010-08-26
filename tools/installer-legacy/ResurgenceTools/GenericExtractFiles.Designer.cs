@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Vextract = new ResurgenceLib.VextractStatus();
             this.Description = new System.Windows.Forms.Label();
+            this.Vextract = new ResurgenceLib.VextractStatus();
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContentPanel
@@ -49,26 +50,26 @@
             // 
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // Vextract
-            // 
-            this.Vextract.ExemptionPatterns = null;
-            this.Vextract.Location = new System.Drawing.Point(15, 29);
-            this.Vextract.Name = "Vextract";
-            this.Vextract.OutputDirectory = null;
-            this.Vextract.Pattern = null;
-            this.Vextract.Size = new System.Drawing.Size(467, 205);
-            this.Vextract.SkeletonOnly = false;
-            this.Vextract.TabIndex = 3;
-            this.Vextract.VPKDirectory = null;
-            // 
             // Description
             // 
             this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(12, 13);
+            this.Description.Location = new System.Drawing.Point(12, 81);
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(122, 13);
             this.Description.TabIndex = 4;
             this.Description.Text = "Extracting general files...";
+            // 
+            // Vextract
+            // 
+            this.Vextract.ExemptionPatterns = null;
+            this.Vextract.Location = new System.Drawing.Point(15, 97);
+            this.Vextract.Name = "Vextract";
+            this.Vextract.OutputDirectory = null;
+            this.Vextract.Pattern = null;
+            this.Vextract.Size = new System.Drawing.Size(467, 137);
+            this.Vextract.SkeletonOnly = false;
+            this.Vextract.TabIndex = 3;
+            this.Vextract.VPKDirectory = null;
             // 
             // GenericExtractFiles
             // 
@@ -80,6 +81,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExtractGeneralFiles_FormClosing);
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

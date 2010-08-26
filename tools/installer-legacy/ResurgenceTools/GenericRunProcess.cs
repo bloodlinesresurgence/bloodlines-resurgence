@@ -47,6 +47,9 @@ namespace ResurgenceTools
             InitializeComponent();
 
             AutoProceedStep = true;
+#if DEBUG
+            Log.Visible = true;
+#endif
         }
 
         protected override void AutoProceed_Start()
@@ -249,15 +252,16 @@ namespace ResurgenceTools
         /// <param name="text"></param>
         protected void AppendText(string text)
         {
+#if DEBUG
             if (Log.InvokeRequired == false)
             {
                 Log.AppendText(text);
                 RTFHelper.ScrollToEnd(Log);
             }
             else
-                Log.Invoke(new AppendTextDelegate(AppendText), new object[] { text });
+                Log.Invoke(new MethodInvoker(() => AppendText(text)));
+#endif
         }
-        delegate void AppendTextDelegate(string text);
 
         /// <summary>
         /// Gets a list of directories contained in the given directory, recursively.

@@ -48,8 +48,8 @@
             this.panel1.Controls.Add(this.StartButton);
             this.panel1.Controls.Add(this.Progress);
             this.panel1.Controls.Add(this.CancelButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 147);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 23);
             this.panel1.TabIndex = 2;
@@ -96,13 +96,14 @@
             // Log
             // 
             this.Log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Log.Location = new System.Drawing.Point(0, 0);
+            this.Log.Location = new System.Drawing.Point(0, 23);
             this.Log.Name = "Log";
             this.Log.ReadOnly = true;
             this.Log.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.Log.Size = new System.Drawing.Size(300, 147);
             this.Log.TabIndex = 3;
             this.Log.Text = "";
+            this.Log.Visible = false;
             // 
             // VextractStatus
             // 
