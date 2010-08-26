@@ -138,7 +138,7 @@ Description        = Extracting materials to temporary directory...
 
 [ConvertAndCopyMaterials]
 WizardDescription  = Convert and Copy Materials
-Description		   = This stage may take some time. Click Start to begin.
+Description		   = Converting materials, this will take some time...
 !StageOne		   = Stage One: Finding all material directories...
 !StageOneDone      = Finished: {0} directories found.
 !StageTwo          = Stage Two: Converting and copying materials...
@@ -163,9 +163,9 @@ Description        = Fixes decompiled maps and moves them to the mod directory
 !StageTwoCopy      = moving...
 !Done              = Done.
 
-[CopyReplacementFiles]
-WizardDescription  = Copy Replacement Files
-Description        = Copies replacement files to the mod directory.
+[CopyBaseFiles]
+WizardDescription  = Copy Base Files
+Description        = Copies base required files to the mod directory.
 !Starting          = Extracting...
 
 [ExtractModels]
