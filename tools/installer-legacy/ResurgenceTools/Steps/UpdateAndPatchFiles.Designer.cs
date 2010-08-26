@@ -1,4 +1,4 @@
-﻿namespace ResurgenceTools.Steps
+﻿namespace Resurgence.Steps
 {
     partial class UpdateAndPatchFiles
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WizardDescription
@@ -45,6 +46,8 @@
             this.Text = "UpdateAndPatchFiles";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
