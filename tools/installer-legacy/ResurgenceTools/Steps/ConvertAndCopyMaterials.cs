@@ -92,7 +92,7 @@ namespace Resurgence.Steps
                 // Pause whilst it executes
                 while (app.HasExited == false)
                     /* Do nothing */
-                    Thread.Sleep(1);
+                    Thread.Sleep(10);
                     ;
 
                 string destination = currentDirectory.Replace(baseDirectory, Program.Settings.DestinationDirectory + "\\materials");

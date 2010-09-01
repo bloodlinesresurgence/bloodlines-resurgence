@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Description
@@ -45,6 +46,8 @@
             this.Text = "ExtractMaterials";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -199,7 +199,6 @@
 
         #endregion
 
-        private DaedalusLib.ExtendedPanel extendedPanel3;
 
         /// <summary>
         /// Title of the wizard, displayed at the top of the page.
@@ -244,6 +243,7 @@
         /// </summary>
         protected System.Windows.Forms.Button FinishButton;
         protected DaedalusLib.ExtendedPanel ControlPanel;
+        protected DaedalusLib.ExtendedPanel extendedPanel3;
     }
 }
 

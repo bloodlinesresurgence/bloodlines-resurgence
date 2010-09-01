@@ -612,5 +612,20 @@ namespace Resurgence
             get { return (int)this["WinPos_Y", -1]; }
             set { this["WinPos_Y"] = value; }
         }*/
+
+        internal bool DebugLog = false;
+
+        /// <summary>
+        /// Convert the Settings object into a string, anonymizing as nessesary
+        /// </summary>
+        /// <returns></returns>
+        internal string ConvertToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("ModDirectory = " + ModDirectory);
+            sb.AppendLine("SteamDirectory = " + SteamDirectory);
+            sb.AppendLine("VampireDirectory = " + VampireDirectory);
+            return sb.ToString();
+        }
     }
 }

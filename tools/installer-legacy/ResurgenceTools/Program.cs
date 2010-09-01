@@ -130,6 +130,7 @@ namespace Resurgence
             List<string> failedCopies = new List<string>();
 
             if (Directory.Exists(destinationDirectory) == false)
+            {
                 try
                 {
                     Directory.CreateDirectory(destinationDirectory);
@@ -139,55 +140,64 @@ namespace Resurgence
                     migrationError("Failed to create destination directory: ", destinationDirectory + Environment.NewLine + ex.Message);
                     return;
                 }
+            }
 
             Preparing preparing = null;
+            NodeCS.Callback callback = delegate()
+            {
+                foreach (FileInfo sourceInfo in files)
+                {
+                    string destinationFile = destinationDirectory + sourceInfo.Name;
+                    if (File.Exists(destinationFile))
+                    {
+                        // Check file times - skips file if the destination is newer than the source.
+                        FileInfo destInfo = new FileInfo(destinationFile);
+                        if (destInfo.LastWriteTimeUtc > sourceInfo.LastWriteTimeUtc)
+                            continue;
+                    }
+
+                    try
+                    {
+                        File.Copy(sourceInfo.FullName, destinationFile, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        failedCopies.Add(sourceInfo.Name + ": " + ex.Message);
+                    }
+
+                    if (dialog)
+                    {
+                        ResurgenceLib.Threading.ProgressBars.SetProgress(preparing.Progress, preparing.Progress.Value + 1);
+                    }
+                }
+
+                if (failedCopies.Count > 0)
+                {
+                    string fileList = "";
+                    foreach (string currentFailed in failedCopies)
+                        fileList += currentFailed + Environment.NewLine;
+                    migrationError("Failed to copy the following files to the data directory:", fileList);
+                }
+
+                if (dialog)
+                {
+                    preparing.Close();
+                }
+            };
             if (dialog)
             {
-                preparing = new Preparing(Program.Settings.TranslationProvider);
+                preparing = new Preparing(Program.Settings.TranslationProvider, callback);
                 preparing.Show();
 
                 ResurgenceLib.Threading.ProgressBars.SetProgressStyle(preparing.Progress, ProgressBarStyle.Continuous);
                 ResurgenceLib.Threading.ProgressBars.SetProgressMax(preparing.Progress, files.Length);
             }
-
-            foreach (FileInfo sourceInfo in files)
+            else
             {
-                string destinationFile = destinationDirectory + sourceInfo.Name;
-                if (File.Exists(destinationFile))
-                {
-                    // Check file times - skips file if the destination is newer than the source.
-                    FileInfo destInfo = new FileInfo(destinationFile);
-                    if (destInfo.LastWriteTimeUtc > sourceInfo.LastWriteTimeUtc)
-                        continue;
-                }
-
-                try
-                {
-                    File.Copy(sourceInfo.FullName, destinationFile, true);
-                }
-                catch (Exception ex)
-                {
-                    failedCopies.Add(sourceInfo.Name + ": " + ex.Message);
-                }
-
-                if (dialog)
-                {
-                    ResurgenceLib.Threading.ProgressBars.SetProgress(preparing.Progress, preparing.Progress.Value + 1);
-                }
+                callback();
             }
 
-            if (failedCopies.Count > 0)
-            {
-                string fileList = "";
-                foreach (string currentFailed in failedCopies)
-                    fileList += currentFailed + Environment.NewLine;
-                migrationError("Failed to copy the following files to the data directory:", fileList);
-            }
-
-            if (dialog)
-            {
-                preparing.Close();
-            }
+            
         }
 
         /// <summary>
@@ -384,6 +394,7 @@ namespace Resurgence
     /// <summary>
     /// Specifies the wizard steps to run.
     /// </summary>
+    [Serializable]
     [Flags]
     internal enum WizardSteps
     {

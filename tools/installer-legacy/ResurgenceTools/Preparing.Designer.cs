@@ -62,6 +62,7 @@
             this.Name = "Preparing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloodlines Revial Toolkit";
+            this.Shown += new System.EventHandler(this.Preparing_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
