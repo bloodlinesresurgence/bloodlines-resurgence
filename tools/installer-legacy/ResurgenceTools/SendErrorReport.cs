@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using ResurgenceLib;
 using Resurgence;
 using System.IO;
+using System.IO.Compression;
+using System.Text.RegularExpressions;
 
 namespace ResurgenceTools
 {
@@ -99,6 +101,10 @@ namespace ResurgenceTools
                 {
                     SetProgressState(null, 0);
                     UpdateContents();
+                    SendReport.BeginInvoke(new MethodInvoker(delegate()
+                    {
+                        SendReport.Enabled = true;
+                    }));
                 }
             });
             thread.Start();
@@ -139,6 +145,113 @@ namespace ResurgenceTools
         private void UpdateReports_Tick(object sender, EventArgs e)
         {
             UpdateContents();
+        }
+
+        private void SendReport_Click(object sender, EventArgs e)
+        {
+            NodeCS.Async.run(delegate()
+            {
+                // Disable report button
+                this.BeginInvoke(new MethodInvoker(delegate() { this.Enabled = false; }));
+
+                SetProgressState("Compressing report", 25);
+                UTF8Encoding encoding = new UTF8Encoding();
+                string report_content = content.serializeToString();
+                MemoryStream input = new MemoryStream(encoding.GetBytes(report_content));
+                MemoryStream output = new MemoryStream();
+                DeflateStream deflate = new DeflateStream(output, CompressionMode.Compress);
+                input.WriteTo(deflate);
+                byte[] compressed = new byte[output.Length];
+                output.Seek(0, SeekOrigin.Begin);
+                output.Read(compressed, 0, (int)output.Length);
+                report_content = encoding.GetString(compressed);
+                deflate.Close();
+                input.Close();
+
+                SetProgressState("Preparing to upload", 50);
+                System.Collections.Specialized.NameValueCollection parameters = new System.Collections.Specialized.NameValueCollection();
+                parameters.Add("name", NameEntry.Text);
+                parameters.Add("email", EmailEntry.Text);
+                parameters.Add("version", Application.ProductVersion);
+                parameters.Add("content", report_content);
+
+                // Create the key needed
+                string crcs = "";
+                string KEY = "fitz and the fool";
+                foreach (string pKey in parameters.AllKeys)
+                {
+                    crcs += Crc32.Calculate(parameters[pKey]+KEY).ToString();
+                }
+                string key = Crc32.Calculate(crcs).ToString();
+                parameters.Add("key", key);
+
+                // Post to error receiver
+                SetProgressState("Uploading report", 70);
+                Snowball.Common.PostSubmitter submitter = new Snowball.Common.PostSubmitter(
+                    "http://www.bloodlinesresurgence.com/error_reports/receive.php", parameters);
+                submitter.Type = Snowball.Common.PostSubmitter.PostTypeEnum.Post;
+                string result = submitter.Post();
+                MatchCollection parts = Regex.Matches(result, @"^(\d+),(.*)$");
+                if (0 == parts.Count || 3 != parts[0].Groups.Count)
+                {
+                    this.BeginInvoke(new MethodInvoker(delegate()
+                    {
+                        MessageBox.Show("Error: Unrecognized return message: " + result);
+                    }));
+                }
+                else
+                {
+                    int code = Int32.Parse(parts[0].Groups[1].Value);
+                    string message = parts[0].Groups[2].Value;
+                    NodeCS.Callback callback;
+                    switch (code)
+                    {
+                        case 0:     // Success!
+                            callback = delegate()
+                            {
+                                MessageBox.Show(this,
+                                    "Success! Your error report number is: " + message + Environment.NewLine +
+                                    "Use this number if you wish to contact us regarding the error report.",
+                                    "Send Error Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            };
+                            break;
+
+                        case 1:     // Database error
+                        case 2:     // Error inserting data
+                            callback = delegate()
+                            {
+                                MessageBox.Show(this,
+                                    "Error submitting error report, a database error occurred", "Send Error Report",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            };
+                            break;
+
+                        case 128:   // Key doesn't fit
+                            callback = delegate()
+                            {
+                                MessageBox.Show(this,
+                                    "This key doesn't fit ... could not send report.", "Send Error Report",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            };
+                            break;
+
+                        default:
+                            callback = delegate()
+                            {
+                                MessageBox.Show(this,
+                                    "Unknown error code: " + result, "Send Error Report",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            };
+                            break;
+                    }
+                    this.BeginInvoke(new MethodInvoker(delegate()
+                    {
+                        callback();
+                        this.Enabled = true;
+                        SetProgressState(null, 0);
+                    }));
+                }
+            });
         }
     }
 

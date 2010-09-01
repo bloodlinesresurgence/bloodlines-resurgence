@@ -88,12 +88,14 @@
             // 
             // SendReport
             // 
+            this.SendReport.Enabled = false;
             this.SendReport.Location = new System.Drawing.Point(376, 41);
             this.SendReport.Name = "SendReport";
             this.SendReport.Size = new System.Drawing.Size(75, 23);
             this.SendReport.TabIndex = 6;
             this.SendReport.Text = "Send Report";
             this.SendReport.UseVisualStyleBackColor = true;
+            this.SendReport.Click += new System.EventHandler(this.SendReport_Click);
             // 
             // EmailEntry
             // 
