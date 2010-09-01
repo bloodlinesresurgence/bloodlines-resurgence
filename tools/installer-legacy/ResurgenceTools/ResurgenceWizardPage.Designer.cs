@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.CheckForUpdates = new System.Windows.Forms.Timer(this.components);
             this.UpdateCheck = new System.Windows.Forms.LinkLabel();
+            this.SendErrorReport = new System.Windows.Forms.Button();
             this.ControlPanel.SuspendLayout();
+            this.extendedPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // CancelWizardButton
@@ -54,6 +56,13 @@
             this.ControlPanel.Controls.SetChildIndex(this.FinishButton, 0);
             this.ControlPanel.Controls.SetChildIndex(this.NextButton, 0);
             // 
+            // extendedPanel3
+            // 
+            this.extendedPanel3.Controls.Add(this.SendErrorReport);
+            this.extendedPanel3.Controls.SetChildIndex(this.SendErrorReport, 0);
+            this.extendedPanel3.Controls.SetChildIndex(this.WizardTitle, 0);
+            this.extendedPanel3.Controls.SetChildIndex(this.WizardDescription, 0);
+            // 
             // CheckForUpdates
             // 
             this.CheckForUpdates.Enabled = true;
@@ -71,6 +80,17 @@
             this.UpdateCheck.Visible = false;
             this.UpdateCheck.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateCheck_LinkClicked);
             // 
+            // SendErrorReport
+            // 
+            this.SendErrorReport.Location = new System.Drawing.Point(389, 7);
+            this.SendErrorReport.Name = "SendErrorReport";
+            this.SendErrorReport.Size = new System.Drawing.Size(93, 42);
+            this.SendErrorReport.TabIndex = 1;
+            this.SendErrorReport.Text = "Send Error Report";
+            this.SendErrorReport.UseVisualStyleBackColor = true;
+            this.SendErrorReport.Visible = false;
+            this.SendErrorReport.Click += new System.EventHandler(this.SendErrorReport_Click);
+            // 
             // ResurgenceWizardPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,6 +103,8 @@
             this.LocationChanged += new System.EventHandler(this.ResurgenceWizardPage_LocationChanged);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
+            this.extendedPanel3.ResumeLayout(false);
+            this.extendedPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -91,5 +113,6 @@
 
         private System.Windows.Forms.LinkLabel UpdateCheck;
         private System.Windows.Forms.Timer CheckForUpdates;
+        private System.Windows.Forms.Button SendErrorReport;
     }
 }

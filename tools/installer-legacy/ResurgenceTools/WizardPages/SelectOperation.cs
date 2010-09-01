@@ -36,6 +36,8 @@ namespace Resurgence.WizardPages
         {
             Program.Settings.AutoProceed = true;
 
+            Program.Settings.DebugLog = DebugLog.Checked;
+
             // Always patch files
             WizardSteps steps = WizardSteps.Update_And_Patch_Files;
 
@@ -57,6 +59,12 @@ namespace Resurgence.WizardPages
                 Program.NextStep();
             }
             Close();
+        }
+
+        private void DebugLogHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Records various installation details so that you may send an error report to us",
+                "Debug Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

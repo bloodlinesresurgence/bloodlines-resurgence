@@ -33,7 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateOption = new System.Windows.Forms.RadioButton();
             this.SelectSteps = new System.Windows.Forms.CheckBox();
+            this.DebugLog = new System.Windows.Forms.CheckBox();
+            this.DebugLogHelp = new System.Windows.Forms.Button();
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WizardDescription
@@ -43,6 +46,8 @@
             // 
             // ContentPanel
             // 
+            this.ContentPanel.Controls.Add(this.DebugLogHelp);
+            this.ContentPanel.Controls.Add(this.DebugLog);
             this.ContentPanel.Controls.Add(this.SelectSteps);
             this.ContentPanel.Controls.Add(this.InstallOption);
             this.ContentPanel.Controls.Add(this.UpdateOption);
@@ -53,6 +58,8 @@
             this.ContentPanel.Controls.SetChildIndex(this.UpdateOption, 0);
             this.ContentPanel.Controls.SetChildIndex(this.InstallOption, 0);
             this.ContentPanel.Controls.SetChildIndex(this.SelectSteps, 0);
+            this.ContentPanel.Controls.SetChildIndex(this.DebugLog, 0);
+            this.ContentPanel.Controls.SetChildIndex(this.DebugLogHelp, 0);
             // 
             // NextButton
             // 
@@ -103,12 +110,32 @@
             // SelectSteps
             // 
             this.SelectSteps.AutoSize = true;
-            this.SelectSteps.Location = new System.Drawing.Point(15, 217);
+            this.SelectSteps.Location = new System.Drawing.Point(15, 140);
             this.SelectSteps.Name = "SelectSteps";
             this.SelectSteps.Size = new System.Drawing.Size(187, 17);
             this.SelectSteps.TabIndex = 5;
             this.SelectSteps.Text = "Advanced: Select the steps to run";
             this.SelectSteps.UseVisualStyleBackColor = true;
+            // 
+            // DebugLog
+            // 
+            this.DebugLog.AutoSize = true;
+            this.DebugLog.Location = new System.Drawing.Point(15, 217);
+            this.DebugLog.Name = "DebugLog";
+            this.DebugLog.Size = new System.Drawing.Size(159, 17);
+            this.DebugLog.TabIndex = 6;
+            this.DebugLog.Text = "DEBUG: Enable Debug Log";
+            this.DebugLog.UseVisualStyleBackColor = true;
+            // 
+            // DebugLogHelp
+            // 
+            this.DebugLogHelp.Location = new System.Drawing.Point(203, 211);
+            this.DebugLogHelp.Name = "DebugLogHelp";
+            this.DebugLogHelp.Size = new System.Drawing.Size(29, 23);
+            this.DebugLogHelp.TabIndex = 7;
+            this.DebugLogHelp.Text = "?";
+            this.DebugLogHelp.UseVisualStyleBackColor = true;
+            this.DebugLogHelp.Click += new System.EventHandler(this.DebugLogHelp_Click);
             // 
             // SelectOperation
             // 
@@ -119,6 +146,8 @@
             this.Text = "SelectOperation";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -130,5 +159,7 @@
         private System.Windows.Forms.Label Install;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox SelectSteps;
+        private System.Windows.Forms.Button DebugLogHelp;
+        private System.Windows.Forms.CheckBox DebugLog;
     }
 }

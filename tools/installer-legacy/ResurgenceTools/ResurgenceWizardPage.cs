@@ -60,6 +60,9 @@ namespace Resurgence
             InitializeComponent();
 
             LoadPosition();
+
+            if (Program.Settings.DebugLog)
+                SendErrorReport.Visible = true;
         }
 
         /// <summary>
@@ -330,6 +333,12 @@ namespace Resurgence
         private void UpdateCheck_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(UpdateCheck.Tag as string);
+        }
+
+        private void SendErrorReport_Click(object sender, EventArgs e)
+        {
+            ResurgenceTools.SendErrorReport form = new ResurgenceTools.SendErrorReport(TranslationProvider);
+            form.ShowDialog(this);
         }
     }
 }
