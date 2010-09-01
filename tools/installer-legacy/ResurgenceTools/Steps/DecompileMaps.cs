@@ -45,6 +45,8 @@ namespace Resurgence.Steps
             string[] maps = Directory.GetFiles(mapdir, "*.bsp");
             SetProgressMax(maps.Length);
 
+            LibCommunications.gAddLog(String.Format("About to convert {0} maps", maps.Length));
+
             ProcessStartInfo vmex = new ProcessStartInfo(Program.Settings.Tools_Directory + "\\vmex.exe");
             vmex.WorkingDirectory = mapdir;
             vmex.UseShellExecute = false;

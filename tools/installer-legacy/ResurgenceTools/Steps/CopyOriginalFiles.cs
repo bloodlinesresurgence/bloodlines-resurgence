@@ -60,8 +60,12 @@ namespace Resurgence.Steps
 
             if (0 == toCopy.Count)
             {
+                LibCommunications.gAddLog("No original files found to copy");
                 return Result.Success;
             }
+
+            LibCommunications.gAddLog(String.Format("Copying {0} original files",
+                toCopy.Count));
 
             int count = toCopy.Count;
             string copyStr = TranslationProvider.Translate("!StageTwoCopy", this.Name) + " ";

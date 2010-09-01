@@ -41,9 +41,12 @@ namespace Resurgence.Steps
 
             if (files.Length == 0)
             {
+                LibCommunications.gAddLog("No maps found to fix");
                 AppendText(String.Format(Constant("!NoMapsFound"), src));
                 return Result.Success;
             }
+
+            LibCommunications.gAddLog(String.Format("Found {0} maps to fix", files.Length));
 
             AppendText(String.Format(Translate("!StageOneDone"), files.Length) + "\n");
             SetProgressMax(files.Length - 1);

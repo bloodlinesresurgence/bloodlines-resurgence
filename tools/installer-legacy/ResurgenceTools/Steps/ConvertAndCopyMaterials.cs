@@ -57,6 +57,7 @@ namespace Resurgence.Steps
                 MessageBox.Show(this, "Could not find any materials to convert! Please consider sending an error report",
                     "Convert and Copy Materials", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return Result.Failure;
+                LibCommunications.gAddLog("No materials found to convert");
 #endif
             }
 
