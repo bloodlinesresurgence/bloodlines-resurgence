@@ -16,5 +16,11 @@ namespace ResurgenceLib
         /// <param name="language"></param>
         /// <returns></returns>
         string GetLanguageFile(string language);
+
+        /// <summary>
+        /// Add a log item (usually for debug logging, in case the user is having issues)
+        /// </summary>
+        /// <param name="text"></param>
+        void AddLog(string text);
     }
 }
