@@ -52,7 +52,12 @@ namespace Resurgence.Steps
             {
                 if (Program.Settings.IgnoreCancelExtraction == true)
                     return Result.Success;
+
+#if !DEBUG
+                MessageBox.Show(this, "Could not find any materials to convert! Please consider sending an error report",
+                    "Convert and Copy Materials", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return Result.Failure;
+#endif
             }
 
             AppendText(String.Format(TranslationProvider.Translate("!StageOneDone", this.Name) + "\n", DirectoryList.Length));

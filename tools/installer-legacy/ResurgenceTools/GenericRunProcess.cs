@@ -113,8 +113,11 @@ namespace Resurgence
             info.RedirectStandardError = true;
 
 #if DEBUG
-            AppendText(info.FileName + " " + info.Arguments + "\n");
+            AppendText(
+#else
+            LibCommunications.gAddLog(
 #endif
+                info.FileName + " " + info.Arguments + "\n");
 
             Process p = new Process();
             p.StartInfo = info;
@@ -281,6 +284,8 @@ namespace Resurgence
             }
             else
                 Log.Invoke(new MethodInvoker(() => AppendText(text)));
+#else
+            LibCommunications.gAddLog(text);
 #endif
         }
 

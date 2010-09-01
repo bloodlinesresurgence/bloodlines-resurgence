@@ -89,6 +89,8 @@ namespace ResurgenceLib
 
 #if DEBUG
             Log.Visible = true;
+            StartButton.Visible = true;
+            CancelButton.Visible = true;
 #endif
         }
 
@@ -314,6 +316,8 @@ namespace ResurgenceLib
             }
             else
                 Log.Invoke(new AppendTextDelegate(AppendText), new object[] { text });
+#else
+            Lib.CommunicationsObject.AddLog(text);
 #endif
         }
         private delegate void AppendTextDelegate(string text);
