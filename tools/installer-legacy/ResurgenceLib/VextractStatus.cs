@@ -313,6 +313,7 @@ namespace ResurgenceLib
                 Log.SelectionLength = 0;
                 Log.ScrollToCaret();*/
                 RTFHelper.ScrollToEnd(Log);
+                Lib.CommunicationsObject.AddLog(text);
             }
             else
                 Log.Invoke(new AppendTextDelegate(AppendText), new object[] { text });
