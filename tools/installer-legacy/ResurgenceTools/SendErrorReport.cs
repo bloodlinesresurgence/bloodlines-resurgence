@@ -215,6 +215,11 @@ namespace ResurgenceTools
                                     "Success! Your error report number is: " + message + Environment.NewLine +
                                     "Use this number if you wish to contact us regarding the error report.",
                                     "Send Error Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.BeginInvoke(new MethodInvoker(delegate()
+                                {
+                                    CurrentAction.Text = "Your report number: " + message;
+                                    Progress.Visible = false;
+                                }));
                             };
                             break;
 
