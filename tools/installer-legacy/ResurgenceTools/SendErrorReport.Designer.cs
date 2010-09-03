@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendErrorReport));
             this.panel1 = new System.Windows.Forms.Panel();
             this.AdditionalInformation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -116,12 +117,12 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(237, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(133, 46);
             this.label1.TabIndex = 3;
-            this.label1.Text = "(Optional)";
+            this.label1.Text = "Please enter a name and / or email address";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NameEntry
             // 
@@ -218,6 +219,7 @@
             this.Controls.Add(this.ReportContentsBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SendErrorReport";
             this.Text = "SendErrorReport";
             this.panel1.ResumeLayout(false);
