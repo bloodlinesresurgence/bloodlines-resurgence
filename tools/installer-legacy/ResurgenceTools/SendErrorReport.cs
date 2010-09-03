@@ -12,7 +12,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 
-namespace ResurgenceTools
+namespace Resurgence
 {
     public partial class SendErrorReport : TranslatedForm
     {
