@@ -337,8 +337,13 @@ namespace Resurgence
 
         private void SendErrorReport_Click(object sender, EventArgs e)
         {
-            ResurgenceTools.SendErrorReport form = new ResurgenceTools.SendErrorReport(TranslationProvider);
+            Resurgence.SendErrorReport form = new Resurgence.SendErrorReport(TranslationProvider);
             form.ShowDialog(this);
+        }
+
+        private void ResurgenceWizardPage_Shown(object sender, EventArgs e)
+        {
+            CheckForUpdates.Enabled = true;
         }
     }
 }

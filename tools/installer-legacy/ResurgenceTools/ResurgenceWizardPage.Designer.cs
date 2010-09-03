@@ -66,7 +66,6 @@
             // 
             // CheckForUpdates
             // 
-            this.CheckForUpdates.Enabled = true;
             this.CheckForUpdates.Tick += new System.EventHandler(this.CheckForUpdates_Tick);
             // 
             // UpdateCheck
@@ -100,6 +99,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResurgenceWizardPage";
             this.Text = "ResurgenceWizardPage";
+            this.Shown += new System.EventHandler(this.ResurgenceWizardPage_Shown);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ResurgenceWizardPage_FormClosed);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ResurgenceWizardPage_FormClosing);
             this.LocationChanged += new System.EventHandler(this.ResurgenceWizardPage_LocationChanged);
