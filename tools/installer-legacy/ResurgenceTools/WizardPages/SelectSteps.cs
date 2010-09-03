@@ -28,6 +28,9 @@ namespace Resurgence.WizardPages
 #if DEBUG
             IgnoreCancelExtraction.Visible = true;
             IgnoreCancelExtraction.Checked = true;
+            AutoProceed.Visible = true;
+#else
+            IgnoreCancelExtraction.Checked = false;
 #endif
 
             AutoProceed.Checked = Program.Settings.AutoProceed;
