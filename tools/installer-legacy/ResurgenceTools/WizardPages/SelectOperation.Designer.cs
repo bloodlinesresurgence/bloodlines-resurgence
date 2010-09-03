@@ -127,9 +127,9 @@
             this.DebugLog.AutoSize = true;
             this.DebugLog.Location = new System.Drawing.Point(15, 217);
             this.DebugLog.Name = "DebugLog";
-            this.DebugLog.Size = new System.Drawing.Size(159, 17);
+            this.DebugLog.Size = new System.Drawing.Size(115, 17);
             this.DebugLog.TabIndex = 6;
-            this.DebugLog.Text = "DEBUG: Enable Debug Log";
+            this.DebugLog.Text = "Enable Debug Log";
             this.DebugLog.UseVisualStyleBackColor = true;
             // 
             // DebugLogHelp
