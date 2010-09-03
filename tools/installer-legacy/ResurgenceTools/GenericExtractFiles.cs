@@ -45,6 +45,19 @@ namespace Resurgence.Steps
 
         protected void StartExtraction()
         {
+            // Create VPK index
+            try
+            {
+                ResurgenceLib.Tools.Vextract.Vextract.CreateIndex(System.IO.Path.Combine(Program.Settings.VampireDirectory, "Vampire"));
+            }
+            catch (Exception ex)
+            {
+                LibCommunications.gAddLog("Error indexing VPKs: " + ex.Message);
+                MessageBox.Show(this, "Error indexing Vampire data files (VPKs): " + System.Environment.NewLine + ex.Message,
+                    "Extract files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Vextract.OutputDirectory = outputDirectory;
             Vextract.VPKDirectory = Program.Settings.VPKDirectory;
             Vextract.Pattern = extractPattern;
