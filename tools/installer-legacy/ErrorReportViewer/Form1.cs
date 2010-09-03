@@ -23,22 +23,8 @@ namespace ErrorReportViewer
             Snowball.Common.PostSubmitter submitter = new Snowball.Common.PostSubmitter(
                 "http://www.bloodlinesresurgence.com/error_reports/get.php", p);
             string content = submitter.Post();
-            UTF8Encoding encoding = new UTF8Encoding();
-            byte[] content_b = encoding.GetBytes(content);
-            System.IO.MemoryStream input = new System.IO.MemoryStream(content_b);
-            System.IO.MemoryStream output = new System.IO.MemoryStream();
-            System.IO.Compression.DeflateStream deflate = new System.IO.Compression.DeflateStream(input, System.IO.Compression.CompressionMode.Decompress);
-            byte[] buffer = new byte[4096];
-            int numRead = 0;
-            while ((numRead = deflate.Read(buffer, 0, buffer.Length)) != 0)
-            {
-                output.Write(buffer, 0, numRead);
-            }
-            output.Seek(0, System.IO.SeekOrigin.Begin);
-            byte[] final_buffer = new byte[output.Length];
-            string final = encoding.GetString(final_buffer);
 
-            Report.Text = final;
+            Report.Text = ResurgenceLib.Compression.StringDecompress(content);
         }
     }
 }
