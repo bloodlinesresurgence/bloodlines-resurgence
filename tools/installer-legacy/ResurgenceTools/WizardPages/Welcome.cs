@@ -31,9 +31,8 @@ namespace Resurgence.WizardPages
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-            webBrowser1.Dispose();
             Hide();
-            Program.NextForm = new SelectPaths(TranslationProvider);
+            Program.NextForm = new Readme(TranslationProvider);
             Close();
         }
     }
