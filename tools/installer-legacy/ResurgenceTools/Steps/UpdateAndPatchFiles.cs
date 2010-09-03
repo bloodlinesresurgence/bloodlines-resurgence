@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Resurgence;
 using ResurgenceLib;
 using System.Diagnostics;
-using RevivalLib;
+using ResurgenceLib;
 
 namespace Resurgence.Steps
 {

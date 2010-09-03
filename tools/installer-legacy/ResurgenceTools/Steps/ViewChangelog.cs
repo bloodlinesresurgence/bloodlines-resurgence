@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Resurgence;
 using ResurgenceLib;
-using RevivalLib;
+using ResurgenceLib;
 
 namespace Resurgence.Steps
 {
