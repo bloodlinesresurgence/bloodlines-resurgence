@@ -43,6 +43,8 @@ namespace ResurgenceLib.Tools.Vextract
 
             vpkentries = vpkIndexEntries.ToArray();
 
+            Lib.CommunicationsObject.AddLog("Indexed " + vpkIndexEntries.Count.ToString() + " files in VPKs");
+
             Save();
         }
 
