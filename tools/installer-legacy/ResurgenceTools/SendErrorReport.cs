@@ -17,6 +17,7 @@ namespace ResurgenceTools
     public partial class SendErrorReport : TranslatedForm
     {
         private ReportContent content = new ReportContent();
+        private bool finishedInitialization = false;
 
         private static bool enumeratedVampire = false;
 
@@ -103,7 +104,8 @@ namespace ResurgenceTools
                     UpdateContents();
                     SendReport.BeginInvoke(new MethodInvoker(delegate()
                     {
-                        SendReport.Enabled = true;
+                        UpdateReport();
+                        finishedInitialization = true;
                     }));
                 }
             });
@@ -117,6 +119,7 @@ namespace ResurgenceTools
             {
                 Contents.Text = content.serializeToString();
                 UpdateReports.Enabled = false;
+                SendReport.Enabled = (finishedInitialization && (NameEntry.Text.Length > 0 || EmailEntry.Text.Length > 0));
             }));
         }
 
@@ -155,18 +158,17 @@ namespace ResurgenceTools
                 this.BeginInvoke(new MethodInvoker(delegate() { this.Enabled = false; }));
 
                 SetProgressState("Compressing report", 25);
-                UTF8Encoding encoding = new UTF8Encoding();
                 string report_content = content.serializeToString();
-                MemoryStream input = new MemoryStream(encoding.GetBytes(report_content));
-                MemoryStream output = new MemoryStream();
-                DeflateStream deflate = new DeflateStream(output, CompressionMode.Compress);
-                input.WriteTo(deflate);
-                byte[] compressed = new byte[output.Length];
-                output.Seek(0, SeekOrigin.Begin);
-                output.Read(compressed, 0, (int)output.Length);
-                report_content = encoding.GetString(compressed);
-                deflate.Close();
-                input.Close();
+                string compressed = ResurgenceLib.Compression.StringCompress(report_content);
+                // Verify it compresseses properly
+                string decompressed = ResurgenceLib.Compression.StringDecompress(compressed);
+                if (decompressed != report_content)
+                {
+                    MessageBox.Show(this, "Failed to compress report. Please send it as an email.", "Send Error Report",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                report_content = compressed;
 
                 SetProgressState("Preparing to upload", 50);
                 System.Collections.Specialized.NameValueCollection parameters = new System.Collections.Specialized.NameValueCollection();
