@@ -36,6 +36,8 @@
             this.IgnoreCancelExtraction = new System.Windows.Forms.CheckBox();
             this.AutoProceed = new System.Windows.Forms.CheckBox();
             this.ContentPanel.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
+            this.extendedPanel3.SuspendLayout();
             this.DescriptionBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +133,7 @@
             this.AutoProceed.TabIndex = 3;
             this.AutoProceed.Text = "Proceed to next dialogue automatically as each step finishes";
             this.AutoProceed.UseVisualStyleBackColor = true;
+            this.AutoProceed.Visible = false;
             // 
             // SelectSteps
             // 
@@ -141,6 +144,10 @@
             this.Text = "SelectSteps";
             this.ContentPanel.ResumeLayout(false);
             this.ContentPanel.PerformLayout();
+            this.ControlPanel.ResumeLayout(false);
+            this.ControlPanel.PerformLayout();
+            this.extendedPanel3.ResumeLayout(false);
+            this.extendedPanel3.PerformLayout();
             this.DescriptionBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
