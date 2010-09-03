@@ -167,17 +167,9 @@ namespace ResurgenceLib.Tools.Vextract
         /// </summary>
         /// <param name="VPKLocation">The location of the VPK files.</param>
         /// <returns>True on success, false on failure.</returns>
-        public bool CreateIndex(string VPKLocation)
+        public static void CreateIndex(string VPKLocation)
         {
-            try
-            {
-                VPKIndex index = new VPKIndex(VPKLocation);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            VPKIndex index = new VPKIndex(VPKLocation);
         }
     }
 }
