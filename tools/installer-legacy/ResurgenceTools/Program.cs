@@ -124,6 +124,8 @@ namespace Resurgence
         /// <param name="dialog">Sets whether to show the progress dialog.</param>
         private static void MigrateFiles(string path, string filespec, string destination, bool dialog)
         {
+            LibCommunications.gAddLog(String.Format("Migrate files from {0}, spec {1}, to destination {2}",
+                path, filespec, destination));
             DirectoryInfo directory = new DirectoryInfo(path);
             FileInfo[] files = directory.GetFiles(filespec);
             string destinationDirectory = Settings.ProgramData + "\\" + destination + "\\";
@@ -133,10 +135,12 @@ namespace Resurgence
             {
                 try
                 {
+                    LibCommunications.gAddLog("Directory " + destination + " does not exist, creating it");
                     Directory.CreateDirectory(destinationDirectory);
                 }
                 catch (Exception ex)
                 {
+                    LibCommunications.gAddLog("Failed to create destination directory: " + ex.Message);
                     migrationError("Failed to create destination directory: ", destinationDirectory + Environment.NewLine + ex.Message);
                     return;
                 }
@@ -145,6 +149,7 @@ namespace Resurgence
             Preparing preparing = null;
             NodeCS.Callback callback = delegate()
             {
+                LibCommunications.gAddLog("Starting copy of " + files.Length.ToString() + " files");
                 foreach (FileInfo sourceInfo in files)
                 {
                     string destinationFile = destinationDirectory + sourceInfo.Name;
@@ -153,15 +158,20 @@ namespace Resurgence
                         // Check file times - skips file if the destination is newer than the source.
                         FileInfo destInfo = new FileInfo(destinationFile);
                         if (destInfo.LastWriteTimeUtc > sourceInfo.LastWriteTimeUtc)
+                        {
+                            LibCommunications.gAddLog("Not overwriting " + destinationFile + " as it is newer than our copy");
                             continue;
+                        }
                     }
 
                     try
                     {
                         File.Copy(sourceInfo.FullName, destinationFile, true);
+                        LibCommunications.gAddLog("Copied " + sourceInfo.FullName);
                     }
                     catch (Exception ex)
                     {
+                        LibCommunications.gAddLog("Failed to copy " + sourceInfo.FullName + ": " + ex.Message);
                         failedCopies.Add(sourceInfo.Name + ": " + ex.Message);
                     }
 
@@ -284,6 +294,12 @@ namespace Resurgence
                 constructedSteps.Add(typeof(ViewChangelog));
 
             StepsToRun = constructedSteps.ToArray();
+            LibCommunications.gAddLog("Steps to run:");
+            foreach (Type type in constructedSteps)
+            {
+                LibCommunications.gAddLog(" -> " + type.FullName);
+            }
+            LibCommunications.gAddLog("Fin.");
         }
 
         /// <summary>
@@ -291,6 +307,8 @@ namespace Resurgence
         /// </summary>
         internal static void NextStep()
         {
+            LibCommunications.gAddLog(String.Format("Moving to next step, {0} to {1} (of {2} total)",
+                CurrentStep, CurrentStep + 1, StepsToRun.Length));
             Form form;
             CurrentStep++;
             if (CurrentStep == StepsToRun.Length)
@@ -318,6 +336,7 @@ namespace Resurgence
         /// <returns></returns>
         private static WizardPage CreateStep()
         {
+            LibCommunications.gAddLog("Creating step: " + StepsToRun[CurrentStep].FullName);
             return (WizardPage)
                         Activator.CreateInstance(StepsToRun[CurrentStep], Settings.TranslationProvider);
         }
@@ -327,6 +346,8 @@ namespace Resurgence
         /// </summary>
         internal static void PreviousStep()
         {
+            LibCommunications.gAddLog(String.Format("Moving to previous step, {0} to {1} (of {2} total)",
+                CurrentStep, CurrentStep - 1, StepsToRun.Length));
             CurrentStep--;
             if (CurrentStep < 0)
             {
