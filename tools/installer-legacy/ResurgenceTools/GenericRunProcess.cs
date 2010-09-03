@@ -10,7 +10,7 @@ using ResurgenceLib;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
-using RevivalLib;
+using ResurgenceLib;
 
 namespace Resurgence
 {
@@ -112,22 +112,23 @@ namespace Resurgence
             info.RedirectStandardOutput = true;
             info.RedirectStandardError = true;
 
+            string command = info.FileName + " " + info.Arguments + "\n";
+            LibCommunications.gAddLog(command);
 #if DEBUG
-            AppendText(
-#else
-            LibCommunications.gAddLog(
+            AppendText(command);
 #endif
-                info.FileName + " " + info.Arguments + "\n");
 
             Process p = new Process();
             p.StartInfo = info;
             p.OutputDataReceived += delegate(object sender, DataReceivedEventArgs e)
             {
                 output.StdOutput += e.Data + "\n";
+                LibCommunications.gAddLog("Output data received: " + e.Data);
             };
             p.ErrorDataReceived += delegate(object sender, DataReceivedEventArgs e)
             {
                 output.StdError += e.Data + "\n";
+                LibCommunications.gAddLog("Error data received: " + e.Data);
             };
 
             p.Start();
@@ -279,6 +280,7 @@ namespace Resurgence
 #if DEBUG
             if (Log.InvokeRequired == false)
             {
+                LibCommunications.gAddLog(text);
                 Log.AppendText(text);
                 RTFHelper.ScrollToEnd(Log);
             }
@@ -296,6 +298,7 @@ namespace Resurgence
         /// <returns>An array of strings containing the full path to each directory.</returns>
         protected string[] FindDirectories(string baseDirectory)
         {
+            LibCommunications.gAddLog("Finding directories in " + baseDirectory);
             List<string> directoriesFound = new List<string>();
 
             try
@@ -307,6 +310,7 @@ namespace Resurgence
                         return new string[0];
 
                     directoriesFound.Add(subDirectory.FullName);
+                    LibCommunications.gAddLog("Found a directory: " + subDirectory.FullName);
 
                     string[] subDirectories = FindDirectories(subDirectory.FullName);
                     directoriesFound.AddRange(subDirectories);
