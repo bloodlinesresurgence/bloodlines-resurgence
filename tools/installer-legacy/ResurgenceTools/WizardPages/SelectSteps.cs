@@ -60,7 +60,7 @@ namespace Resurgence.WizardPages
         private void BackButton_Click(object sender, EventArgs e)
         {
 #if !FULL_TOOLSET
-            Program.NextForm = new ModDetails(TranslationProvider);
+            Program.NextForm = new SelectOperation(TranslationProvider);
 #else
             Hide();
             (new ModDetails(TranslationProvider)).Show(Program.MainForm);
