@@ -466,7 +466,14 @@ namespace Resurgence
         /// </summary>
         internal bool IgnoreCancelExtraction
         {
-            get { return this["IgnoreCancelExtraction", null] != null; }
+            get { 
+#if DEBUG
+                return this["IgnoreCancelExtraction", null] != null; 
+#else
+                // Disabled for RELEASE
+                return false;
+#endif
+            }
             set { this["IgnoreCancelExtraction"] = (value == true ? (object)true : null); }
         }
 
