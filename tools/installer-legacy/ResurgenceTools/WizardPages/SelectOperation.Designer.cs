@@ -37,6 +37,7 @@
             this.DebugLogHelp = new System.Windows.Forms.Button();
             this.ContentPanel.SuspendLayout();
             this.ControlPanel.SuspendLayout();
+            this.extendedPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // WizardDescription
@@ -64,6 +65,10 @@
             // NextButton
             // 
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // BackButton
+            // 
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // InstallOption
             // 
@@ -148,6 +153,8 @@
             this.ContentPanel.PerformLayout();
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
+            this.extendedPanel3.ResumeLayout(false);
+            this.extendedPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

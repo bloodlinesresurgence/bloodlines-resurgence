@@ -66,5 +66,11 @@ namespace Resurgence.WizardPages
             MessageBox.Show(this, "Records various installation details so that you may send an error report to us",
                 "Debug Log", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Program.NextForm = new ModDetails(TranslationProvider);
+            Close();
+        }
     }
 }
