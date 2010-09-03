@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RevivalLib
+namespace ResurgenceLib
 {
     /// <summary>
     /// Output from executing a binary.

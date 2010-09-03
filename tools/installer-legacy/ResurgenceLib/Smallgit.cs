@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace RevivalLib
+namespace ResurgenceLib
 {
     /// <summary>
     /// Interface to Smallgit distribution
