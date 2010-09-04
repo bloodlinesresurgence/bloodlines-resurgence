@@ -70,6 +70,27 @@ namespace Resurgence
         [STAThread]
         static void Main(string[] arguments)
         {
+            try
+            {
+                RunApplication(arguments);
+            }
+            catch (Exception ex)
+            {
+                DialogResult result = MessageBox.Show(null, "An uncaught exception occurred! Would you like to take a moment to send an error report?" + Environment.NewLine +
+                    "Exception details:" + Environment.NewLine + ex.Message, "Uncaught Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (result == DialogResult.Yes)
+                {
+                    LibCommunications.gAddLog("Uncaught top level exception: " + ex.ToString());
+                    LibCommunications.gAddLog(ex.Message);
+                    LibCommunications.gAddLog(ex.StackTrace);
+                    Application.Run(new SendErrorReport());
+                }
+                Application.Exit();
+            }
+        }
+
+        private static void RunApplication(string[] arguments)
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -80,10 +101,10 @@ namespace Resurgence
             Settings = Settings.Load(SettingsFile);
 
             SelectedSteps = Settings.LastSelectedSteps;
-            
+
             // Load the translations.
             Lib.SetCommunicationsObject(LibCommunications.GetInstance());
-           
+
             Settings.LoadTranslations();
 
             MigrateDataFiles();
