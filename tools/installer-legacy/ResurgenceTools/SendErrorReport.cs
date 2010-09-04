@@ -69,6 +69,8 @@ namespace Resurgence
 
                     Directories.Push(Program.Settings.VampireDirectory);
 
+                    LibCommunications.gAddLog(Environment.NewLine + "Vampire Directory:");
+
                     while (Directories.Count > 0)
                     {
                         string currentDir = Directories.Pop();
