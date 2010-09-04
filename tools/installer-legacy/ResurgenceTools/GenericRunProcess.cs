@@ -53,9 +53,14 @@ namespace Resurgence
 #endif
         }
 
+        private bool AutoProceedStarted = false;
         protected override void AutoProceed_Start()
         {
-            StartStop.PerformClick();
+            if (!AutoProceedStarted)
+            {
+                AutoProceedStarted = true;
+                StartStop.PerformClick();
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)
