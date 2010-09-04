@@ -125,7 +125,7 @@ AutoProceed        = Proceed to next dialogue automatically as each step finishe
 
 [ExtractGeneralFiles]
 WizardDescription  = Extract General Files
-Description        = Exactracting general files...
+Description        = Extracting general files...
 
 [CopyOriginalFiles]
 WizardDescription  = Copy Original Files
