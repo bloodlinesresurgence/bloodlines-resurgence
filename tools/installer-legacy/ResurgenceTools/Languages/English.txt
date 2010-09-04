@@ -62,6 +62,9 @@ Description  = Preparing data files, please wait...
 
 [Welcome]
 WizardDescription = Welcome to the Bloodlines Resurgence Toolkit!
+
+[Readme]
+WizardDescription = Please take a moment to read the following
 Understand        = I understand the above conditions
 !WelcomeDocNotFound = Welcome document for your language was not found. Expected file: {0}
 
