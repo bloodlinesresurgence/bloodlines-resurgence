@@ -44,6 +44,8 @@ namespace Resurgence.Steps
                 "bsp$",
                 RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
+            SetProgressStyle(ProgressBarStyle.Marquee);
+
             DirectoryInfo dir = new DirectoryInfo(Program.Settings.VampireDirectory+@"\Vampire");
             FileInfo[] files = dir.GetFiles("*", SearchOption.AllDirectories);
 
@@ -86,9 +88,25 @@ namespace Resurgence.Steps
                 FileInfo dest = new FileInfo(Program.Settings.DestinationDirectory + "\\" + shortName);
                 dest.Directory.Create();
 
-                AppendText(copyStr + shortName+"...");
+                AppendText(shortName + " -> " + dest.FullName);
 
-                if (false == dest.Exists || dest.Length != source.Length)              source.CopyTo(dest.FullName);
+                if (false == dest.Exists || dest.Length != source.Length)
+                {
+                    try
+                    {
+                        source.CopyTo(dest.FullName);
+                    }
+                    catch (Exception ex)
+                    {
+                        this.Invoke(new MethodInvoker(delegate()
+                        {
+                            MessageBox.Show(this, "Error copying file. Please consider sending an error report (make sure debug logging is enabled.) Error message: " +
+                                Environment.NewLine + ex.Message, "Copy Original Files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }));
+                        LibCommunications.gAddLog("Error copying file: " + ex.Message);
+                        return Result.Failure;
+                    }
+                }
 
                 AppendText("\n");
 
