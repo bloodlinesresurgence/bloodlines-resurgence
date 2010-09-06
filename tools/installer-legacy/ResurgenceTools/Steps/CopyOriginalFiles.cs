@@ -94,7 +94,7 @@ namespace Resurgence.Steps
                 {
                     try
                     {
-                        source.CopyTo(dest.FullName);
+                        source.CopyTo(dest.FullName, true);
                     }
                     catch (Exception ex)
                     {
