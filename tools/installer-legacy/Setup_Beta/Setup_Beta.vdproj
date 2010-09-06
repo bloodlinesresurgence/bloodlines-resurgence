@@ -27,38 +27,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_76F21FC18509A76B5A43A8DDFE6D938D"
-        "OwnerKey" = "8:_AD5B233BCF3D1C011907B4515032AF97"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_76F21FC18509A76B5A43A8DDFE6D938D"
+        "MsmKey" = "8:_9B157DEF67948754676802039C819745"
         "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7B4D9778B0C1E3C8BDCA6B04B9A55EE9"
-        "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AD5B233BCF3D1C011907B4515032AF97"
-        "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C5953F7F22E17CAEB8DEB8385E82A94E"
-        "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C5953F7F22E17CAEB8DEB8385E82A94E"
-        "OwnerKey" = "8:_7B4D9778B0C1E3C8BDCA6B04B9A55EE9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,7 +40,37 @@
         "Entry"
         {
         "MsmKey" = "8:_D1DEE2F254E9C50968B2C55579545190"
-        "OwnerKey" = "8:_7B4D9778B0C1E3C8BDCA6B04B9A55EE9"
+        "OwnerKey" = "8:_9B157DEF67948754676802039C819745"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DC86A088B84E34A91CA4667782FF889C"
+        "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DC86A088B84E34A91CA4667782FF889C"
+        "OwnerKey" = "8:_9B157DEF67948754676802039C819745"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE764B900083CEB9135298CAB3040653"
+        "OwnerKey" = "8:_FAAB05AC8EACE062FF396E7DDAE83F0E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE764B900083CEB9135298CAB3040653"
+        "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FAAB05AC8EACE062FF396E7DDAE83F0E"
+        "OwnerKey" = "8:_3ECC137C034444A8A0FC5AB8E5019EB2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -82,25 +82,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AD5B233BCF3D1C011907B4515032AF97"
+        "OwnerKey" = "8:_FAAB05AC8EACE062FF396E7DDAE83F0E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_76F21FC18509A76B5A43A8DDFE6D938D"
+        "OwnerKey" = "8:_DE764B900083CEB9135298CAB3040653"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7B4D9778B0C1E3C8BDCA6B04B9A55EE9"
+        "OwnerKey" = "8:_9B157DEF67948754676802039C819745"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C5953F7F22E17CAEB8DEB8385E82A94E"
+        "OwnerKey" = "8:_DC86A088B84E34A91CA4667782FF889C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -271,113 +271,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_76F21FC18509A76B5A43A8DDFE6D938D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SpecSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_76F21FC18509A76B5A43A8DDFE6D938D"
-                    {
-                    "Name" = "8:SpecSharp.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SpecSharp.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B4D9778B0C1E3C8BDCA6B04B9A55EE9"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9B157DEF67948754676802039C819745"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ResurgenceLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_7B4D9778B0C1E3C8BDCA6B04B9A55EE9"
+                    "_9B157DEF67948754676802039C819745"
                     {
                     "Name" = "8:ResurgenceLib.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:ResurgenceLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AD5B233BCF3D1C011907B4515032AF97"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:NodeCS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_AD5B233BCF3D1C011907B4515032AF97"
-                    {
-                    "Name" = "8:NodeCS.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:NodeCS.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C5953F7F22E17CAEB8DEB8385E82A94E"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Ionic.Zip.Reduced, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_C5953F7F22E17CAEB8DEB8385E82A94E"
-                    {
-                    "Name" = "8:Ionic.Zip.Reduced.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Ionic.Zip.Reduced.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
@@ -409,6 +316,99 @@
                     }
                 }
             "SourcePath" = "8:DaedalusLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DC86A088B84E34A91CA4667782FF889C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Ionic.Zip.Reduced, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DC86A088B84E34A91CA4667782FF889C"
+                    {
+                    "Name" = "8:Ionic.Zip.Reduced.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Ionic.Zip.Reduced.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DE764B900083CEB9135298CAB3040653"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SpecSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DE764B900083CEB9135298CAB3040653"
+                    {
+                    "Name" = "8:SpecSharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SpecSharp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FAAB05AC8EACE062FF396E7DDAE83F0E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NodeCS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_FAAB05AC8EACE062FF396E7DDAE83F0E"
+                    {
+                    "Name" = "8:NodeCS.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NodeCS.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
@@ -493,14 +493,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Bloodlines Resurgence"
-        "ProductCode" = "8:{0BB21417-62CD-4401-88E2-E0DA75531AA0}"
-        "PackageCode" = "8:{F9AC9FD5-E6A2-4046-BF9F-68D563130FF8}"
+        "ProductCode" = "8:{0E3D2504-5655-4311-B4CE-EE21972A7CDF}"
+        "PackageCode" = "8:{71098A73-C0B9-4CAA-8CB9-3BC4D5C4210D}"
         "UpgradeCode" = "8:{900B6AB8-41D6-476F-8839-4F27BDE532B9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
-        "DetectNewerInstalledVersion" = "11:TRUE"
+        "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1030"
+        "ProductVersion" = "8:1.0.1040"
         "Manufacturer" = "8:Bloodlines Resurgence"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://forum.bloodlinesresurgence.com"
@@ -1028,7 +1028,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3ECC137C034444A8A0FC5AB8E5019EB2"
             {
-            "SourcePath" = "8:..\\ResurgenceTools\\obj\\x86\\Release\\ResurgenceTools.exe"
+            "SourcePath" = "8:..\\ResurgenceTools\\obj\\x86\\Debug\\ResurgenceTools.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_453763D036044D71B1915F6C2CE1FAD8"
