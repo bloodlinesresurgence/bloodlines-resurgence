@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "swarm_sdk_server", "src\game\server\swarm_sdk_server.vcproj", "{A26C0361-6B09-9E3D-5194-C9CB89243710}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "swarm_sdk_client", "src\game\client\swarm_sdk_client.vcproj", "{DD2DA85D-29EE-480C-8126-666CBFE54D69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "swarm_sdk_missionchooser", "src\game\missionchooser\swarm_sdk_missionchooser.vcproj", "{49D75CEE-34D0-4B69-84CF-EEF82A1D0B87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Debug|Win32.Build.0 = Debug|Win32
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Release|Win32.ActiveCfg = Release|Win32
+		{A26C0361-6B09-9E3D-5194-C9CB89243710}.Release|Win32.Build.0 = Release|Win32
+		{DD2DA85D-29EE-480C-8126-666CBFE54D69}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD2DA85D-29EE-480C-8126-666CBFE54D69}.Debug|Win32.Build.0 = Debug|Win32
+		{DD2DA85D-29EE-480C-8126-666CBFE54D69}.Release|Win32.ActiveCfg = Release|Win32
+		{DD2DA85D-29EE-480C-8126-666CBFE54D69}.Release|Win32.Build.0 = Release|Win32
+		{49D75CEE-34D0-4B69-84CF-EEF82A1D0B87}.Debug|Win32.ActiveCfg = Debug|Win32
+		{49D75CEE-34D0-4B69-84CF-EEF82A1D0B87}.Debug|Win32.Build.0 = Debug|Win32
+		{49D75CEE-34D0-4B69-84CF-EEF82A1D0B87}.Release|Win32.ActiveCfg = Release|Win32
+		{49D75CEE-34D0-4B69-84CF-EEF82A1D0B87}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

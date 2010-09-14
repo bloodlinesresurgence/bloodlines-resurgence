@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
-	Name="MissionChooser"
-	ProjectGUID="{A26C0361-6B09-9E3D-5194-C9CB89243710}"
+	Version="9.00"
+	Name="swarm_sdk_missionchooser"
+	ProjectGUID="{49D75CEE-34D0-4B69-84CF-EEF82A1D0B87}"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -94,6 +95,8 @@
 				MapFileName="$(IntDir)/$(TargetName).map"
 				SubSystem="2"
 				BaseAddress=" "
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 				ErrorReporting="1"
 			/>
@@ -118,9 +121,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -214,6 +214,8 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				BaseAddress=" "
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 				ErrorReporting="1"
 			/>
@@ -238,9 +240,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -918,4 +917,6 @@
 			</File>
 		</Filter>
 	</Files>
+	<Globals>
+	</Globals>
 </VisualStudioProject>
