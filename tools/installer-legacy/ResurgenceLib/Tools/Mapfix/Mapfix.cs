@@ -19,6 +19,11 @@ namespace ResurgenceLib.Tools.Mapfix
         public static bool Disable_ConnectionFix = false;
 
         /// <summary>
+        /// Direction to rotate props
+        /// </summary>
+        public static int Rotate_Direction = 0;
+
+        /// <summary>
         /// The last error that occured.
         /// </summary>
         public static string LastError = "";
@@ -55,8 +60,6 @@ namespace ResurgenceLib.Tools.Mapfix
             Entity entity = new Entity();
             LastError = "";
 
-            
-
             foreach(string line in buffer)
             {
                 switch (line)
@@ -67,6 +70,7 @@ namespace ResurgenceLib.Tools.Mapfix
                         break;
 
                     case "}":
+                        entity.in_connections = false;
                         depth--;
                         if (depth < 0)
                         {
@@ -107,6 +111,12 @@ namespace ResurgenceLib.Tools.Mapfix
                                 break;
 
                             case Flags.ENTITY:
+                                // Special case: connections block
+                                if (line.ToLower().Trim() == "connections")
+                                {
+                                    entity.in_connections = true;
+                                }
+
                                 // Entity data, let the entity class manage it
                                 entity.Add_Line(line);
                                 break;

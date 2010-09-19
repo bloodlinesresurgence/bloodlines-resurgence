@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ResurgenceLib.Tools.Mapfix
 {
@@ -10,8 +11,26 @@ namespace ResurgenceLib.Tools.Mapfix
     /// </summary>
     internal class Entity
     {
-        private string GenericData = "";
-        private string Outputs = "";
+        private StringBuilder GenericData = new StringBuilder();
+        private StringBuilder Outputs = new StringBuilder();
+        /// <summary>
+        /// Class name.
+        /// </summary>
+        /// Hammer crashes if no class name is specified.
+        private string ClassName = "unknown_entity";
+
+        /// <summary>
+        /// Whether we are in a connections block.
+        /// </summary>
+        public bool in_connections = false;
+
+        private Regex keyValue = new Regex("\"([^\"]+)\"\\W+\"([^\"]+)\"", RegexOptions.Compiled);
+
+        static string[] to_rotate = {
+                                        "prop_dynamic",
+                                        "prop_doorknob",
+                                        "prop_static",
+                                    };
 
         public Entity()
         {
@@ -19,13 +38,16 @@ namespace ResurgenceLib.Tools.Mapfix
 
         public void Reset()
         {
-            GenericData = "";
-            Outputs = "";
+            ClassName = "unknown_entity";
+            GenericData.Length = 0;
+            Outputs.Length = 0;
         }
 
         private bool is_output(string line)
         {
             if (Mapfix.Disable_ConnectionFix) return false;
+
+            if (in_connections) return false;
 
             // If line contains: "On
             if (line.Contains("\"On"))
@@ -36,35 +58,77 @@ namespace ResurgenceLib.Tools.Mapfix
             return false;
         }
 
-        private void checkEntityData()
-        {
-            // Fix missing "classname" error - crashes Hammer if an entity does not define their classname
-            if (this.GenericData.Contains("\"classname\"") == false)
-                this.GenericData += "		\"classname\"	\"unknown_entity\"" + System.Environment.NewLine;
-        }
-
         public void Add_Line(string line)
         {
             if (is_output(line))
-                this.Outputs += "\t" + line + "" + System.Environment.NewLine;
+                this.Outputs.AppendLine("\t" + line + "");
             else
-                this.GenericData += line + "" + System.Environment.NewLine;
-        }
+            {
+                // Probably in the format: "key" "value"
+                MatchCollection pair = keyValue.Matches(line);
+                if (pair.Count > 0)
+                {
+                    var parts = pair[0].Groups;
+                    if (parts.Count > 1)
+                    {
+                        // Key
+                        switch (parts[1].Value.ToLower())
+                        {
+                            case "classname":
+                                this.ClassName = parts[2].Value;
+                                break;
 
+                            case "angles":
+                                // If of a certain class, rotate the angles
+                                if (Mapfix.Rotate_Direction != 0 && to_rotate.Contains(parts[2].Value.ToLower()))
+                                {
+                                    // Adjust angles accordingly
+                                    string[] angles_parts = parts[2].Value.Split(' ');
+                                    if (angles_parts[0] == "0" && angles_parts[2] == "0")
+                                    {
+                                        int angle = Int16.Parse(angles_parts[1]) + Mapfix.Rotate_Direction;
+                                        if (angle < 0)
+                                            angle = 360 - (-angle);
+                                        else if (angle > 360)
+                                            angle -= 360;
+                                        angles_parts[1] = angle.ToString();
+                                    }
+                                    this.GenericData.AppendLine("\t\"angles\" \"" + String.Join(" ", angles_parts));
+                                }
+                                else
+                                {
+                                    this.GenericData.AppendLine(line);
+                                }
+                                break;
+
+                            default:
+                                this.GenericData.AppendLine(line);
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    this.GenericData.AppendLine(line);
+                }
+            }
+        }
+            
         public string Generate()
         {
-            checkEntityData();
-            string output = this.GenericData;
+            StringBuilder output = new StringBuilder();
+            output.AppendLine("\t\"classname\"  \"" + this.ClassName + "\"" + Environment.NewLine);
+            output.Append(this.GenericData.ToString());
 
             if (Mapfix.Disable_ConnectionFix == false && this.Outputs.Length > 0)
             {
-                output += "        connections" + System.Environment.NewLine;
-                output += "        {" + System.Environment.NewLine;
-                output += this.Outputs;
-                output += "        }" + System.Environment.NewLine;
+                output.AppendLine("        connections");
+                output.AppendLine("        {");
+                output.AppendLine(this.Outputs.ToString());
+                output.AppendLine("        }");
             }
 
-            return output;
+            return output.ToString();
         }
     }
 }
