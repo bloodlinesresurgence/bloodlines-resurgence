@@ -724,10 +724,10 @@ int __cdecl _CrtDbgReport( int nRptType, const char * szFile,
 #if defined( _DEBUG )
  
 // wrapper which passes no debug info; not available in debug
-void __cdecl _invalid_parameter_noinfo(void)
+/*void __cdecl _invalid_parameter_noinfo(void)
 {
     Assert(0);
-}
+}*/
 
 #endif /* defined( _DEBUG ) */
 
