@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="Vvis_dll"
 	ProjectGUID="{CB353257-04B0-4EC8-9E47-F2F17B2675C9}"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -93,6 +94,8 @@
 				MapFileName="$(IntDir)/$(TargetName).map"
 				SubSystem="2"
 				BaseAddress=" "
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 				ErrorReporting="1"
 			/>
@@ -119,11 +122,7 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
 				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
@@ -212,6 +211,8 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				BaseAddress=" "
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 				ErrorReporting="1"
 			/>
@@ -238,11 +239,7 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
 				CommandLine=""
 				ExcludedFromBuild="false"
 			/>

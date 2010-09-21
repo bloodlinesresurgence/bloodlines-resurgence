@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="Vrad_launcher"
 	ProjectGUID="{914F19DF-64EC-4E7D-8B01-76477BF06479}"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -98,6 +99,8 @@
 				MapFileName="$(IntDir)/$(TargetName).map"
 				SubSystem="1"
 				BaseAddress=" "
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 				ErrorReporting="1"
 			/>
@@ -124,11 +127,7 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
 				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
@@ -220,6 +219,8 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				BaseAddress=" "
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 				ErrorReporting="1"
 			/>
@@ -246,11 +247,7 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
-				Description=""
 				CommandLine=""
 				ExcludedFromBuild="false"
 			/>
