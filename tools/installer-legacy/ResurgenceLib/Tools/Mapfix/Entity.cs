@@ -80,13 +80,13 @@ namespace ResurgenceLib.Tools.Mapfix
 
                             case "angles":
                                 // If of a certain class, rotate the angles
-                                if (Mapfix.Rotate_Direction != 0 && to_rotate.Contains(parts[2].Value.ToLower()))
+                                if (Mapfix.Rotate_Direction != 0 && to_rotate.Contains(ClassName))
                                 {
                                     // Adjust angles accordingly
                                     string[] angles_parts = parts[2].Value.Split(' ');
                                     if (angles_parts[0] == "0" && angles_parts[2] == "0")
                                     {
-                                        int angle = Int16.Parse(angles_parts[1]) + Mapfix.Rotate_Direction;
+                                        float angle = float.Parse(angles_parts[1]) + Mapfix.Rotate_Direction;
                                         if (angle < 0)
                                             angle = 360 - (-angle);
                                         else if (angle > 360)
