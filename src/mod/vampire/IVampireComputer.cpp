@@ -12,6 +12,8 @@ using namespace vgui;
 #include "C_ComputerParser.h"
 #include "C_ComputerFunc.h"
 
+ConVar cl_computer_script("cl_computer_script", "", FCVAR_CLIENTDLL, "Sets the current computer script");
+
  //CVampireComputer class: Tutorial example class
  class CVampireComputer : public vgui::Frame
  {
@@ -22,6 +24,11 @@ using namespace vgui;
  	~CVampireComputer(){};				// Destructor
 	void Deactivate (void) {
 		SetVisible(false);
+	}
+
+	void refreshScript ()
+	{
+		this->m_Parser->setScript(cl_computer_script.GetString());
 	}
 
  protected:
@@ -89,7 +96,6 @@ CVampireComputer::CVampireComputer(vgui::VPANEL parent) : BaseClass(NULL, "vampi
 	m_TextPanel->SetVerticalScrollbar( false );
 
 	SetScheme(vgui::scheme()->LoadSchemeFromFile("resource/ComputerScheme.res", "ComputerScheme"));
-	//SetScheme(vgui::scheme()->LoadSchemeFromFile("resource/SourceScheme.res", "SourceScheme"));
 	LoadControlSettings("resource/UI/vampireComputer.res");
 	vgui::ivgui()->AddTickSignal( GetVPanel(), 100 );
 
@@ -127,6 +133,8 @@ public:
 	{
 		if ( vampireComputer )
 		{
+			// Parse the file again
+			vampireComputer->refreshScript();
 			vampireComputer->Activate();
 		}
 	}
@@ -170,27 +178,35 @@ void CVampireComputer::OnCommand(const char* pcCommand)
 
 void CVampireComputer::OnKeyCodePressed( KeyCode code )
 {
-	if(code == KEY_ENTER)
+	DevMsg("KeyCodePressed: %i\n", code);
+	switch(code)
 	{
-		if( m_pTime->HasFocus() )
-		{
-			char *tmp = new char[m_pTime->GetTextLength()+1];
-			m_pTime->GetText( tmp, m_pTime->GetTextLength()+1 );
-			DevMsg("Received: %s \n", tmp);
-			//m_TextPanel->SetText(tmp);
+		case KEY_ENTER:
+			if( m_pTime->HasFocus() )
+			{
+				char *tmp = new char[m_pTime->GetTextLength()+1];
+				m_pTime->GetText( tmp, m_pTime->GetTextLength()+1 );
+				DevMsg("Received: %s \n", tmp);
+				//m_TextPanel->SetText(tmp);
 
-			//change this to a switch statement?
-			if( pComputerFunc->GetOnlyEnter() )
-				pComputerFunc->Enter();
-			else if( pComputerFunc->IsPasswordReq() )
-				pComputerFunc->HandlePassword(tmp);
-			else
-				pComputerFunc->HandleCmd(tmp);
-			
-			delete[] tmp;
-			tmp = 0;
-			//m_pTime->SetText("");
-		}
+				//change this to a switch statement?
+				if( pComputerFunc->GetOnlyEnter() )
+					pComputerFunc->Enter();
+				else if( pComputerFunc->IsPasswordReq() )
+					pComputerFunc->HandlePassword(tmp);
+				else
+					pComputerFunc->HandleCmd(tmp);
+				
+				delete[] tmp;
+				tmp = 0;
+				//m_pTime->SetText("");
+			}
+			break;
+
+		case KEY_ESCAPE:
+			cl_computer_window.SetValue(false);
+			vampireComputer->Activate();
+			break;
 	}
 	BaseClass::OnKeyCodePressed( code );
 }
