@@ -32,9 +32,14 @@ public:
 	~C_ComputerParser();
 	void Parse();
 	void Say(const char *what);
+	void setScript(const char *script) {
+		this->m_Script = std::string(script);
+		this->Parse();
+	};
 private:
 	vgui::RichText *m_vguiRichText;
 	C_ComputerFunc *pComputer;
+	std::string m_Script;
 protected:
 };
 

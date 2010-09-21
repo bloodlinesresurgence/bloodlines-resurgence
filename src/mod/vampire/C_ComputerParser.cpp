@@ -27,7 +27,7 @@ void C_ComputerParser::Parse()
 {
 
 	KeyValues *pRoot = new KeyValues( "Computer" );
-	pRoot->LoadFromFile( g_pFullFileSystem, "resource/computer/blood_bank_computer.txt", "MOD" );
+	pRoot->LoadFromFile( g_pFullFileSystem, this->m_Script.c_str(), "MOD" );
 	//DevMsg("%s \n", pRoot->GetString("screen saver", "should be santa monica bloodbank"));
 	//DevMsg("%s \n", pRoot->GetString("brackets", "should be []"));
 
