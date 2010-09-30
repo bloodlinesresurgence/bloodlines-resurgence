@@ -5389,6 +5389,18 @@
 				>
 			</File>
 		</Filter>
+		<Filter
+			Name="Vampire"
+			>
+			<File
+				RelativePath="..\..\vampire\server\prop_hacking.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\vampire\server\prop_hacking.h"
+				>
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>

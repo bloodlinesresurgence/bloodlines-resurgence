@@ -5125,31 +5125,31 @@
 			Name="Vampire"
 			>
 			<File
-				RelativePath="..\..\vampire\C_ComputerFunc.cpp"
+				RelativePath="..\..\vampire\client\C_ComputerFunc.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\vampire\C_ComputerFunc.h"
+				RelativePath="..\..\vampire\client\C_ComputerFunc.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\vampire\C_ComputerParser.cpp"
+				RelativePath="..\..\vampire\client\C_ComputerParser.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\vampire\C_ComputerParser.h"
+				RelativePath="..\..\vampire\client\C_ComputerParser.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\vampire\C_ComputerStruct.h"
+				RelativePath="..\..\vampire\client\C_ComputerStruct.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\vampire\IVampireComputer.cpp"
+				RelativePath="..\..\vampire\client\IVampireComputer.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\vampire\IVampireComputer.h"
+				RelativePath="..\..\vampire\client\IVampireComputer.h"
 				>
 			</File>
 		</Filter>
