@@ -19,6 +19,8 @@ namespace ResurgenceLib.Tools.Mapfix
         /// Hammer crashes if no class name is specified.
         private string ClassName = "unknown_entity";
 
+        private string id = null;
+
         /// <summary>
         /// Whether we are in a connections block.
         /// </summary>
@@ -28,7 +30,7 @@ namespace ResurgenceLib.Tools.Mapfix
 
         static string[] to_rotate = {
                                         "prop_dynamic",
-                                        "prop_doorknob",
+                                        //"prop_doorknob",
                                         "prop_static",
                                     };
 
@@ -41,6 +43,7 @@ namespace ResurgenceLib.Tools.Mapfix
             ClassName = "unknown_entity";
             GenericData.Length = 0;
             Outputs.Length = 0;
+            id = null;
         }
 
         private bool is_output(string line)
@@ -74,6 +77,17 @@ namespace ResurgenceLib.Tools.Mapfix
                         // Key
                         switch (parts[1].Value.ToLower())
                         {
+                            case "id":
+                                if (this.id == null)
+                                {
+                                    this.id = parts[2].Value;
+                                }
+                                else
+                                {
+                                    this.GenericData.AppendLine(line);
+                                }
+                                break;
+
                             case "classname":
                                 this.ClassName = parts[2].Value;
                                 break;
@@ -87,13 +101,13 @@ namespace ResurgenceLib.Tools.Mapfix
                                     if (angles_parts[0] == "0" && angles_parts[2] == "0")
                                     {
                                         float angle = float.Parse(angles_parts[1]) + Mapfix.Rotate_Direction;
-                                        if (angle < 0)
+                                        if (angle < -360)
                                             angle = 360 - (-angle);
                                         else if (angle > 360)
                                             angle -= 360;
                                         angles_parts[1] = angle.ToString();
                                     }
-                                    this.GenericData.AppendLine("\t\"angles\" \"" + String.Join(" ", angles_parts));
+                                    this.GenericData.AppendLine("\t\"angles\" \"" + String.Join(" ", angles_parts) + "\"");
                                 }
                                 else
                                 {
@@ -117,7 +131,8 @@ namespace ResurgenceLib.Tools.Mapfix
         public string Generate()
         {
             StringBuilder output = new StringBuilder();
-            output.AppendLine("\t\"classname\"  \"" + this.ClassName + "\"" + Environment.NewLine);
+            output.AppendLine("\t\"id\" \"" + this.id + "\"");
+            output.AppendLine("\t\"classname\" \"" + this.ClassName + "\"");
             output.Append(this.GenericData.ToString());
 
             if (Mapfix.Disable_ConnectionFix == false && this.Outputs.Length > 0)
