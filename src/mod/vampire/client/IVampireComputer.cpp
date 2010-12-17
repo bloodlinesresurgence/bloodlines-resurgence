@@ -105,7 +105,7 @@ CVampireComputer::CVampireComputer(vgui::VPANEL parent) : BaseClass(NULL, "vampi
 	DevMsg("vampireComputer has been constructed\n");
 }
 
-ConVar cl_computer_window("cl_showvampireComputer", "1", FCVAR_CLIENTDLL, "Sets the state of vampireComputer <state>");
+ConVar cl_computer_window("cl_showvampireComputer", "0", FCVAR_CLIENTDLL, "Sets the state of vampireComputer <state>");
 
 //Class: CVampireComputerInterface Class. Used for construction.
 class CVampireComputerInterface : public IVampireComputer

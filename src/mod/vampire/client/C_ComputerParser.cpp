@@ -91,7 +91,7 @@ void C_ComputerParser::Parse()
 					Q_snprintf(c->szRunText,sizeof(c->szRunText),pSubKey->GetString("runtext", "none"));
 					std::vector<stComputerFunc*>::iterator it;
 					it = s->vecFunctions.begin();
-					it = s->vecFunctions.insert( it, c );
+					//it = s->vecFunctions.insert( it, c );
 				}
 			}
 			pComputer->AddSubDir( s );

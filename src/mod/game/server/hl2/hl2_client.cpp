@@ -23,6 +23,7 @@
 #include "game.h"
 #include "player_resource.h"
 #include "engine/IEngineSound.h"
+#include "vamp_player.h"
 
 #include "tier0/vprof.h"
 
@@ -44,14 +45,16 @@ called each time a player is spawned into the game
 void ClientPutInServer( edict_t *pEdict, const char *playername )
 {
 	// Allocate a CBasePlayer for pev, and call spawn
-	CHL2_Player *pPlayer = CHL2_Player::CreatePlayer( "player", pEdict );
+	//CHL2_Player *pPlayer = CHL2_Player::CreatePlayer( "player", pEdict );
+	CVamp_Player *pPlayer = CVamp_Player::CreatePlayer( "player", pEdict );
 	pPlayer->SetPlayerName( playername );
 }
 
 
 void ClientActive( edict_t *pEdict, bool bLoadGame )
 {
-	CHL2_Player *pPlayer = dynamic_cast< CHL2_Player* >( CBaseEntity::Instance( pEdict ) );
+	// CHL2_Player *pPlayer = dynamic_cast< CHL2_Player* >( CBaseEntity::Instance( pEdict ) );
+	CVamp_Player *pPlayer = dynamic_cast< CVamp_Player* >( CBaseEntity::Instance( pEdict ) );
 	Assert( pPlayer );
 
 	if ( !pPlayer )

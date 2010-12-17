@@ -98,6 +98,9 @@
 #include "sdk_gamerules.h"
 #endif
 
+extern void PythonInit();
+extern void PythonShutdown();
+
 extern IToolFrameworkServer *g_pToolFrameworkServer;
 extern IParticleSystemQuery *g_pParticleSystemQuery;
 
@@ -710,6 +713,9 @@ bool CServerGameDLL::DLLInit( CreateInterfaceFn appSystemFactory,
 	gamestatsuploader->InitConnection();
 #endif
 
+	Msg("PythonInit()\n"); 
+	PythonInit();
+
 	return true;
 }
 
@@ -720,6 +726,8 @@ void CServerGameDLL::PostInit()
 
 void CServerGameDLL::DLLShutdown( void )
 {
+	
+	PythonShutdown();
 
 	// Due to dependencies, these are not autogamesystems
 	ModelSoundsCacheShutdown();
